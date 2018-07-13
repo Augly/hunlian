@@ -1,0 +1,6 @@
+<view class='container'>
+  <view class='item' wx:for="{{List}}" bindtap='tores'>
+    <text>{{item.nickname}}喜欢了你</text>
+    <image src='{{item.more}}' class='person_head'></image>
+  </view>
+</view>

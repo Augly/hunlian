@@ -1,0 +1,12 @@
+<!--pages/index/registrationAgreement.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml"/>
+<view class='container'>
+  <view class='content_item'>
+    <view class='content_character'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
+    </view>
+  </view>
+</view>
+  <view class='bottomGroup'>
+    <view class='next_btn' bindtap='know'>我知道了</view>
+  </view>

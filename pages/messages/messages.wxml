@@ -1,0 +1,86 @@
+<!--pages/messages/messages.wxml-->
+<view class='selectGroup'>
+  <view class='selectView' bindtap='select' data-id='1'>
+    <view class="selectCor {{myindex=='1'?'selectCor_Active':''}}">已读({{allNum}})</view>
+
+  </view>
+  <view class='selectView'>
+    <view class="selectCor {{myindex=='2'?'selectCor_Active':''}}" bindtap='select' data-id='2'> 未读({{otherNum}}）</view>
+
+  </view>
+</view>
+<view class='wrap' wx:if="{{myindex=='1'}}">
+<view>
+  <view class='item' bindtap='tomail'>
+    <view class='item_left'>
+      <view class='left_log'>
+        <text class='iconfont icon-yidu'></text>
+      </view>
+      <view class='left_res'>
+        <view class='left_title'>系统消息</view>
+        <view class='left_mintitle'>给您发布{{alldata.message_num}}条消息</view>
+      </view>
+      <view class='left_data'>
+        {{alldata.message_date}}
+      </view>
+    </view>
+  </view>
+</view>
+<scroll-view class='selectList' wx:for="{{list}}" scroll-x scroll-left="{{item.myleft}}" scroll-with-animation bindscroll='scroll' data-index='{{index}}'>
+  <view class='item'>
+    <view class='item_left' bindtap='tomailRes' data-formid='{{item.from_id}}' data-id='{{item.id}}'>
+      <view class='left_log'>
+        <text class='iconfont icon-yidu'></text>
+      </view>
+      <view class='left_res'>
+        <view class='left_title'>{{item.nickname}}</view>
+        <view class='left_mintitle'>给您发布{{item.num}}条消息</view>
+      </view>
+      <view class='left_data'>
+        {{item.create_time}}
+      </view>
+    </view>
+    <view class='item_right'>
+      删除
+    </view>
+  </view>
+</scroll-view>
+</view>
+
+<view class='wrap' wx:else>
+  <view class='item' bindtap='tomailtwo'>
+    <view class='item_left'>
+      <view class='left_log'>
+        <text class='iconfont icon-yidu'></text>
+      </view>
+      <view class='left_res'>
+        <view class='left_title'>系统消息</view>
+        <view class='left_mintitle'>给您发布{{otheralldata.message_num}}条消息</view>
+      </view>
+      <view class='left_data'>
+        {{otheralldata.message_date}}
+      </view>
+    </view>
+  </view>
+<scroll-view class='selectList' wx:for="{{otherlist}}" scroll-x scroll-left="{{item.myleft}}" scroll-with-animation bindscroll='scroll' data-index='{{index}}'>
+  <view class='item'>
+    <view class='item_left' bindtap='tomailRestwo' data-formid='{{item.from_id}}' data-id='{{item.id}}'>
+      <view class='left_log'>
+        <text class='iconfont icon-yidu'></text>
+      </view>
+      <view class='left_res'>
+        <view class='left_title'>{{item.nickname}}</view>
+        <view class='left_mintitle'>给您发布{{item.num}}条消息</view>
+      </view>
+      <view class='left_data'>
+        {{item.create_time}}
+      </view>
+    </view>
+    <view class='item_right'>
+      删除
+    </view>
+  </view>
+</scroll-view>
+</view>
+
+<myToast noCode="{{noCode}}" step="{{step}}"></myToast>

@@ -1,0 +1,58 @@
+/* pages/infocode/inficode.wxss */
+page{
+  box-sizing: border-box;
+  padding-bottom: 150rpx;
+}
+.top_img {
+  width: 100%;
+  height: 360rpx;
+  overflow: hidden;
+}
+
+.top_img image {
+  width: 100%;
+}
+
+.infocode_content {
+  color: #282828;
+  font-size: 28rpx;
+  padding: 32rpx;
+  line-height: 50rpx;
+}
+
+.info_btn {
+  margin: 40rpx 35rpx;
+  height: 88rpx;
+  width: 680rpx;
+  text-align: center;
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 38rpx;
+  background-color: #e9ad40;
+  border-radius: 44rpx;
+  background: radial-gradient(#e7a42a, #c98c1c);
+   box-shadow:0rpx 2rpx 30rpx #E9AD40;
+}
+
+.infomold {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.infomold_content {
+  position: absolute;
+  text-align: center;
+  padding: 65rpx;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 28rpx;
+  width: 520rpx;
+  height: 360rpx;
+  background-color: rgba(0, 0, 0, 1);
+  opacity: 0.8;
+  border-radius: 10rpx;
+}

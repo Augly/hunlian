@@ -1,0 +1,40 @@
+<view class='container'>
+
+<view wx:for="{{list}}">
+    <view class='talk_item' wx:if="{{item.from==1}}">
+    <image src='{{item.more}}' class='person_head'></image>
+    <view class='person_name'>
+      <text class='name'>{{item.nickname}}</text>
+      <view class='talk_details'>
+       {{item.content}}
+      </view>
+    </view>
+  </view>
+  <view class='talk_item flex_right' wx:else>
+    <view class='person_name'>
+      <text class='name myname' style='text-align:right'>{{item.nickname}}</text>
+      <view class='mytalk'>
+       {{item.content}}
+      </view>
+    </view>
+    <image src='{{item.more}}' class='person_head'></image>
+  </view>
+</view>
+  <!--回复弹层  -->
+  <view class="reply_mask {{showView?'show':''}}">
+    <view class='reply_popup'>
+      <text class='reply_tit'>回复</text>
+      <icon class='iconfont icon-quxiao1' bindtap='mask'></icon>
+      <textarea class='text_box' placeholder='请输入您的回复' bindinput='myipt' value='{{myipt}}'></textarea>
+      <view class='reply_btn' bindtap='success_mask'>发送</view>
+    </view>
+  </view>
+
+  <!--发送成功  -->
+</view>
+<!--btn  -->
+<view class='btn_wrpa'>
+  <view class='btn' bindtap='mask'>
+    回复
+  </view>
+</view>

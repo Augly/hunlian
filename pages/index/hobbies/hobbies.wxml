@@ -1,0 +1,45 @@
+<!--pages/index/hobbies.wxml-->
+<view class='container'>
+  <view class='content_item'>
+    <view class='item_list'>
+      <view class='content_title'>
+        <view class='iconfont icon-xingqu'></view>
+        <view class='label_title'>个人标签</view>
+      </view>
+      <view class='label_box'>
+      <view class='label'>哲学控</view>
+      <view class='label'>哲学控</view>
+      </view>
+    </view>
+    <view class='item_list'>
+      <view class='content_title'>
+        <view class='iconfont icon-dianying'></view>
+        <view class='label_title'>电影</view>
+      </view>
+      <view class='label_box'>
+      <view class='label'>阿甘正传</view>
+      <view class='label'>肖申克的救赎</view>
+      </view>
+    </view>
+    <view class='item_list'>
+      <view class='content_title'>
+        <view class='iconfont icon-lnicon29'></view>
+        <view class='label_title'>美食</view>
+      </view>
+      <view class='label_box'>
+      <view class='label'>甜食</view>
+      <view class='label'>麻辣烫</view>
+      </view>
+    </view>
+    <view class='item_list'>
+      <view class='content_title'>
+        <view class='iconfont icon-yundong'></view>
+        <view class='label_title'>运动</view>
+      </view>
+      <view class='label_box'>
+      <view class='label'>篮球</view>
+      <view class='label'>乒乓球</view>
+      </view>
+    </view>
+  </view>
+</view>

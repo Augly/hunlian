@@ -1,0 +1,112 @@
+/* pages/my.wxss */
+
+page {
+  background-color: #f5f6fa;
+}
+
+.myimg_box {
+  box-sizing: border-box;
+  padding: 28rpx 0 0 0;
+  height: 320rpx;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 24rpx;
+}
+
+.img_box {
+  margin: 0 auto;
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 5rpx solid #858585;
+  overflow: hidden;
+}
+
+.img_box image {
+  width: 100%;
+  height: 100%;
+}
+
+.myname {
+  font-size: 30rpx;
+  margin: 15rpx 0 18rpx 0;
+}
+
+.myitem {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  margin: 24rpx 32rpx;
+  padding: 25rpx 36rpx 24rpx 100rpx;
+  background-color: #fff;
+  color: #e9ad40;
+  font-size: 28rpx;
+  font-weight: bold;
+  border-radius: 10rpx;
+}
+
+.myitem_rigth {
+  display: flex;
+  width: 160rpx;
+  height: 50rpx;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25rpx;
+  color: #fff;
+  background-color: #e9ad40;
+}
+
+.myitem .icon-arrow {
+  margin: 0 0 0 10rpx;
+  font-size: 28rpx;
+}
+
+.myitem_left {
+  padding: 4px 0 0 0;
+}
+
+.mycontent {
+  background-color: #fff;
+  color: #1a1a1a;
+  font-size: 28rpx;
+}
+
+.mycontent_item {
+  display: flex;
+  margin: 0 32rpx;
+  padding: 25rpx 8rpx 25rpx 0;
+  border-bottom: 1px solid #ebebeb;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mycontent_item:last-child {
+  border-bottom: 1px solid #fff;
+}
+
+.icon_box {
+  display: inline-block;
+  margin: 0 10rpx 0 0;
+  height: 48rpx;
+  width: 48rpx;
+  border-radius: 3rpx;
+  background-color: #e9ad40;
+  text-align: center;
+  line-height: 48rpx;
+  color: #fff;
+}
+
+.icon_box .icon-yanzhengma {
+  font-size: 26rpx;
+}
+
+.mycontent_item .icon-arrow {
+  color: #dadada;
+  font-size: 26rpx;
+}
+
+.info_icon {
+  color: #dadada;
+}

@@ -1,0 +1,78 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/bacisinfo/bacisinfo",
+    "pages/text/text",
+    "pages/index/detail/detail",
+    "pages/index/chooseStandard/chooseStandard",
+    "pages/index/hobbies/hobbies",
+    "pages/index/basicInformation2/basicInformation2",
+    "pages/index/toloading/toloading",
+    "pages/Appointment/near_acitve_q/near_acitve_q",
+    "pages/index/basicInformation/basicInformation",
+    "pages/index/certificationInformation/certificationInformation",
+    "pages/index/certification/certification",
+    "pages/index/registrationAgreement/registrationAgreement",
+    "pages/index/loginRegister/loginRegister",
+    "pages/index/Pay_certification/Pay_certification",
+    "pages/active/active",
+    "pages/active/active_details_q/active_details_q",
+    "pages/Appointment/Appointment",
+    "pages/Appointment/date_details_q/date_details_q",
+    "pages/messages/messages",
+    "pages/messages/messagesRes/messagesRes",
+    "pages/messages/massage/massage",
+    "pages/messages/mail/mail",
+    "pages/my/my",
+    "pages/my/renzheng_yes/renzheng_yes",
+    "pages/my/unrenzheng/unrenzheng",
+    "pages/my/renzheng/renzheng",
+    "pages/my/already_activity/already_activity",
+    "pages/my/contactme/contactme",
+    "pages/my/teacher/teacher",
+    "pages/my/infocode/infocode"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#000000",
+    "navigationBarTitleText": "ForYou",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#C98C1C",
+    "backgroundColor": "#000000",
+    "color": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/imgs/nav01@2x.png",
+        "selectedIconPath": "/imgs/nav02@2x.png"
+      },
+      {
+        "pagePath": "pages/active/active",
+        "text": "活动",
+        "iconPath": "/imgs/nav03@2x.png",
+        "selectedIconPath": "/imgs/nav04@2x.png"
+      },
+      {
+        "pagePath": "pages/Appointment/Appointment",
+        "text": "约吧",
+        "iconPath": "/imgs/nav05@2x.png",
+        "selectedIconPath": "/imgs/nav06@2x.png"
+      },
+      {
+        "pagePath": "pages/messages/messages",
+        "text": "信箱",
+        "iconPath": "/imgs/nav07@2x.png",
+        "selectedIconPath": "/imgs/nav08@2x.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/imgs/nav09@2x.png",
+        "selectedIconPath": "/imgs/nav10@2x.png"
+      }
+    ]
+  }
+}

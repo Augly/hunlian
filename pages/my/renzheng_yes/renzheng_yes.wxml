@@ -1,0 +1,5 @@
+<view class="top_img">
+  <image src='http://wxq.test.bronet.cn/images/renzheng1.png' class='renzheng_type'></image>
+</view>
+<view class='renzhang_title'>恭喜，您提交的认证信息！</view>
+<view class='renzheng_txt'>您已认证为会员</view>

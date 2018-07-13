@@ -1,0 +1,106 @@
+<!--pages/index/detail.wxml-->
+<view class='container'>
+  <view class='banner_img'>
+    <image src='http://wxq.test.bronet.cn/images/pic01@2x.png' mode='widthFix'></image>
+    <view class='name_box'>
+      <view class='name'>
+        <view>苏菀菁</view>
+        <view class='sex_box'>
+          <view class='iconfont icon-nv'></view>
+          <view>24</view>
+        </view>
+      </view>
+      <view class='hint'>期待两年内结婚</view>
+    </view>
+  </view>
+
+  <view class='content_item'>
+    <view class='item_list'>
+      <view class='content_detail top'>173cm • 45kg</view>
+      <view class='content_detail'>设计总监 | 年收入20W-30W | 本科学历</view>
+      <view class='content_detail'>工作地点：和平区</view>
+    </view>
+    <view class='item_list certification'>
+      <view class='title'>实名认证</view>
+      <view class='real-name'>张**</view>
+    </view>
+    <view class='item_list'>
+      <view class='title'>基本信息</view>
+      <view class='basic_information'>
+        <view class='aaaa'>
+          <view>
+            <view class='iconfont icon-wode'></view>
+          </view>
+          <view class='basic_information_item'>
+            <view class='content_detail1'>张甜甜</view>
+            <view class='content_detail1'>1993.09.13</view>
+            <view class='content_detail1'>处女座</view>
+            <view class='content_detail1'>汉族</view>
+            <view class='content_detail1'>未婚</view>
+            <view class='content_detail1'>无子女</view>
+            <view class='content_detail1'>张甜甜</view>
+            <view class='content_detail1'>1993.09.13</view>
+            <view class='content_detail1'>处女座</view>
+            <view class='content_detail1'>汉族</view>
+            <view class='content_detail1'>未婚</view>
+            <view class='content_detail1'>无子女</view>
+          </view>
+        </view>
+        <view>
+          <view class='iconfont icon-diandiandianshu'></view>
+        </view>
+      </view>
+    </view>
+    <view class='item_list'>
+      <view class='title'>择偶标准</view>
+      <view class='basic_information'>
+        <view class='aaaa'>
+          <view>
+            <view class='iconfont icon-3zeoutiaojian'></view>
+          </view>
+          <view class='basic_information_item'>
+            <view class='content_detail1'>28</view>
+            <view class='content_detail1'>射手座</view>
+            <view class='content_detail1'>183cm</view>
+            <view class='content_detail1'>和平区</view>
+            <view class='content_detail1'>10W~20W</view>
+            <view class='content_detail1'>博士后</view>
+          </view>
+        </view>
+        <view>
+          <view class='iconfont icon-diandiandianshu'></view>
+        </view>
+      </view>
+    </view>
+    <view class='item_list'>
+      <view class='title'>兴趣爱好</view>
+      <view class='basic_information'>
+        <view class='aaaa'>
+          <view>
+            <view class='iconfont icon-xingqu'></view>
+          </view>
+          <view class='basic_information_item'>
+            <view class='content_detail1'>甜食</view>
+            <view class='content_detail1'>乒乓球</view>
+            <view class='content_detail1'>哲学控</view>
+            <view class='content_detail1'>阿甘正传</view>
+            <view class='content_detail1'>肖申克的救赎</view>
+          </view>
+        </view>
+        <view>
+          <view class='iconfont icon-diandiandianshu'></view>
+        </view>
+      </view>
+    </view>
+    <view class='bottom_btn'>
+      <view class='message_btn'>
+        <view class='iconfont icon-weidu'></view>
+        <view class='words'>写信件给Ta</view>
+      </view>
+      <view class='phone_btn'>
+        <view class='iconfont icon-fuwuerji'></view>
+        <view class='words'>帮我联系Ta</view>
+      </view>
+    </view>
+  </view>
+</view>

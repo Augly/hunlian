@@ -1,0 +1,6 @@
+<view class="input_box">
+  <textarea placeholder='请输入自己的经验' type="text" bindinput='teacherPost' value='{{teacherPost}}'></textarea> 
+</view>
+  <view class='bottomGroup'>
+    <view class='next_btn' bindtap='sure'>确定</view>
+  </view>

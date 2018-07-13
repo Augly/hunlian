@@ -1,0 +1,10 @@
+<!--pages/index/version.wxml-->
+<view class='container'>
+  <view class='banner'>
+    <view class='banner_icon'>ForYou</view>
+    <view class='banner_title'>Just ForYou</view>
+    <view class='banner_content'>高端婚恋交友平台</view>
+  </view>
+  <button open-type='getUserInfo' class='start_btn' lang="zh_CN" bindgetuserinfo="onGotUserInfo" hover-class='none'>开启</button>
+  <!-- <view class='start_btn' bindtap='begin'>开启</view> -->
+</view>

@@ -1,0 +1,40 @@
+/* pages/index/registrationAgreement.wxss */
+
+.content_item {
+  box-sizing: border-box;
+  padding: 33rpx 33rpx;
+}
+
+.content_title {
+  text-align: center;
+  font-size: 32rpx;
+  color: #000;
+  margin: 43rpx 0;
+}
+
+.content_character {
+  font-size: 28rpx;
+  color: #282828;
+}
+
+.bottom_btn {
+  width:686rpx;
+  height: 88rpx;
+  background: linear-gradient(#C98C1C,#E7A42A);
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}
+
+.sureGroup{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 200rpx;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}

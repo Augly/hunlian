@@ -1,0 +1,51 @@
+/* pages/index/registrationAgreement.wxss */
+
+.content_item {
+  padding: 33rpx 33rpx;
+}
+
+.content_title {
+  text-align: center;
+  font-size: 32rpx;
+  color: #000;
+  margin: 43rpx 0;
+}
+
+.content_character {
+  font-size: 28rpx;
+  color: #282828;
+}
+
+.bottom_btn {
+  width: 91%;
+  height: 88rpx;
+  background: linear-gradient(#c98c1c, #e7a42a);
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+  position: fixed;
+  bottom: 39rpx;
+  left: 32rpx;
+}
+.bottomGroup{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 1)
+}
+.next_btn {
+  width: 91%;
+  height: 88rpx;
+  background: linear-gradient(#c98c1c, #e7a42a);
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}

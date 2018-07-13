@@ -1,0 +1,27 @@
+<!--pages/index/loginRegister.wxml-->
+<view class='container'>
+  <view class='input_box'>
+    <view class='phone_box'>
+      <view class='iconfont icon-shouji'></view>
+      <view>
+        <input placeholder='请输入手机号' placeholder-class='font_color' bindinput='getmobile' type='number' value='{{mobile}}'></input>
+      </view>
+    </view>
+    <view class='code_box'>
+      <view class='iconfont icon-yanzhengma'></view>
+      <view>
+        <input placeholder='请输入验证码' placeholder-class='font_color' bindinput='mycode' value='{{code}}'></input>
+      </view>
+      <view class='verify_code' wx:if="{{disabled}}" bindtap='getCode'>获取验证码</view>
+      <view class='verify_code' wx:else>{{time}}</view>
+    </view>
+  </view>
+  <view class='bottom_box'>
+    <view class='next_btn' bindtap='next'>下一步</view>
+    <view class='prompt_words'>无酒托、茶托、婚托</view>
+    <view class='default_information'>
+      <view>点击注册默认您同意</view>
+      <view class='agreement' bindtap='torule'>《ForYou注册协议》</view>
+    </view>
+  </view>
+</view>

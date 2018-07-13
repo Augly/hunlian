@@ -1,0 +1,124 @@
+/* pages/index/basicInformation2.wxss */
+
+.banner_box {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_box image {
+  width: 100%;
+}
+
+.content_item {
+  padding: 0 32rpx;
+}
+
+.banner_img {
+  width: 200rpx;
+  position: relative;
+  top: -50rpx;
+}
+
+.banner_img image {
+  width: 100%;
+}
+
+.person_information {
+  display: flex;
+}
+
+.information_detail {
+  margin-left: 32rpx;
+}
+
+.name_box {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-size: 32rpx;
+  color: #1a1a1a;
+}
+
+.sex_box {
+  font-size: 24rpx;
+  color: #fff;
+  background-color: #241700;
+  align-items: center;
+  padding: 6rpx 11rpx;
+  box-sizing: border-box;
+  display: flex;
+  margin-left: 10rpx;
+  border-radius: 3rpx;
+}
+
+.icon-nv {
+  font-size: 26rpx;
+}
+
+.birth, .married_time {
+  font-size: 26rpx;
+  color: #1a1a1a;
+  margin-top: 23rpx;
+}
+
+.bottom {
+  font-size: 30rpx;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+}
+
+.person_information_detail {
+  text-align: center;
+}
+
+.icon-nickname, .icon-tizhong, .icon-shengao {
+  font-size: 46rpx;
+}
+
+.item_list, .item_list1 {
+  background-color: #fff;
+  border-radius: 10rpx;
+  position: relative;
+  top: -173rpx;
+  box-sizing: border-box;
+  box-shadow: 2rpx 0rpx 8rpx rgba(0, 0, 0,0.2);
+  padding: 30rpx 32rpx;
+}
+
+.item_list1 {
+  margin-top: 16rpx;
+}
+
+.icon_font {
+  width: 48rpx;
+  height: 48rpx;
+  background: rgba(233, 173, 64, 1);
+  border-radius: 5rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+}
+
+.icon-xiaohaitou {
+  font-size: 40rpx;
+}
+
+.list_character {
+  font-size: 28rpx;
+  color: #1a1a1a;
+  margin-left: 25rpx;
+}
+
+.list_content {
+  display: flex;
+  margin-top: 32rpx;
+}
+
+.top {
+  margin-top: 0;
+}

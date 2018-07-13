@@ -1,0 +1,30 @@
+<view wx:if="{{mask}}">
+  <view class='wrap' wx:if="{{msg=='认证中'}}">
+    <view class="top_img">
+      <image src='http://wxq.test.bronet.cn/images/renzheng1.png' class='renzheng_type'></image>
+    </view>
+    <view class='renzhang_title'>提交成功，请等待管理员审核！</view>
+    <view class='renzheng_txt'>预计3个工作日内审核完毕</view>
+  </view>
+
+  <view class='wrap' wx:elif="{{msg=='认证成功'}}">
+    <view class="top_img">
+      <image src='http://wxq.test.bronet.cn/images/renzheng_yes.png' class='renzheng_type'></image>
+    </view>
+    <view class='renzhang_title'>恭喜，您提交的认证信息已通过！</view>
+    <view class='renzheng_txt'>您已认证为会员</view>
+  </view>
+
+
+  <view class='wrap' wx:else="{{msg=='认证失败'}}">
+    <view class="top_img">
+      <image src='http://wxq.test.bronet.cn/images/renzheng_no.png' class='renzheng_type'></image>
+    </view>
+    <view class='renzhang_title'>抱歉，您提交的认证信息未通过！</view>
+    <view class='renzheng_txt'>请提交您的真实有效信息</view>
+
+    <view class='reset'>
+      重新认证
+    </view>
+  </view>
+</view>

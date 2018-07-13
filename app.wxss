@@ -1,0 +1,288 @@
+/**app.wxss**/
+
+@font-face {
+  font-family: 'iconfont'; /* project id 686310 */
+  src: url('//at.alicdn.com/t/font_686310_vd89jp0jup.eot');
+  src: url('//at.alicdn.com/t/font_686310_vd89jp0jup.eot?#iefix') format('embedded-opentype'),
+         url('//at.alicdn.com/t/font_686310_vd89jp0jup.woff') format('woff'),
+         url('//at.alicdn.com/t/font_686310_vd89jp0jup.ttf') format('truetype'),
+         url('//at.alicdn.com/t/font_686310_vd89jp0jup.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-renminbi:before {
+  content: "\e63d";
+}
+
+.icon-lnicon29:before {
+  content: "\e621";
+}
+
+.icon-lianxiwomen:before {
+  content: "\e630";
+}
+
+.icon-shengao:before {
+  content: "\e606";
+}
+
+.icon-shouji:before {
+  content: "\e707";
+}
+
+.icon-tizhong:before {
+  content: "\e68e";
+}
+
+.icon-weidu:before {
+  content: "\e73e";
+}
+
+.icon-nv:before {
+  content: "\e604";
+}
+
+.icon-3zeoutiaojian:before {
+  content: "\e649";
+}
+
+.icon-fuwuerji:before {
+  content: "\e60d";
+}
+
+.icon-renzheng:before {
+  content: "\e6ac";
+}
+
+.icon-hunyinzhuangkuang:before {
+  content: "\e60f";
+}
+
+.icon-didian:before {
+  content: "\e61a";
+}
+
+.icon-yifu:before {
+  content: "\e666";
+}
+
+.icon-xingqu:before {
+  content: "\e61d";
+}
+
+.icon-quxiao1:before {
+  content: "\e66e";
+}
+
+.icon-yidu:before {
+  content: "\e612";
+}
+
+.icon-diandiandianshu:before {
+  content: "\e679";
+}
+
+.icon-aiqingmiao_iconfont-:before {
+  content: "\e607";
+}
+
+.icon-huodong1:before {
+  content: "\e60b";
+}
+
+.icon-xueli:before {
+  content: "\efb0";
+}
+
+.icon-liuyanxinxiang:before {
+  content: "\e786";
+}
+
+.icon-xiaohaitou:before {
+  content: "\e60a";
+}
+
+.icon-xingqiu:before {
+  content: "\e8e7";
+}
+
+.icon-fenxiang:before {
+  content: "\e691";
+}
+
+.icon-quxiao:before {
+  content: "\e6fa";
+}
+
+.icon-tianjiajiahaowubiankuang:before {
+  content: "\e616";
+}
+
+.icon-cainixihuan:before {
+  content: "\e652";
+}
+
+.icon-dianying:before {
+  content: "\e603";
+}
+
+.icon-ic_track_changes_p:before {
+  content: "\ea59";
+}
+
+.icon-nickname:before {
+  content: "\e602";
+}
+
+.icon-icon02:before {
+  content: "\e608";
+}
+
+.icon-arrow:before {
+  content: "\e60c";
+}
+
+.icon-fenxiang1:before {
+  content: "\e600";
+}
+
+.icon-kefu-:before {
+  content: "\e605";
+}
+
+.icon-xinfeng:before {
+  content: "\e6d4";
+}
+
+.icon-yundong:before {
+  content: "\e609";
+}
+
+.icon-wode:before {
+  content: "\e601";
+}
+
+.icon-duigou:before {
+  content: "\e67b";
+}
+
+.icon-kefu:before {
+  content: "\e610";
+}
+
+.icon-ditu:before {
+  content: "\e66a";
+}
+
+.icon-aiqingyuehui:before {
+  content: "\e625";
+}
+
+.icon-dianhua:before {
+  content: "\e6bb";
+}
+
+.icon-icon:before {
+  content: "\e654";
+}
+
+.icon-xiaogegeyizhuanhuan_xingzuo:before {
+  content: "\e655";
+}
+
+.icon-yanzhengma:before {
+  content: "\e706";
+}
+
+@-webkit-keyframes fadeinL {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-900rpx);
+  }
+}
+
+@keyframes fadeinL {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(-900rpx);
+    transform: translateX(-900rpx);
+  }
+}
+
+@-webkit-keyframes fadeinR {
+  0% {
+    -webkit-transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(900rpx);
+  }
+}
+
+@keyframes fadeinR {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    -webkit-transform: translateX(900rpx);
+    transform: translateX(900rpx);
+  }
+}
+
+.cssActiveL {
+  -webkit-animation: 1s ease-out backwards;
+  animation: 1s ease-out backwards;
+  -webkit-animation-name: fadeinL;
+  animation-name: fadeinL;
+  animation-fill-mode: forwards;
+}
+
+.cssActiveR {
+  -webkit-animation: 1s ease-out backwards;
+  animation: 1s ease-out backwards;
+  -webkit-animation-name: fadeinR;
+  animation-name: fadeinR;
+  animation-fill-mode: forwards;
+}
+
+.bottomGroup{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 1)
+}
+.next_btn {
+  width: 91%;
+  height: 88rpx;
+  background: linear-gradient(#c98c1c, #e7a42a);
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

@@ -1,0 +1,86 @@
+<!--pages/index/basicInformation2.wxml-->
+<view class='container'>
+  <view class='banner_box'>
+    <image src='http://wxq.test.bronet.cn/images/bg01@2x.png' mode='widthFix'></image>
+  </view>
+  <view class='content_item'>
+    <view class='item_list'>
+      <view class='person_information'>
+        <view class='banner_img'>
+          <image src='http://wxq.test.bronet.cn/images/pic01@2x.png' mode='widthFix'></image>
+        </view>
+        <view class='information_detail'>
+          <view class='name_box'>
+            <view class='name'>张甜甜</view>
+            <view class='sex_box'>
+              <view class='iconfont icon-nv'></view>
+              <view>处女座</view>
+            </view>
+          </view>
+          <view class='birth'>1993.09.13</view>
+          <view class='married_time'>期望结婚时间：两年</view>
+        </view>
+      </view>
+      <view class='person_information bottom'>
+        <view class='person_information_detail'>
+          <view class='iconfont icon-nickname'></view>
+          <view>苏菀菁</view>
+        </view>
+        <view class='person_information_detail'>
+          <view class='iconfont icon-tizhong'></view>
+          <view>45kg</view>
+        </view>
+        <view class='person_information_detail'>
+          <view class='iconfont icon-shengao'></view>
+          <view>173cm</view>
+        </view>
+      </view>
+    </view>
+    <view class='item_list1'>
+      <view class='list_content top'>
+        <view class='icon_font'>
+          <view class='iconfont icon-wode'></view>
+        </view>
+        <view class='list_character'>设计总监</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-renminbi'></view>
+        </view>
+        <view class='list_character'>年收入10W~20W</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-xueli'></view>
+        </view>
+        <view class='list_character'>本科</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-didian'></view>
+        </view>
+        <view class='list_character'>天津-和平区工作</view>
+      </view>
+    </view>
+    <view class='item_list1'>
+      <view class='list_content top'>
+        <view class='icon_font'>
+          <view class='iconfont icon-yifu'></view>
+        </view>
+        <view class='list_character '>汉族</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-hunyinzhuangkuang'></view>
+        </view>
+        <view class='list_character'>未婚</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-xiaohaitou'></view>
+        </view>
+        <view class='list_character'>无子女</view>
+      </view>
+    </view>
+  </view>
+</view>

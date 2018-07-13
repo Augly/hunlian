@@ -1,0 +1,8 @@
+<import src="../../../utils/wxParse/wxParse.wxml"/>
+<view class="top_img">
+  <image src="http://wxq.test.bronet.cn/images/pic08@2x.png"></image>
+</view>
+<view class="infocode_content">
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
+</view>
+<view class="contact_box">联系方式：400-549-3268</view>

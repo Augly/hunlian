@@ -1,0 +1,12 @@
+<!--Components/myToast.wxml-->
+<view class='maskCode' wx:if="{{noCode}}">
+  <view class='toast_centerCode'>
+    <text class='iconfont icon-quxiao1' bindtap='hideMask'></text>
+    <view class='toat_mainCode'>
+      {{otherdetail}}
+    </view>
+    <view class='toat_yes' bindtap='goloading'>
+      去登录
+    </view>
+  </view>
+</view>

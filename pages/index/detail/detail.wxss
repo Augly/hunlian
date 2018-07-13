@@ -1,0 +1,169 @@
+/* pages/index/detail.wxss */
+
+page {
+  background-color: #f5f5fa;
+}
+
+.banner_img {
+  height: 750rpx;
+  position: relative;
+  z-index: 100;
+}
+
+.banner_img image {
+  width: 100%;
+}
+
+.name_box {
+  width: 686rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: -50rpx auto 0 auto;
+  /* left: 50%;
+  margin-left: -343rpx;
+  margin-top: -50rpx; */
+  padding: 33rpx 32rpx;
+  box-sizing: border-box;
+}
+
+.name {
+  display: flex;
+  font-size: 36rpx;
+  align-items: center;
+}
+
+.sex_box {
+  display: flex;
+  align-items: center;
+  border-radius: 3rpx;
+  background-color: #ff99d3;
+  padding: 0rpx 20rpx;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 26rpx;
+  margin-left: 18rpx;
+  justify-content: center;
+}
+
+.hint {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.item_list {
+  background-color: #fff;
+  margin-bottom: 16rpx;
+  padding: 36rpx 30rpx;
+}
+
+.title {
+  font-size: 32rpx;
+  color: #c98c1c;
+}
+
+.real-name {
+  font-size: 28rpx;
+  color: #333;
+}
+
+.content_detail {
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #f7f7f7;
+  font-size: 28rpx;
+  color: #333;
+  border-radius: 5rpx;
+  padding: 0 36rpx;
+  display: inline-block;
+  margin-top: 16rpx;
+}
+
+.top {
+  margin-top: 60rpx;
+}
+
+.certification {
+  display: flex;
+  justify-content: space-between;
+}
+
+.basic_information {
+  display: flex;
+  align-items: flex-end;
+  margin-top: 35rpx;
+}
+
+.basic_information_item {
+  margin-left: 68rpx;
+}
+
+.icon-diandiandianshu {
+  font-size: 60rpx;
+  color: #ccc;
+}
+
+.aaaa {
+  display: flex;
+  align-items: center;
+}
+
+.content_detail1 {
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #f7f7f7;
+  font-size: 26rpx;
+  color: #666;
+  border-radius: 5rpx;
+  padding: 0 36rpx;
+  display: inline-block;
+  margin-top: 16rpx;
+  margin-left: 8rpx;
+}
+
+.icon-wode, .icon-3zeoutiaojian, .icon-xingqu {
+  width: 48rpx;
+  height: 48rpx;
+  font-size: 32rpx;
+  background-color: #9aafff;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+  border-radius: 5rpx;
+}
+
+.bottom_btn {
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: 16rpx;
+  padding: 10rpx 0;
+}
+
+.message_btn, .phone_btn {
+  display: flex;
+  height: 88rpx;
+  background-color: #e9ad40;
+  border-radius: 44rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 88rpx;
+  text-align: center;
+  padding: 0 44rpx;
+}
+
+.icon-weidu, .icon-fuwuerji {
+  font-size: 36rpx;
+}
+
+.words {
+  margin-left: 22rpx;
+}
+
+.phone_btn {
+  margin-left: 23rpx;
+}

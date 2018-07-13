@@ -1,0 +1,109 @@
+/* pages/index/certificationInformation.wxss */
+
+.content_item {
+  padding: 0rpx 35rpx 150rpx 35rpx;
+}
+
+.content_title {
+  font-size: 32rpx;
+  color: #282828;
+  font-weight: bold;
+  margin-top: 32rpx;
+}
+
+.content_character {
+  font-size: 28rpx;
+  color: #282828;
+  margin-top: 32rpx;
+}
+
+.input_box {
+  font-size: 30rpx;
+  color: #282828;
+  border: 1rpx solid #ebebeb;
+  border-radius: 5rpx;
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.05);
+  margin-top: 32rpx;
+}
+
+.name_information, .id_number {
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+}
+.id_number{
+  border-top: 1rpx solid #EBEBEB;
+}
+.input_name {
+  width: 170rpx;
+  margin-left: 37rpx;
+  font-size: 30rpx;
+  color: #282828;
+}
+
+.font_color {
+  font-size: 30rpx;
+  color: #666;
+  margin-left: 49rpx; 
+}
+
+.upload_box {
+  margin-top: 32rpx;
+}
+
+.upload_photo {
+  font-size: 30rpx;
+  color: #282828;
+  margin-left: 40rpx;
+}
+
+.upload_content_box {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 19rpx;
+}
+
+.upload_content {
+  width: 325rpx;
+  height: 200rpx;
+  border: 1rpx solid #ebebeb;
+  overflow: hidden
+}
+
+.icon-tianjiajiahaowubiankuang {
+  font-size: 128rpx;
+  text-align: center;
+  line-height: 200rpx;
+}
+.prompt_information{
+  font-size: 24rpx;
+  color: #282828;
+  text-align: center;
+  margin-top: 24rpx;
+}
+.bottomGroup{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 1)
+}
+.next_btn {
+  width: 91%;
+  height: 88rpx;
+  background: linear-gradient(#c98c1c, #e7a42a);
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}
+
+
+.upload{
+  width:100%;
+  height: 100%;
+}

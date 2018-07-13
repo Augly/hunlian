@@ -1,0 +1,9 @@
+{
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTitleText": "约吧",
+  "navigationBarTextStyle": "white",
+    "usingComponents": {
+      "myToast": "/Components/myToast"
+    }
+}

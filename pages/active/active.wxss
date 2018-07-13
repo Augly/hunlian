@@ -1,0 +1,41 @@
+/* pages/active_q/active_q.wxss */
+.container{
+  padding-top: 32rpx;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.active_item{
+  width: 686rpx;
+  height: 360rpx;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 16rpx;
+}
+.pic_item{
+  width: 100%;
+  height: 100%;
+}
+.active_mask{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+.mask_text{
+  font-size: 32rpx;
+  display: block;
+  text-align: center;
+  margin-top: 140rpx;
+  line-height: 32rpx;
+}
+.mask_subtext{
+  display: block;
+  text-align: center;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  line-height: 26rpx;
+}

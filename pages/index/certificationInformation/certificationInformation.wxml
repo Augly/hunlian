@@ -1,0 +1,45 @@
+<!--pages/index/certificationInformation.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml"/>
+<view class='container'>
+  <view class='content_item'>
+    <view class='content_title'>关于隐私安全</view>
+    <view class='content_character'><template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
+    </view>
+    <view class='input_box'>
+      <view class='name_information'>
+        <view class='input_name'>姓名</view>
+        <view>
+          <input type='text' placeholder='请输入' placeholder-class='font_color' bindinput='nickName' value='{{nickName}}'></input>
+        </view>
+      </view>
+      <view class='id_number'>
+        <view class='input_name'>身份证号</view>
+        <view>
+          <input type='text' placeholder='请输入' placeholder-class='font_color' bindinput='idCard' value='{{idCard}}'></input>
+        </view>
+      </view>
+    </view>
+    <view class='upload_box'>
+      <view class='upload_photo'>上传照片</view>
+      <view class='upload_content_box'>
+        <view>
+          <view class='upload_content' bindtap='uploadZ'>
+            <view class='iconfont icon-tianjiajiahaowubiankuang' wx:if="{{zimg==''}}"></view>
+            <image class='upload' src='{{zimg}}' wx:else></image>
+          </view>
+          <view class='prompt_information'>手持身份证正面照</view>
+        </view>
+        <view>
+          <view class='upload_content' bindtap='uploadB'>
+            <view class='iconfont icon-tianjiajiahaowubiankuang' wx:if="{{bimg==''}}"></view>
+             <image class='upload' src='{{bimg}}' wx:else></image>
+          </view>
+          <view class='prompt_information'>身份证背面照</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+  <view class='bottomGroup'>
+    <view class='next_btn' bindtap='submit'>立即支付</view>
+  </view>

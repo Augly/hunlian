@@ -1,0 +1,6 @@
+<view class="top_img">
+  <image src='../img/renzheng_no.png' class='renzheng_type'></image>
+</view>
+<view class='renzhang_title'>抱歉，您提交的认证信息未通过！</view>
+<view class='renzheng_txt'>抱歉，您提交的认证信息未通过！</view>
+<view class="btn">重新认证</view>

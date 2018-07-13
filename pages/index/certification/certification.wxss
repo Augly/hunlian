@@ -1,0 +1,53 @@
+/* pages/index/certification.wxss */
+.container{
+  box-sizing: border-box;
+  padding-bottom: 150rpx;
+}
+.banner_img{
+  height: 360rpx;
+}
+.banner_img image{
+  width: 100%;
+  height: 100%;
+}
+.content_character{
+  font-size: 28rpx;
+  color: #282828;
+  padding:33rpx 33rpx 85rpx 33rpx;
+}
+.content_information{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45rpx;
+}
+.bottom_btn{
+  width: 91%;
+  height: 88rpx;
+  background:linear-gradient(#C98C1C,#E7A42A);
+  border-radius:40rpx; 
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+  margin: 0 auto;
+}
+
+.bottomGroup{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+   background-color: rgba(255, 255, 255, 1)
+}
+.next_btn {
+  width: 91%;
+  height: 88rpx;
+  background: linear-gradient(#c98c1c, #e7a42a);
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+}

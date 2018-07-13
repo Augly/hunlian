@@ -1,0 +1,50 @@
+/* pages/index/version.wxss */
+
+.container {
+  position: fixed;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.banner_icon {
+  width: 132rpx;
+  height: 132rpx;
+  border-radius: 20rpx;
+  background-color: #000;
+  font-size: 32rpx;
+  font-style: italic;
+  color: #fff;
+  text-align: center;
+  line-height: 132rpx;
+  margin: 0 auto;
+  margin-top: 269rpx;
+}
+
+.banner_title {
+  font-size: 32rpx;
+  font-style: italic;
+  text-align: center;
+  margin-top: 46rpx;
+}
+
+.banner_content {
+  font-size: 32rpx;
+  text-align: center;
+}
+.start_btn{
+  width: 520rpx;
+  height: 80rpx;
+  font-size: 32rpx;
+  color: #fff;
+  line-height: 80rpx;
+  text-align: center;
+  background-color: #000;
+  border-radius: 40rpx;
+  margin-bottom: 176rpx;
+}

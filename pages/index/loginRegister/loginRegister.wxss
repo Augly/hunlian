@@ -1,0 +1,82 @@
+/* pages/index/loginRegister.wxss */
+
+page {
+  background-size: 100% 100%;
+  background-image: url('http://wxq.test.bronet.cn/images/bga@2x.png');
+  background-repeat: no-repeat;
+}
+
+.input_box {
+  padding: 0 32rpx;
+  margin-top: 359rpx;
+}
+
+.phone_box, .code_box {
+  width: 100%;
+  border-bottom: 1rpx solid white;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding: 54rpx 0 31rpx 0;
+}
+.phone_box input, .code_box input{
+  margin-left: 30rpx;
+  font-size: 36rpx;     
+}
+.code_box input{
+  margin-left:35rpx;
+  font-size: 36rpx;     
+}
+.icon-shouji {
+  font-size: 40rpx;
+}
+
+.icon-yanzhengma {
+  font-size: 35rpx;
+}
+
+.font_color {
+  font-size: 32rpx;
+  color: #fff;
+  margin-left:0rpx;
+}
+
+.verify_code {
+  font-size: 32rpx;
+  margin-left: auto;
+}
+
+.bottom_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.next_btn {
+  width: 91%;
+  height: 88rpx;
+  background: linear-gradient(#c98c1c, #e7a42a);
+  border-radius: 44rpx;
+  font-size: 36rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 88rpx;
+  margin-top: 43rpx;
+}
+
+.prompt_words {
+  font-size: 26rpx;
+  color: #fff;
+  margin-top: 41rpx;
+}
+
+.default_information {
+  display: flex;
+  margin-top: 278rpx;
+  font-size: 24rpx;
+  color: #fff;
+}
+
+.agreement {
+  color: #e3a128;
+}

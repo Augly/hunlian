@@ -1,0 +1,26 @@
+<import src="../../../utils/wxParse/wxParse.wxml"/>
+<view class='container'>
+  <view class='banner'>
+    <image src='{{alldata.more}}' class='banner_pic'></image>
+    <view class='active_mask'>
+      <text class='mask_text'>{{alldata.theme}}</text>
+      <text class='mask_subtext'>{{alldata.title}}</text>
+    </view>
+  </view>
+  <view class='address'>
+    <text>地址：{{alldata.address}}</text>
+    <view>
+      <icon class='iconfont icon-ditu ditu'></icon>查看地图</view>
+  </view>
+  <!--最近活动  -->
+  <view class='near_active' bindtap='near_page'>
+    <text>最近的活动</text>
+    <icon class='iconfont icon-arrow jiantou'></icon>
+  </view>
+  <!--详情  -->
+  <view class='active_details'>
+    <text class='active_tit'>活动详情</text>
+    <view class='active_text'><template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,63 @@
+<!--pages/index/basicInformation2.wxml-->
+<view class='container'>
+  <view class='banner_box'>
+    <image src='http://wxq.test.bronet.cn/images/bg02@2x.png' mode='widthFix'></image>
+  </view>
+  <view class='content_item'>
+    <view class='item_list'>
+      <view class='content_title'> 择偶标准</view>
+      <view class='person_information '>
+        <view class='person_information_detail'>
+          <view class='number'>28</view>
+          <view>年龄</view>
+        </view>
+        <view class='person_information_detail'>
+          <view class='number'>183</view>
+          <view>身高(cm)</view>
+        </view>
+        <view class='person_information_detail'>
+          <view class='number'>66</view>
+          <view>体重(kg)</view>
+        </view>
+      </view>
+    </view>
+    <view class='item_list1'>
+      <view class='list_content top'>
+        <view class='icon_font'>
+          <view class='iconfont icon-renminbi'></view>
+        </view>
+        <view class='list_character'>年收入10W~20W</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-xueli'></view>
+        </view>
+        <view class='list_character'>博士后</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-didian'></view>
+        </view>
+        <view class='list_character'>天津-和平区工作</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-xingqiu'></view>
+        </view>
+        <view class='list_character '>射手座</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-hunyinzhuangkuang'></view>
+        </view>
+        <view class='list_character'>未婚</view>
+      </view>
+      <view class='list_content'>
+        <view class='icon_font'>
+          <view class='iconfont icon-xiaohaitou'></view>
+        </view>
+        <view class='list_character'>无子女</view>
+      </view>
+    </view>
+  </view>
+</view>

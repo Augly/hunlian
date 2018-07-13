@@ -1,0 +1,13 @@
+<!--pages/index/registrationAgreement.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml"/>
+<view class='container'>
+  <view class='content_item'>
+    <!-- <view class='content_title'>注册协议</view> -->
+    <view class='content_character'>
+      <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    </view>
+  </view>
+  <view class='sureGroup'>
+    <view class='bottom_btn' bindtap='tologin'>我知道了</view>
+  </view>
+</view>

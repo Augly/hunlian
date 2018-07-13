@@ -1,0 +1,109 @@
+/* pages/index/basicInformation2.wxss */
+
+.banner_box {
+  width: 750rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_box image {
+  width: 100%;
+}
+
+.content_item {
+  padding: 0 32rpx;
+}
+
+.banner_img {
+  width: 200rpx;
+  position: relative;
+  top: -50rpx;
+}
+
+.banner_img image {
+  width: 100%;
+}
+
+
+
+.item_list {
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  top: -173rpx;
+  overflow: hidden;
+}
+
+.content_title {
+  font-size: 36rpx;
+  font-weight: bold;
+  background-color: #ffbf4b;
+  padding: 27rpx;
+}
+
+.information_detail {
+  margin-left: 32rpx;
+}
+
+.person_information {
+  font-size: 30rpx;
+  color: #1a1a1a;
+  display: flex;
+  justify-content: space-between;
+  padding: 65rpx 100rpx;
+}
+
+.person_information_detail {
+  font-size: 24rpx;
+  color: #000;
+  text-align: center;
+}
+.number{
+  font-size: 54rpx;
+  font-weight: bold;
+}
+
+.item_list1 {
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 2px 0px 8px rgba(0, 0, 0, 0.08);
+  position: relative;
+  top: -173rpx;
+  box-sizing: border-box;
+  padding: 30rpx 32rpx;
+}
+
+.item_list1 {
+  margin-top: 16rpx;
+}
+
+.icon_font {
+  width: 48rpx;
+  height: 48rpx;
+  background: rgba(233, 173, 64, 1);
+  border-radius: 5rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 48rpx;
+}
+
+.icon-xiaohaitou {
+  font-size: 40rpx;
+}
+
+.list_character {
+  font-size: 28rpx;
+  color: #1a1a1a;
+  margin-left: 25rpx;
+}
+
+.list_content {
+  display: flex;
+  margin-top: 32rpx;
+}
+
+.top {
+  margin-top: 0;
+}

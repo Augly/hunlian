@@ -1,0 +1,19 @@
+.container{
+  padding-top: 16rpx;
+}
+.person_head{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+.item{
+  font-size: 32rpx;
+  color: #1A1A1A;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 54rpx 0 35rpx;
+  height: 120rpx;
+  align-items: center;
+  border-bottom: 1px solid #EBEBEB;
+  background-color: #ffffff;
+}

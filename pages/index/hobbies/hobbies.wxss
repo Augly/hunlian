@@ -1,0 +1,48 @@
+/* pages/index/hobbies.wxss */
+
+.content_item {
+  padding: 31rpx;
+}
+
+.item_list {
+  background-color: #fff;
+  border-radius: 10rpx;
+  box-shadow: 2rpx 1rpx 8rpx rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin-bottom: 16rpx;
+}
+
+.content_title {
+  font-size: 30rpx;
+  color: #1a1a1a;
+  background-color: #ebebeb;
+  padding: 27rpx;
+  display: flex;
+  align-items: center;
+}
+
+.icon-xingqu, .icon-dianying {
+  font-size: 32rpx;
+}
+
+.icon-lnicon29, .icon-yundong {
+  font-size: 34rpx;
+}
+
+.label_title {
+  margin-left: 13rpx;
+}
+
+.label_box {
+  padding: 24rpx 32rpx 34rpx 24rpx;
+  display: flex;
+}
+
+.label {
+  font-size: 26rpx;
+  color: #2846b3;
+  border-radius: 10rpx;
+  background-color: #bdcbff;
+  padding: 18rpx 31rpx;
+  margin-left: 16rpx;
+}

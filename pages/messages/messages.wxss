@@ -1,0 +1,112 @@
+/* pages/messages/messages.wxss */
+
+page {
+  background-color: RGBA(245, 246, 250, 1);
+}
+
+.selectGroup {
+  width: 100%;
+  height: 100rpx;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.selectView {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: RGBA(153, 153, 153, 1);
+  font-size: 30rpx;
+}
+
+.selectCor {
+  display: inline-block;
+  height: 100%;
+  box-sizing: border-box;
+  line-height: 100rpx;
+  border-bottom: 6rpx solid rgba(255, 255, 255, 1);
+}
+
+.selectCor_Active {
+  border-bottom: 6rpx solid RGBA(233, 173, 64, 1);
+}
+
+.selectList {
+  height: 148rpx;
+  background-color: rgba(255, 255, 255, 1);
+  box-sizing: border-box;
+  border-bottom: 1rpx solid RGBA(235, 235, 235, 1);
+}
+
+.item {
+  width: 950rpx;
+  height: 148rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.item_left {
+  width: 750rpx;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 24rpx 32rpx;
+  display: flex;
+  /* align-items: center; */
+}
+
+.left_res {
+  width: 350rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 30rpx;
+}
+
+.left_data {
+  font-size: 26rpx;
+  color: rgba(153, 153, 153, 1);
+  margin-left: auto;
+}
+
+.left_title {
+  font-size: 36rpx;
+  color: rgba(26, 26, 26, 1);
+}
+
+.left_mintitle {
+  font-size: 26rpx;
+  color: rgba(102, 102, 102, 1);
+}
+
+.item_right {
+  width: 200rpx;
+  height: 100%;
+  background-color: red;
+  font-size: 36rpx;
+  color: rgba(255, 255, 255, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.left_log {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background-color: RGBA(231, 164, 42, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconfont {
+  font-size: 50rpx;
+  color: rgba(255, 255, 255, 1);
+}

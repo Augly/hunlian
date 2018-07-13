@@ -1,0 +1,19 @@
+<!--pages/index/certification.wxml-->
+<import src="../../../utils/wxParse/wxParse.wxml"/>
+<view class='container'>
+<view class='banner_img'><image src='http://wxq.test.bronet.cn/images/pic08@2x.png'></image></view>
+<view class='content_character'>
+<view>
+<!-- <view> -->
+  <template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
+</view>
+<view class='content_information'>
+<view>特惠价：￥{{alldata.data.data.price}}</view>
+<view bindtap='torule'>缴纳认证费说明</view>
+</view>
+</view>
+
+</view>
+  <view class='bottomGroup'>
+    <view class='next_btn' bindtap='rightNow'>马上认证</view>
+  </view>

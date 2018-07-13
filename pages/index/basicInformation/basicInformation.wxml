@@ -1,0 +1,92 @@
+<!--pages/index/basicInformation.wxml-->
+<view class='container'>
+  <view class='content_items'>
+    <view class='item_list'>
+      <view class='list_content banner'>
+        <view class='list_name'>头像</view>
+        <image class='user_log' src='{{myimg}}' bindtap='upload' mode='widthFix' lazy-load>
+
+        </image>
+      </view>
+      <view class='list_content'>
+        <view class='list_name'>昵称</view>
+        <view>
+          <input type='text' placeholder='请输入' placeholder-class='content' bindinput='nickName' value='{{nackName}}'></input>
+        </view>
+      </view>
+    </view>
+    <view class='item_list'>
+      <picker mode='selector' range='{{sexGroup}}' bindchange='sex'>
+        <view class='list_content'>
+          <view class='list_name'>性别</view>
+          <view>
+            <view class='picker'>{{sex}}</view>
+          </view>
+          <text class='iconfont icon-arrow'></text>
+        </view>
+      </picker>
+      <picker mode='date' bindchange='mydate' value='' end='{{endDate}}' start='{{startDate}}'>
+        <view class='list_content'>
+          <view class='list_name'>出生日期</view>
+          <view>
+            <view class='picker'>{{mydate}}</view>
+          </view>
+          <text class='iconfont icon-arrow'></text>
+        </view>
+      </picker>
+      <view class='list_content'>
+        <view class='list_name'>星座</view>
+        <view>
+          <view class='picker'>{{star}}</view>
+        </view>
+      </view>
+      <view class='list_content'>
+        <view class='list_name'>身高</view>
+        <view>
+          <input type='text' placeholder='请输入' placeholder-class='content' bindinput='myHeight' value='{{myHeight}}'></input>
+        </view>
+      </view>
+      <view class='list_content'>
+        <view class='list_name'>体重</view>
+        <view>
+          <input type='text' placeholder='请输入' placeholder-class='content' bindinput='myWeight' value='{{myWeight}}'></input>
+        </view>
+      </view>
+    </view>
+
+    <view class='item_list'>
+      <picker mode="region" bindchange="bindRegionChange" value="{{region}}">
+
+        <view class='list_content'>
+          <view class='list_name'>工作所在地</view>
+          <view>
+            <view class='picker'>{{region[0]}}{{region[1]}}{{region[2]}}</view>
+          </view>
+          <text class='iconfont icon-arrow'></text>
+        </view>
+      </picker>
+      <picker mode='selector' range='{{xlGroup}}' bindchange='xl' range-key='education'>
+        <view class='list_content'>
+          <view class='list_name'>学历</view>
+          <view>
+            <view class='picker'>{{xl.education}}</view>
+          </view>
+          <text class='iconfont icon-arrow'></text>
+        </view>
+      </picker>
+      <picker mode='selector' range='{{merryGroup}}' bindchange='merry' range-key='marriage_time'>
+        <view class='list_content'>
+          <view class='list_name'>期望结婚时间</view>
+          <view>
+            <view class='picker'>{{merry.marriage_time}}</view>
+          </view>
+          <text class='iconfont icon-arrow'></text>
+        </view>
+      </picker>
+    </view>
+  </view>
+
+  <view class='bottomGroup'>
+    <view class='next_btn' bindtap='next'>下一步</view>
+  </view>
+</view>
