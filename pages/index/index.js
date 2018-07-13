@@ -7,7 +7,7 @@ Page({
   data: {
     myindex: null,
     mask: true,
-    lick: true,
+    lick: null,
     x: winWidth,
     y: winHeight,
     distance: "",
@@ -72,6 +72,15 @@ Page({
         lick: null
       })
     }
+  },
+  lookmore(e){
+    wx.navigateTo({
+      // url: '/pages/index/basicInformation2/basicInformation2?userId='+e.currentTarget.dataset.id,
+      url: '/pages/index/detail/detail?userId=' + e.currentTarget.dataset.id+'&type=1',
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   //左滑不喜欢点击函数
   unlick: function () {

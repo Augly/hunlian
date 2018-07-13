@@ -1,4 +1,6 @@
 // pages/index/basicInformation2/basicInformation2.js
+const config=require('../../../utils/config.js')
+let app=getApp()
 Page({
 
   /**
@@ -12,7 +14,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    config.ajax('POST',{
+      uid: app.globalData.uid,
+      relation_id:options.id
+    }, config.MemberBase,(res)=>{
+      console.log(res.data.data)
+      this.setData({
+        alldata:res.data.data
+      })
+    },(res)=>{
+
+    })
   },
 
   /**

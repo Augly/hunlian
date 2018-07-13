@@ -1,13 +1,14 @@
 /* pages/index/detail.wxss */
 
-page {
-  background-color: #f5f5fa;
-}
+/* page {
+  background-color: RGBA(245, 245, 250, 1);
+} */
 
 .banner_img {
-  height: 750rpx;
+  /* height: 750rpx; */
   position: relative;
   z-index: 100;
+  background-color: RGBA(245, 245, 250, 1);
 }
 
 .banner_img image {

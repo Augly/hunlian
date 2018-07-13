@@ -131,11 +131,22 @@ Page({
     }, config.registerPost, (res) => {
       config.pay(res, (res) => {
         console.log(res)
+                wx.navigateTo({
+          url: '/pages/my/renzheng/renzheng',
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
+        })
       })
       if (res.data.data.code == '20000') {
         console.log(res)
         // config.pay(res,(res)=>{
-        //   console.log(res)
+        //           // wx.navigateTo({
+        //   url: '/pages/my/renzheng/renzheng',
+        //   success: function(res) {},
+        //   fail: function(res) {},
+        //   complete: function(res) {},
+        // })
         // })
         // wx.navigateTo({
         //   url: '/pages/my/renzheng/renzheng',

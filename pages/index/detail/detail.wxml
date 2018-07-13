@@ -1,24 +1,24 @@
 <!--pages/index/detail.wxml-->
 <view class='container'>
   <view class='banner_img'>
-    <image src='http://wxq.test.bronet.cn/images/pic01@2x.png' mode='widthFix'></image>
+    <image src="{{alldata.more}}" mode='widthFix'></image>
     <view class='name_box'>
       <view class='name'>
-        <view>苏菀菁</view>
+        <view>{{alldata.name==null?'未填写':alldata.name}}</view>
         <view class='sex_box'>
-          <view class='iconfont icon-nv'></view>
-          <view>24</view>
+          <view class="iconfont {{alldata.sex==1?'icon-nan':'icon-nv'}}"></view>
+          <view>{{alldata.age==null?'未填写':alldata.age}}</view>
         </view>
       </view>
-      <view class='hint'>期待两年内结婚</view>
+      <view class='hint'>{{alldata.marriage_time==null?'未填写':alldata.marriage_time}}</view>
     </view>
   </view>
 
   <view class='content_item'>
     <view class='item_list'>
-      <view class='content_detail top'>173cm • 45kg</view>
-      <view class='content_detail'>设计总监 | 年收入20W-30W | 本科学历</view>
-      <view class='content_detail'>工作地点：和平区</view>
+      <view class='content_detail top'>{{alldata.height==null?'未填写':alldata.height}}cm • {{alldata.weight==null?'未填写':alldata.weight}}kg</view>
+      <view class='content_detail'>{{alldata.profession==null?'未填写':alldata.profession}} | 年收入 {{alldata.income==null?'未填写':alldata.income}}| {{alldata.education==null?'未填写':alldata.education}}学历</view>
+      <view class='content_detail'>工作地点：{{alldata.workplace==null?'未填写':alldata.workplace}}</view>
     </view>
     <view class='item_list certification'>
       <view class='title'>实名认证</view>
@@ -32,22 +32,16 @@
             <view class='iconfont icon-wode'></view>
           </view>
           <view class='basic_information_item'>
-            <view class='content_detail1'>张甜甜</view>
-            <view class='content_detail1'>1993.09.13</view>
-            <view class='content_detail1'>处女座</view>
-            <view class='content_detail1'>汉族</view>
-            <view class='content_detail1'>未婚</view>
-            <view class='content_detail1'>无子女</view>
-            <view class='content_detail1'>张甜甜</view>
-            <view class='content_detail1'>1993.09.13</view>
-            <view class='content_detail1'>处女座</view>
-            <view class='content_detail1'>汉族</view>
-            <view class='content_detail1'>未婚</view>
-            <view class='content_detail1'>无子女</view>
+            <view class='content_detail1'>{{alldata.name==null?'未填写':alldata.name}}</view>
+            <view class='content_detail1'>{{alldata.name==null?'未填写':alldata.name}}</view>
+            <view class='content_detail1'>{{alldata.constellation==null?'未填写':alldata.constellation}}</view>
+            <view class='content_detail1'>{{alldata.birth==null?'未填写':alldata.birth}}</view>
+            <view class='content_detail1'>{{alldata.marital_status==null?'未填写':''||alldata.marital_status==0?'未婚':'已婚'}}</view>
+            <view class='content_detail1'>{{alldata.ywzn==0?'有子女':'无子女'}}</view>
           </view>
         </view>
         <view>
-          <view class='iconfont icon-diandiandianshu'></view>
+          <view class='iconfont icon-diandiandianshu' bindtap='jbzl'></view>
         </view>
       </view>
     </view>
@@ -59,16 +53,16 @@
             <view class='iconfont icon-3zeoutiaojian'></view>
           </view>
           <view class='basic_information_item'>
-            <view class='content_detail1'>28</view>
-            <view class='content_detail1'>射手座</view>
-            <view class='content_detail1'>183cm</view>
-            <view class='content_detail1'>和平区</view>
-            <view class='content_detail1'>10W~20W</view>
-            <view class='content_detail1'>博士后</view>
+            <view class='content_detail1'>{{alldata.age2==null?'未填写':alldata.age2}}</view>
+            <view class='content_detail1'>{{alldata.age2==null?'未填写':alldata.age2}}</view>
+            <view class='content_detail1'>{{alldata.height2==null?'未填写':alldata.height2+'cm'}}</view>
+            <view class='content_detail1'>{{alldata.workplace2==null?'未填写':alldata.workplace2}}</view>
+            <view class='content_detail1'>{{alldata.income2==null?'未填写':alldata.income2}}</view>
+            <view class='content_detail1'>{{alldata.constellation2==null?'未填写':alldata.constellation2}}</view>
           </view>
         </view>
         <view>
-          <view class='iconfont icon-diandiandianshu'></view>
+          <view class='iconfont icon-diandiandianshu' bindtap='zobz'></view>
         </view>
       </view>
     </view>
@@ -88,16 +82,16 @@
           </view>
         </view>
         <view>
-          <view class='iconfont icon-diandiandianshu'></view>
+          <view class='iconfont icon-diandiandianshu' bindtap='xqah'></view>
         </view>
       </view>
     </view>
     <view class='bottom_btn'>
-      <view class='message_btn'>
+      <view class='message_btn' bindtap='toemail'>
         <view class='iconfont icon-weidu'></view>
         <view class='words'>写信件给Ta</view>
       </view>
-      <view class='phone_btn'>
+      <view class='phone_btn' bindtap='totell'>
         <view class='iconfont icon-fuwuerji'></view>
         <view class='words'>帮我联系Ta</view>
       </view>

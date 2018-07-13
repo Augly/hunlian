@@ -9,9 +9,9 @@
   <view class="info_item">
     <view class="info_box">
       <view class="info_name">头像</view>
-              <image class='user_log' src='{{myimg}}' bindtap='upload' mode='widthFix' lazy-load>
+      <image class='user_log' src='{{myimg}}' bindtap='upload' mode='widthFix' lazy-load>
 
-        </image>
+      </image>
     </view>
     <view class="info_box border_none">
       <view class="info_name">昵称</view>
@@ -187,13 +187,13 @@
     <view class="info_box">
       <view class="info_name">年龄</view>
       <view>
-        <input value='{{myage}}' bindinput='myage'></input>
+        <input value='{{myage}}' bindinput='myage' placeholder='请输入年龄' placeholder-class='iptplh'></input>
       </view>
     </view>
     <view class="info_box">
       <view class="info_name">身高</view>
       <view>
-        <input value='{{myheight}}cm' bindinput='myheight'></input>
+        <input value='{{myheight}}' bindinput='myheight' placeholder='请输入身高' placeholder-class='iptplh'></input>
       </view>
       <view class="info_icon">
         <text class="iconfont"></text>
@@ -210,15 +210,18 @@
         </view>
       </view>
     </picker>
-    <!-- <view class="info_box">
-      <view class="info_name">年收入</view>
-      <view>
-        <view class='infoSelect'>10W-20W</view>
+
+    <picker range='{{array_income}}' bindchange='start_moneyone' range-key='income'>
+      <view class="info_box ">
+        <view class="info_name">年收入</view>
+        <view>
+          <view class='infoSelect'>{{moneyone.income}}</view>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont icon-arrow"></text>
+        </view>
       </view>
-      <view class="info_icon">
-        <text class="iconfont icon-arrow"></text>
-      </view>
-    </view> -->
+    </picker>
     <picker range='{{array_education}}' bindchange='zo_education' range-key='education'>
 
       <view class="info_box ">
@@ -231,29 +234,40 @@
         </view>
       </view>
     </picker>
-    <!-- <view class="info_box">
-      <view class="info_name">学历</view>
-      <view>
-        <view class='infoSelect'>本科</view>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont icon-arrow"></text>
-      </view>
-    </view> -->
-    <!-- <view class="info_box border_none">
-      <view class="info_name">婚姻状况</view>
-      <view>
-        <view class='infoSelect'>未婚</view>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont icon-arrow"></text>
-      </view>
-    </view> -->
-    <picker range="{{merry}}" bindchange='merrySelectone'>
+    <picker range="{{merry}}" bindchange='merrySelecttwo'>
       <view class="info_box ">
         <view class="info_name">婚姻状况</view>
         <view>
-          <view class='infoSelect'>{{merryValueone}}</view>
+          <view class='infoSelect'>{{merryValuetwo}}</view>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont icon-arrow"></text>
+        </view>
+      </view>
+    </picker>
+    <view class="info_box">
+      <view class="info_name">体重</view>
+      <view>
+        <input placeholder='请输入体重' placeholder-class='iptplh' value='{{myweighttwo}}' bindinput='myweighttwo'></input>
+      </view>
+      <view class="info_icon">
+        <text class="iconfont "></text>
+      </view>
+    </view>
+    <view class="info_box ">
+      <view class="info_name">星座</view>
+      <view>
+        <input class='infoSelect' placeholder='请输入星座' placeholder-class='iptplh'  value='{{staript}}' bindinput='staript'></input>
+      </view>
+      <view class="info_icon">
+        <text class="iconfont "></text>
+      </view>
+    </view>
+    <picker range='{{isHas}}' bindchange='selectCtwo'>
+      <view class="info_box border_none">
+        <view class="info_name">有无子女</view>
+        <view>
+          <view class='infoSelect'>{{isHasValuetwo}}</view>
         </view>
         <view class="info_icon">
           <text class="iconfont icon-arrow"></text>

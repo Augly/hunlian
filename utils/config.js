@@ -78,6 +78,12 @@ const getUid = '/api/portal/index/getUid',
   myLove='/api/user/user/myLove',
   //我的基本消息提交处理
   userPost='/api/user/user/userPost',
+  //兴趣爱好
+  hobby='/api/portal/index/hobby',
+  //我的择偶资料处理
+  myLovePost ='/api/user/user/myLovePost',
+  //详情页
+  MemberDetail='/api/portal/index/MemberDetail',
   //验证码验证
   registerOne='/api/user/register/registerOne'
 /**
@@ -294,5 +300,8 @@ module.exports = {
   userInfo: userInfo,
   myLove: myLove,
   myHobbyDel: myHobbyDel,
-  userPost: userPost
+  userPost: userPost,
+  myLovePost: myLovePost,
+  MemberDetail: MemberDetail,
+  hobby: hobby
 } 

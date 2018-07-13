@@ -7,32 +7,32 @@
     <view class='item_list'>
       <view class='person_information'>
         <view class='banner_img'>
-          <image src='http://wxq.test.bronet.cn/images/pic01@2x.png' mode='widthFix'></image>
+          <image src='{{alldata.more}}' mode='widthFix'></image>
         </view>
         <view class='information_detail'>
           <view class='name_box'>
-            <view class='name'>张甜甜</view>
+            <view class='name'>{{alldata.nickname==null?'未填写':alldata.nickname}}</view>
             <view class='sex_box'>
-              <view class='iconfont icon-nv'></view>
-              <view>处女座</view>
+              <view class="iconfont {{alldata.sex==1?'icon-nan':'icon-nv'}}"></view>
+              <view>{{alldata.constellation==null?'未填写':alldata.constellation}}</view>
             </view>
           </view>
-          <view class='birth'>1993.09.13</view>
-          <view class='married_time'>期望结婚时间：两年</view>
+          <view class='birth'>{{alldata.birth==null?'未填写':alldata.birth}}</view>
+          <view class='married_time'>期望结婚时间:{{alldata.marriage_time==null?'未填写':alldata.marriage_time}}</view>
         </view>
       </view>
       <view class='person_information bottom'>
         <view class='person_information_detail'>
           <view class='iconfont icon-nickname'></view>
-          <view>苏菀菁</view>
+          <view>{{alldata.name==null?'未填写':alldata.name}}</view>
         </view>
         <view class='person_information_detail'>
           <view class='iconfont icon-tizhong'></view>
-          <view>45kg</view>
+          <view>{{alldata.weight==null?'未填写':alldata.weight+'kg'}}</view>
         </view>
         <view class='person_information_detail'>
           <view class='iconfont icon-shengao'></view>
-          <view>173cm</view>
+          <view>{{alldata.height==null?'未填写':alldata.height+'cm'}}</view>
         </view>
       </view>
     </view>
@@ -41,25 +41,25 @@
         <view class='icon_font'>
           <view class='iconfont icon-wode'></view>
         </view>
-        <view class='list_character'>设计总监</view>
+        <view class='list_character'>{{alldata.profession==null?'未填写':alldata.profession}}</view>
       </view>
       <view class='list_content'>
         <view class='icon_font'>
           <view class='iconfont icon-renminbi'></view>
         </view>
-        <view class='list_character'>年收入10W~20W</view>
+        <view class='list_character'>年收入{{alldata.income==null?'未填写':alldata.income}}</view>
       </view>
       <view class='list_content'>
         <view class='icon_font'>
           <view class='iconfont icon-xueli'></view>
         </view>
-        <view class='list_character'>本科</view>
+        <view class='list_character'>{{alldata.education==null?'未填写':alldata.education}}</view>
       </view>
       <view class='list_content'>
         <view class='icon_font'>
           <view class='iconfont icon-didian'></view>
         </view>
-        <view class='list_character'>天津-和平区工作</view>
+        <view class='list_character'>{{alldata.workplace==null?'未填写':alldata.workplace}}工作</view>
       </view>
     </view>
     <view class='item_list1'>
@@ -67,19 +67,19 @@
         <view class='icon_font'>
           <view class='iconfont icon-yifu'></view>
         </view>
-        <view class='list_character '>汉族</view>
+        <view class='list_character '>{{alldata.workplace==null?'未填写':alldata.workplace}}</view>
       </view>
       <view class='list_content'>
         <view class='icon_font'>
           <view class='iconfont icon-hunyinzhuangkuang'></view>
         </view>
-        <view class='list_character'>未婚</view>
+        <view class='list_character'>{{alldata.marital_status==null?'未填写':alldata.marital_status||alldata.marital_status==0?'未婚':'已婚'}}</view>
       </view>
       <view class='list_content'>
         <view class='icon_font'>
           <view class='iconfont icon-xiaohaitou'></view>
         </view>
-        <view class='list_character'>无子女</view>
+        <view class='list_character'>{{alldata.ywzn==null?'未填写':alldata.ywzn}}</view>
       </view>
     </view>
   </view>

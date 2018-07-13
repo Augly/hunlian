@@ -1,4 +1,6 @@
 // pages/index/detail/detail.js
+const config=require('../../../utils/config.js')
+let app=getApp()
 Page({
 
   /**
@@ -12,9 +14,59 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
+    console.log(options)
+    this.setData({
+      formId: options.userId
+    })
+    config.ajax('POST',{
+      uid: app.globalData.uid,
+      relation_id: options.userId,
+      _type: options.type
+    }, config.MemberDetail,(res)=>{
+      console.log(res)
+      this.setData({
+        alldata:res.data.data
+      })
+    },(res)=>{
 
+    })
+  },
+  //写邮件给Ta
+  toemail(){
+    wx.navigateTo({
+      url: '/pages/messages/mail/mail?formId=' + this.data.formId,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  //基本资料
+  jbzl(){
+    wx.navigateTo({
+      url: '/pages/index/basicInformation2/basicInformation2?userId=' + this.data.formId,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  //择偶标准
+  zobz(){
+    wx.navigateTo({
+      url: '/pages/index/chooseStandard/chooseStandard?userId=' + this.data.formId,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+  //兴趣爱好
+  xqah(){
+    wx.navigateTo({
+      url: '/pages/index/hobbies/hobbies?userId=' + this.data.formId,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -49,14 +101,12 @@ Page({
   onPullDownRefresh: function () {
   
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
   
   },
-
   /**
    * 用户点击右上角分享
    */

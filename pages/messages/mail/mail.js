@@ -9,6 +9,7 @@ Page({
   data: {
     showView: false,
     showSucc: false,
+    list:[]
   },
   /**
    * 生命周期函数--监听页面加载
@@ -27,9 +28,11 @@ Page({
       status: options.status
     }, config.letterLog, (res) => {
       console.log(res.data.data.list)
-      this.setData({
-        list: res.data.data.list
-      })
+      if(res.data.data.code=='20000'){
+        this.setData({
+          list: res.data.data.list
+        })
+      }
     }, (res) => {
 
     })
@@ -47,7 +50,7 @@ Page({
         uid: app.globalData.uid,
         to_id: this.data.formid,
         content: this.data.myipt
-      }, config.letterReply, (res) => {
+      }, config.letterReply, (res) => { 
         if (res.data.data.code == '20000') {
           var st = this.data.list
           st.push(res.data.data.list)

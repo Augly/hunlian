@@ -23,12 +23,14 @@ Page({
     merry: ['未婚', '已婚'],
     isHas: ['无', '有'],
     isHasValue: '无',
+    isHasValuetwo: '无',
     merryValue: '未婚',
     merryValueone: '未婚',
+    merryValuetwo: '未婚',
     regionone: ['天津市', '天津市', '和平区'],
-    zo_education:{
+    zo_education: {
       id: 1,
-      education:'小学'
+      education: '小学'
     }
   },
   /**
@@ -54,6 +56,11 @@ Page({
       isHasValue: this.data.isHas[e.detail.value]
     })
   },
+  selectCtwo(e) {
+    this.setData({
+      isHasValuetwo: this.data.isHas[e.detail.value]
+    })
+  },
   merrySelect(e) {
     this.setData({
       merryValue: this.data.merry[e.detail.value]
@@ -62,6 +69,11 @@ Page({
   merrySelectone(e) {
     this.setData({
       merryValueone: this.data.merry[e.detail.value]
+    })
+  },
+  merrySelecttwo(e) {
+    this.setData({
+      merryValuetwo: this.data.merry[e.detail.value]
     })
   },
   mydata(e) {
@@ -103,6 +115,12 @@ Page({
   start_money(e) {
     this.setData({
       money: this.data.array_income[e.detail.value]
+    })
+  },
+  //选择年收入
+  start_moneyone(e) {
+    this.setData({
+      moneyone: this.data.array_income[e.detail.value]
     })
   },
   //选择学历
@@ -222,6 +240,18 @@ Page({
       weight: e.detail.value
     })
   },
+  //输入择偶体重
+  myweighttwo(e) {
+    this.setData({
+      myweighttwo: e.detail.value
+    })
+  },
+  //输入星座
+  staript(e) {
+    this.setData({
+      staript: e.detail.value
+    })
+  },
   //基本信息提交
   adduserPost() {
     if (this.data.height == '' || this.data.height == undefined || this.data.height == null) {
@@ -319,7 +349,7 @@ Page({
       })
       return false
     }
-    if (this.data.marital_status == '未婚') {
+    if (this.data.merryValue == '未婚') {
       var marital_status = 0
     } else {
       var marital_status = 1
@@ -351,16 +381,103 @@ Page({
   //     showmold: !showmold
   //   })
   // },
-  //输入
-  // myage(e) {
-  //   this.setData({
-  //     myage:e.detail.value
-  //   })
-  // },
+  //输入年龄
+  myage(e) {
+    this.setData({
+      myage: e.detail.value
+    })
+  },
+  //输入身高
+  myheight(e) {
+    this.setData({
+      myheight: e.detail.value
+    })
+  },
+  //输入星座
+  staript(e) {
+    this.setData({
+      staript: e.detail.value
+    })
+  },
   //择偶信息标准
   savemyLovePost() {
+    if (this.data.regionone == '' || this.data.regionone == null || this.data.regionone == undefined) {
+      config.mytoast('请选择工作信息', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.merryValueone == '' || this.data.merryValueone == null || this.data.merryValueone == undefined) {
+      config.mytoast('请选择婚姻状况', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.myage == '' || this.data.myage == null || this.data.myage == undefined) {
+      config.mytoast('请输入年龄', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.myheight == '' || this.data.myheight == null || this.data.myheight == undefined) {
+      config.mytoast('请输入身高', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.myweighttwo == '' || this.data.myweighttwo == undefined || this.data.myweighttwo == null) {
+      config.mytoast('请输入体重', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.moneyone.income == '' || this.data.moneyone.income == undefined || this.data.moneyone.income == null) {
+      config.mytoast('请选择年收入', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.zo_education.education == '' || this.data.zo_education.education == undefined || this.data.zo_education.education == null) {
+      config.mytoast('请选择学历', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.staript == '' || this.data.staript == undefined || this.data.staript == null) {
+      config.mytoast('请输入星座', (res) => {
+
+      })
+      return false
+    }
+    if (this.data.merryValuetwo == '未婚') {
+      var marital_status = 0
+    } else {
+      var marital_status = 1
+    }
+    if (this.data.isHasValuetwo == '有') {
+      var ywzn = 1
+    } else {
+      var ywzn = 0
+    }
+    config.ajax('POST', {
+      uid: app.globalData.uid,
+      age: this.data.myage,
+      weight: this.data.myweighttwo,
+      height: this.data.myheight,
+      workplace: this.data.regionone[0] + this.data.regionone[1] + this.data.regionone[2],
+      education: this.data.zo_education.id,
+      income: this.data.moneyone.id,
+      marital_status: marital_status,
+      constellation: this.data.staript,
+      ywzn: ywzn
+    }, config.myLovePost, (res) => {
+      console.log(res)
+    }, (res) => {
+
+    })
+
     // if () {
-      
+
     // }
   },
   /**
@@ -418,6 +535,7 @@ Page({
     config.ajax('POST', {
       uid: uid
     }, config.myLove, (res) => {
+      console.log(res)
       if (res.data.data.code == '40005') {
 
       } else {
@@ -451,6 +569,7 @@ Page({
         weight: res.data.data.weight,
         workplace: res.data.data.workplace,
         money: res.data.data.array_income[0],
+        moneyone: res.data.data.array_income[0],
         marriage: res.data.data.array_marriage[0],
         education: res.data.data.array_education[0]
       })
