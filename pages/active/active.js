@@ -8,14 +8,21 @@ Page({
    */
   data: {
     noCode:false,
-    step:'1'
+    step:'1',
+    wrapContent:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   /**
    * 获取用户数据
@@ -36,6 +43,10 @@ Page({
       } else {
         config.mytoast('服务器错误', (res) => { })
       }
+      this.setData({
+        wrapContent:true
+      })
+      wx.hideLoading()
     }, (res) => {
 
     })

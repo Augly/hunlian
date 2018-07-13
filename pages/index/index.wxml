@@ -66,6 +66,9 @@
     </movable-view>  
   </movable-area>  
 </view></code>   -->
+
+
+<view wx:if="{{wrapContent}}">
 <view class="section">
   <movable-area class="area">
     <movable-view wx:for="{{content}}" wx:key="index" x="{{x}}" y="{{y}}" direction="all" bindchange="onChange" out-of-bounds="true" data-index="{{index}}" data-id='{{item.user_id}}' catch:touchend="tap">
@@ -74,7 +77,7 @@
         <text class="iconfont icon-quxiao active" style="position: absolute;left:40rpx;top:40rpx;" wx:if="{{dx<-15}}"></text>
         <text class="iconfont icon-cainixihuan active" style="position: absolute;right:40rpx;top:40rpx;" wx:if="{{dx>15}}"></text>
 
-        <image class='move_log' src='{{item.more}}' bindtap='lookmore' data-id='{{item.user_id}}'>
+        <image class='move_log' src='{{item.more}}' catchtap='lookmore' data-id='{{item.user_id}}'>
 
         </image>
         <view class='move_res'>
@@ -114,6 +117,7 @@
 </view>
 
 <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
+</view>
 <!-- wx:if="{{noCode}}" -->
 <!-- <view class='maskCode' wx:if="{{noCode}}">
   <view class='toast_centerCode'>

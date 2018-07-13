@@ -1,3 +1,4 @@
+<view wx:if="{{wrapConet}}">
 <import src="../../../utils/wxParse/wxParse.wxml"/>
 <view class='container'>
   <view class='banner_wrap'>
@@ -35,3 +36,4 @@
     </view>
   </view>
 </view> -->
+</view>

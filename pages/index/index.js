@@ -15,8 +15,16 @@ Page({
     animationData: {},
     content: [],
     noCode: false,
+    wrapContent:false
   },
   onLoad: function () {
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
     var that = this;
     var res = wx.getSystemInfoSync();
     winWidth = res.windowWidth;
@@ -40,14 +48,14 @@ Page({
   tap: function (e) {
     var that = this;
     var distance = that.data.distance;
-    if ((distance > (winWidth + winWidth / 4)) || (distance < (winWidth - winWidth / 4))) {
+    if ((distance > (winWidth + winWidth / 2)) || (distance < (winWidth - winWidth / 2))) {
       var content = that.data.content;
       if (app.globalData._ishua) {
-        if (distance > (winWidth + winWidth / 4)) {
+        if (distance > (winWidth + winWidth / 2)) {
           var lick = true
           this.getselectR(config.getData(e, 'id'))  //右滑
         }
-        if (distance < (winWidth - winWidth / 4)) {
+        if (distance < (winWidth - winWidth / 2)) {
           var lick = false
           this.getselectL(config.getData(e, 'id'))  //左滑
         }
@@ -73,13 +81,16 @@ Page({
       })
     }
   },
-  lookmore(e){
+  lookmore(e) {
+    this.setData({
+      lick: null
+    })
     wx.navigateTo({
       // url: '/pages/index/basicInformation2/basicInformation2?userId='+e.currentTarget.dataset.id,
-      url: '/pages/index/detail/detail?userId=' + e.currentTarget.dataset.id+'&type=1',
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      url: '/pages/index/detail/detail?userId=' + e.currentTarget.dataset.id + '&type=1',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
   },
   //左滑不喜欢点击函数
@@ -180,11 +191,15 @@ Page({
           //   noCode: true,
           //   otherdetail: '没有其他了...'
           // })
-          config.mytoast('没有其他了',(res)=>{
+          config.mytoast('没有其他了', (res) => {
 
           })
         })
       }
+      this.setData({
+        wrapContent:true
+      })
+      wx.hideLoading()
 
     }, (res) => {
 
@@ -258,6 +273,7 @@ Page({
    */
   onChange: function (e) {
     var that = this;
+    console.log(e.detail.x)
     that.setData({
       distance: e.detail.x
     })

@@ -1,16 +1,18 @@
-<import src="../../../utils/wxParse/wxParse.wxml" />
-<view class="top_img">
-  <image src="../img/pic07@2x.png"></image>
-</view>
-<view class="infocode_content">
-  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-</view>
+<view wx:if="{{wrapConet}}">
+  <import src="../../../utils/wxParse/wxParse.wxml" />
+  <view class="top_img">
+    <image src="../img/pic07@2x.png"></image>
+  </view>
+  <view class="infocode_content">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+  </view>
 
   <view class='bottomGroup'>
     <view class='next_btn' bindtap='know'>申请解析</view>
   </view>
- <view class="infomold" wx:if="{{note}}" bindtap='hidenote'>
-  <view class="infomold_content">
-    {{note}}
+  <view class="infomold" wx:if="{{note}}" bindtap='hidenote'>
+    <view class="infomold_content">
+      {{note}}
+    </view>
   </view>
-</view> 
+</view>

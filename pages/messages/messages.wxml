@@ -1,4 +1,5 @@
 <!--pages/messages/messages.wxml-->
+<view wx:if="{{wrapConet}}">
 <view class='selectGroup'>
   <view class='selectView' bindtap='select' data-id='1'>
     <view class="selectCor {{myindex=='1'?'selectCor_Active':''}}">已读({{allNum}})</view>
@@ -84,3 +85,4 @@
 </view>
 
 <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
+</view>

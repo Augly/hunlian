@@ -31,7 +31,8 @@ Page({
     zo_education: {
       id: 1,
       education: '小学'
-    }
+    },
+    wrapConet:false
   },
   /**
    * 选择城市
@@ -484,6 +485,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid
@@ -573,6 +581,10 @@ Page({
         marriage: res.data.data.array_marriage[0],
         education: res.data.data.array_education[0]
       })
+      this.setData({
+        wrapConet:true
+      })
+      wx.hideLoading()
     }, (res) => {
 
     })

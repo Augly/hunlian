@@ -1,23 +1,25 @@
-<import src="../../../utils/wxParse/wxParse.wxml"/>
-<view class='container'>
-  <view class='banner'>
-    <image src='http://wxq.test.bronet.cn/images/pic02@2x.png' class='banner_pic'></image>
-    <view class='active_mask'>
-      <text class='mask_text'>{{alldata.theme}}</text>
-      <text class='mask_subtext'>{{alldata.title}}</text>
+<view wx:if="{{wrapConet}}">
+  <import src="../../../utils/wxParse/wxParse.wxml" />
+  <view class='container'>
+    <view class='banner'>
+      <image src='http://wxq.test.bronet.cn/images/pic02@2x.png' class='banner_pic'></image>
+      <view class='active_mask'>
+        <text class='mask_text'>{{alldata.theme}}</text>
+        <text class='mask_subtext'>{{alldata.title}}</text>
+      </view>
     </view>
-  </view>
-  <!--活动地点详情  -->
-  <view class='active_time'>
-  <view class='time_item'>活动时间：{{alldata.time}}</view>
-  <view class='time_item'>活动主题：{{alldata.name}}</view>
-  <view class='time_item'>活动装扮：{{alldata.attired}}</view>
-  </view>
-  <!--详情  -->
-  <view class='active_details'>
-    <text class='active_tit'>活动详情</text>
-    <view class='active_text'>
-<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+    <!--活动地点详情  -->
+    <view class='active_time'>
+      <view class='time_item'>活动时间：{{alldata.time}}</view>
+      <view class='time_item'>活动主题：{{alldata.name}}</view>
+      <view class='time_item'>活动装扮：{{alldata.attired}}</view>
+    </view>
+    <!--详情  -->
+    <view class='active_details'>
+      <text class='active_tit'>活动详情</text>
+      <view class='active_text'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
     </view>
   </view>
 </view>

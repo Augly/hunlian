@@ -8,13 +8,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-    myindex: '1'
+    myindex: '1',
+    wrapConet:false
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
 
   },
   getdata(res) {
@@ -38,6 +45,10 @@ Page({
           step: res.data.data.step
         })
       }
+      wx.hideLoading()
+      this.setData({
+        wrapConet:true
+      })
 
     }, (res) => {
 

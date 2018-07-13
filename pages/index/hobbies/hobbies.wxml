@@ -7,8 +7,7 @@
         <view class='label_title'>个人标签</view>
       </view>
       <view class='label_box'>
-      <view class='label'>哲学控</view>
-      <view class='label'>哲学控</view>
+      <view class='label' wx:for="{{label}}">{{item}}</view>
       </view>
     </view>
     <view class='item_list'>
@@ -17,8 +16,7 @@
         <view class='label_title'>电影</view>
       </view>
       <view class='label_box'>
-      <view class='label'>阿甘正传</view>
-      <view class='label'>肖申克的救赎</view>
+      <view class='label film' wx:for="{{film}}">{{item}}</view>
       </view>
     </view>
     <view class='item_list'>
@@ -27,8 +25,7 @@
         <view class='label_title'>美食</view>
       </view>
       <view class='label_box'>
-      <view class='label'>甜食</view>
-      <view class='label'>麻辣烫</view>
+      <view class='label foods' wx:for="{{foods}}">{{item}}</view>
       </view>
     </view>
     <view class='item_list'>
@@ -37,8 +34,7 @@
         <view class='label_title'>运动</view>
       </view>
       <view class='label_box'>
-      <view class='label'>篮球</view>
-      <view class='label'>乒乓球</view>
+      <view class='label sports' wx:for="{{sports}}">{{item}}</view>
       </view>
     </view>
   </view>

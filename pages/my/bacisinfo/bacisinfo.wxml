@@ -1,337 +1,341 @@
 <!--pages/bacisinfo/bacisinfo.wxml-->
-<view class="info_top">
-  <view class="{{bacis==true?'info_activity top_item':'top_item' }}" bindtap='showbacis'>基本资料</view>
-  <view class="{{standard==true?'info_activity top_item':'top_item' }}" bindtap='showstandard'>择偶标准</view>
-  <view class="{{hohbby==true?'info_activity top_item':'top_item' }}" bindtap='showhohbby'>兴趣爱好</view>
-</view>
-<!-- 基本资料 -->
-<view wx:if="{{bacis==true}}">
-  <view class="info_item">
-    <view class="info_box">
-      <view class="info_name">头像</view>
-      <image class='user_log' src='{{myimg}}' bindtap='upload' mode='widthFix' lazy-load>
 
-      </image>
-    </view>
-    <view class="info_box border_none">
-      <view class="info_name">昵称</view>
-      <view>
-        <input value='{{nickname}}' bindinput='nickname'></input>
-      </view>
-    </view>
+<view wx:if="{{wrapConet}}">
+
+
+  <view class="info_top">
+    <view class="{{bacis==true?'info_activity top_item':'top_item' }}" bindtap='showbacis'>基本资料</view>
+    <view class="{{standard==true?'info_activity top_item':'top_item' }}" bindtap='showstandard'>择偶标准</view>
+    <view class="{{hohbby==true?'info_activity top_item':'top_item' }}" bindtap='showhohbby'>兴趣爱好</view>
   </view>
+  <!-- 基本资料 -->
+  <view wx:if="{{bacis==true}}">
+    <view class="info_item">
+      <view class="info_box">
+        <view class="info_name">头像</view>
+        <image class='user_log' src='{{myimg}}' bindtap='upload' mode='widthFix' lazy-load>
 
-  <view class="info_item">
-
-    <view class="info_box ">
-      <view class="info_name">姓名</view>
-      <view>
-        <input value='{{name}}' bindinput='name'></input>
+        </image>
       </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
-    </view>
-    <picker range='{{sex}}' bindchange='selectSex'>
-      <view class="info_box ">
-        <view class="info_name">性别</view>
-        <view>
-          <view class='infoSelect'>{{sexIndex}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-    <picker mode='date' bindchange='mydata' end='{{enddata}}'>
-      <view class="info_box ">
-        <view class="info_name">生日</view>
-        <view>
-          <view class='infoSelect'>{{mydata}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-    <view class="info_box ">
-      <view class="info_name">星座</view>
-      <view>
-        <view class='infoSelect'>{{star}}</view>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
-    </view>
-    <view class="info_box border_none">
-      <view class="info_name">身高</view>
-      <view>
-        <input class='infoSelect' value="{{height}}cm" bindinput='myheight'></input>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
-    </view>
-  </view>
-
-
-  <view class="info_item">
-
-    <view class="info_box ">
-      <view class="info_name">工作</view>
-      <view>
-        <input class='infoSelect' value='{{workplace}}' bindinput='workplace'></input>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
-    </view>
-
-    <picker range='{{array_income}}' bindchange='start_money' range-key='income'>
-      <view class="info_box ">
-        <view class="info_name">年收入</view>
-        <view>
-          <view class='infoSelect'>{{money.income}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-    <picker range='{{array_education}}' bindchange='start_education' range-key='education'>
-
-      <view class="info_box ">
-        <view class="info_name">学历</view>
-        <view>
-          <view class='infoSelect'>{{education.education}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-    <picker range='{{array_marriage}}' bindchange='start_marriage' range-key='marriage_time'>
       <view class="info_box border_none">
-        <view class="info_name">期望结婚时间</view>
+        <view class="info_name">昵称</view>
         <view>
-          <view class='infoSelect'>{{marriage.marriage_time}}</view>
+          <input value='{{nickname}}' bindinput='nickname'></input>
+        </view>
+      </view>
+    </view>
+
+    <view class="info_item">
+
+      <view class="info_box ">
+        <view class="info_name">姓名</view>
+        <view>
+          <input value='{{name}}' bindinput='name'></input>
         </view>
         <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
+          <text class="iconfont "></text>
         </view>
       </view>
-    </picker>
-  </view>
-
-  <view class="info_item">
-    <view class="info_box ">
-      <view class="info_name">民族</view>
-      <view>
-        <input placeholder='请输入民族' placeholder-class='iptplh' bindinput='iptmz' value="{{iptmz}}"></input>
+      <picker range='{{sex}}' bindchange='selectSex'>
+        <view class="info_box ">
+          <view class="info_name">性别</view>
+          <view>
+            <view class='infoSelect'>{{sexIndex}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+      <picker mode='date' bindchange='mydata' end='{{enddata}}'>
+        <view class="info_box ">
+          <view class="info_name">生日</view>
+          <view>
+            <view class='infoSelect'>{{mydata}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+      <view class="info_box ">
+        <view class="info_name">星座</view>
+        <view>
+          <view class='infoSelect'>{{star}}</view>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont "></text>
+        </view>
       </view>
-      <!-- <view class="info_icon">
+      <view class="info_box border_none">
+        <view class="info_name">身高</view>
+        <view>
+          <input class='infoSelect' value="{{height}}cm" bindinput='myheight'></input>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont "></text>
+        </view>
+      </view>
+    </view>
+
+
+    <view class="info_item">
+
+      <view class="info_box ">
+        <view class="info_name">工作</view>
+        <view>
+          <input class='infoSelect' value='{{workplace}}' bindinput='workplace'></input>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont "></text>
+        </view>
+      </view>
+
+      <picker range='{{array_income}}' bindchange='start_money' range-key='income'>
+        <view class="info_box ">
+          <view class="info_name">年收入</view>
+          <view>
+            <view class='infoSelect'>{{money.income}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+      <picker range='{{array_education}}' bindchange='start_education' range-key='education'>
+
+        <view class="info_box ">
+          <view class="info_name">学历</view>
+          <view>
+            <view class='infoSelect'>{{education.education}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+      <picker range='{{array_marriage}}' bindchange='start_marriage' range-key='marriage_time'>
+        <view class="info_box border_none">
+          <view class="info_name">期望结婚时间</view>
+          <view>
+            <view class='infoSelect'>{{marriage.marriage_time}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+    </view>
+
+    <view class="info_item">
+      <view class="info_box ">
+        <view class="info_name">民族</view>
+        <view>
+          <input placeholder='请输入民族' placeholder-class='iptplh' bindinput='iptmz' value="{{iptmz}}"></input>
+        </view>
+        <!-- <view class="info_icon">
         <text class="iconfont icon-arrow"></text>
       </view> -->
-    </view>
-    <picker range="{{merry}}" bindchange='merrySelect'>
+      </view>
+      <picker range="{{merry}}" bindchange='merrySelect'>
+        <view class="info_box ">
+          <view class="info_name">婚姻状况</view>
+          <view>
+            <view class='infoSelect'>{{merryValue}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
       <view class="info_box ">
-        <view class="info_name">婚姻状况</view>
+        <view class="info_name">职业</view>
         <view>
-          <view class='infoSelect'>{{merryValue}}</view>
+          <input placeholder='设计总监' placeholder-class='iptplh' bindinput='getzw' value="{{getzw}}"></input>
         </view>
         <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
+          <text class="iconfont "></text>
         </view>
       </view>
-    </picker>
-    <view class="info_box ">
-      <view class="info_name">职业</view>
-      <view>
-        <input placeholder='设计总监' placeholder-class='iptplh' bindinput='getzw' value="{{getzw}}"></input>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
-    </view>
-    <view class="info_box">
-      <view class="info_name">体重</view>
-      <view>
-        <input placeholder='请输入体重' placeholder-class='iptplh' value='{{weight}}kg' bindinput='myweight'></input>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
-    </view>
-    <picker range='{{isHas}}' bindchange='selectC'>
-      <view class="info_box border_none">
-        <view class="info_name">有无子女</view>
-        <view>
-          <view class='infoSelect'>{{isHasValue}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-  </view>
-  <cover-view class='saveGroup' style='backgroud-color:RGBA(255, 255, 255, 1);'>
-    <cover-view class="info_btn" bindtap='adduserPost'>
-      保存
-    </cover-view>
-  </cover-view>
-
-</view>
-<!-- 择偶标准 -->
-<view wx:if="{{standard==true}}">
-  <view class="info_item">
-    <view class="info_box">
-      <view class="info_name">年龄</view>
-      <view>
-        <input value='{{myage}}' bindinput='myage' placeholder='请输入年龄' placeholder-class='iptplh'></input>
-      </view>
-    </view>
-    <view class="info_box">
-      <view class="info_name">身高</view>
-      <view>
-        <input value='{{myheight}}' bindinput='myheight' placeholder='请输入身高' placeholder-class='iptplh'></input>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont"></text>
-      </view>
-    </view>
-    <picker mode='region' bindchange='selectCity' value="{{regionone}}">
       <view class="info_box">
-        <view class="info_name">工作所在地</view>
+        <view class="info_name">体重</view>
         <view>
-          <view class='infoSelect'>{{regionone[0]}}{{regionone[1]}}{{regionone[2]}}</view>
+          <input placeholder='请输入体重' placeholder-class='iptplh' value='{{weight}}kg' bindinput='myweight'></input>
         </view>
         <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
+          <text class="iconfont "></text>
         </view>
       </view>
-    </picker>
-
-    <picker range='{{array_income}}' bindchange='start_moneyone' range-key='income'>
-      <view class="info_box ">
-        <view class="info_name">年收入</view>
-        <view>
-          <view class='infoSelect'>{{moneyone.income}}</view>
+      <picker range='{{isHas}}' bindchange='selectC'>
+        <view class="info_box border_none">
+          <view class="info_name">有无子女</view>
+          <view>
+            <view class='infoSelect'>{{isHasValue}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
         </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-    <picker range='{{array_education}}' bindchange='zo_education' range-key='education'>
-
-      <view class="info_box ">
-        <view class="info_name">学历</view>
-        <view>
-          <view class='infoSelect'>{{zo_education.education}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-    <picker range="{{merry}}" bindchange='merrySelecttwo'>
-      <view class="info_box ">
-        <view class="info_name">婚姻状况</view>
-        <view>
-          <view class='infoSelect'>{{merryValuetwo}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-    <view class="info_box">
-      <view class="info_name">体重</view>
-      <view>
-        <input placeholder='请输入体重' placeholder-class='iptplh' value='{{myweighttwo}}' bindinput='myweighttwo'></input>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
+      </picker>
     </view>
-    <view class="info_box ">
-      <view class="info_name">星座</view>
-      <view>
-        <input class='infoSelect' placeholder='请输入星座' placeholder-class='iptplh'  value='{{staript}}' bindinput='staript'></input>
-      </view>
-      <view class="info_icon">
-        <text class="iconfont "></text>
-      </view>
-    </view>
-    <picker range='{{isHas}}' bindchange='selectCtwo'>
-      <view class="info_box border_none">
-        <view class="info_name">有无子女</view>
-        <view>
-          <view class='infoSelect'>{{isHasValuetwo}}</view>
-        </view>
-        <view class="info_icon">
-          <text class="iconfont icon-arrow"></text>
-        </view>
-      </view>
-    </picker>
-  </view>
-  <cover-view class='saveGroup rgb245'>
-    <cover-view class="info_btn" bindtap="savemyLovePost">
-      保存
+    <cover-view class='saveGroup' style='backgroud-color:RGBA(255, 255, 255, 1);'>
+      <cover-view class="info_btn" bindtap='adduserPost'>
+        保存
+      </cover-view>
     </cover-view>
-  </cover-view>
-</view>
-<!-- 兴趣爱好 -->
-<view wx:if="{{hohbby==true}}">
-  <view class='interest'>
-    <view class='interest_item style_tag' bindtap='readyAdd' data-type='label'>
-      <text class="iconfont icon-icon02"></text>个人标签
+
+  </view>
+  <!-- 择偶标准 -->
+  <view wx:if="{{standard==true}}">
+    <view class="info_item">
+      <view class="info_box">
+        <view class="info_name">年龄</view>
+        <view>
+          <input value='{{myage}}' bindinput='myage' placeholder='请输入年龄' placeholder-class='iptplh'></input>
+        </view>
+      </view>
+      <view class="info_box">
+        <view class="info_name">身高</view>
+        <view>
+          <input value='{{myheight}}' bindinput='myheight' placeholder='请输入身高' placeholder-class='iptplh'></input>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont"></text>
+        </view>
+      </view>
+      <picker mode='region' bindchange='selectCity' value="{{regionone}}">
+        <view class="info_box">
+          <view class="info_name">工作所在地</view>
+          <view>
+            <view class='infoSelect'>{{regionone[0]}}{{regionone[1]}}{{regionone[2]}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+
+      <picker range='{{array_income}}' bindchange='start_moneyone' range-key='income'>
+        <view class="info_box ">
+          <view class="info_name">年收入</view>
+          <view>
+            <view class='infoSelect'>{{moneyone.income}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+      <picker range='{{array_education}}' bindchange='zo_education' range-key='education'>
+
+        <view class="info_box ">
+          <view class="info_name">学历</view>
+          <view>
+            <view class='infoSelect'>{{zo_education.education}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+      <picker range="{{merry}}" bindchange='merrySelecttwo'>
+        <view class="info_box ">
+          <view class="info_name">婚姻状况</view>
+          <view>
+            <view class='infoSelect'>{{merryValuetwo}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
+      <view class="info_box">
+        <view class="info_name">体重</view>
+        <view>
+          <input placeholder='请输入体重' placeholder-class='iptplh' value='{{myweighttwo}}' bindinput='myweighttwo'></input>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont "></text>
+        </view>
+      </view>
+      <view class="info_box ">
+        <view class="info_name">星座</view>
+        <view>
+          <input class='infoSelect' placeholder='请输入星座' placeholder-class='iptplh' value='{{staript}}' bindinput='staript'></input>
+        </view>
+        <view class="info_icon">
+          <text class="iconfont "></text>
+        </view>
+      </view>
+      <picker range='{{isHas}}' bindchange='selectCtwo'>
+        <view class="info_box border_none">
+          <view class="info_name">有无子女</view>
+          <view>
+            <view class='infoSelect'>{{isHasValuetwo}}</view>
+          </view>
+          <view class="info_icon">
+            <text class="iconfont icon-arrow"></text>
+          </view>
+        </view>
+      </picker>
     </view>
-    <view class='interest_item style_content' wx:for="{{labelList}}" wx:if="{{labelList.length>0}}">{{item}}
-      <view class="close_icon" bindtap='closeLabel' data-name='{{item}}'>
-        <view class="iconfont icon-quxiao1"></view>
+    <cover-view class='saveGroup rgb245'>
+      <cover-view class="info_btn" bindtap="savemyLovePost">
+        保存
+      </cover-view>
+    </cover-view>
+  </view>
+  <!-- 兴趣爱好 -->
+  <view wx:if="{{hohbby==true}}">
+    <view class='interest'>
+      <view class='interest_item style_tag' bindtap='readyAdd' data-type='label'>
+        <text class="iconfont icon-icon02"></text>个人标签
+      </view>
+      <view class='interest_item style_content' wx:for="{{labelList}}" wx:if="{{labelList.length>0}}">{{item}}
+        <view class="close_icon" bindtap='closeLabel' data-name='{{item}}'>
+          <view class="iconfont icon-quxiao1"></view>
+        </view>
       </view>
     </view>
-  </view>
-  <view class='interest'>
-    <view class='interest_item style_tag2' bindtap='readyAdd' data-type='film'>
-      <text class="iconfont icon-icon02"></text>喜欢的电影
-    </view>
-    <view class='interest_item style_content2' wx:for="{{filmList}}" wx:if="{{filmList.length>0}}">{{item}}
-      <view class="close_icon" bindtap='closeFilm' data-name='{{item}}'>
-        <view class="iconfont icon-quxiao1"></view>
+    <view class='interest'>
+      <view class='interest_item style_tag2' bindtap='readyAdd' data-type='film'>
+        <text class="iconfont icon-icon02"></text>喜欢的电影
+      </view>
+      <view class='interest_item style_content2' wx:for="{{filmList}}" wx:if="{{filmList.length>0}}">{{item}}
+        <view class="close_icon" bindtap='closeFilm' data-name='{{item}}'>
+          <view class="iconfont icon-quxiao1"></view>
+        </view>
       </view>
     </view>
-  </view>
-  <view class='interest'>
-    <view class='interest_item style_tag3' bindtap='readyAdd' data-type='foods'>
-      <text class="iconfont icon-icon02"></text>喜欢的美食
-    </view>
-    <view class='interest_item style_content3' wx:for="{{foodsList}}" wx:if="{{foodsList.length>0}}">{{item}}
-      <view class="close_icon" bindtap='closeFoods' data-name='{{item}}'>
-        <view class="iconfont icon-quxiao1"></view>
+    <view class='interest'>
+      <view class='interest_item style_tag3' bindtap='readyAdd' data-type='foods'>
+        <text class="iconfont icon-icon02"></text>喜欢的美食
+      </view>
+      <view class='interest_item style_content3' wx:for="{{foodsList}}" wx:if="{{foodsList.length>0}}">{{item}}
+        <view class="close_icon" bindtap='closeFoods' data-name='{{item}}'>
+          <view class="iconfont icon-quxiao1"></view>
+        </view>
       </view>
     </view>
-  </view>
-  <view class='interest'>
-    <view class='interest_item style_tag4' bindtap='readyAdd' data-type='sports'>
-      <text class="iconfont icon-icon02"></text>喜欢的运动
-    </view>
-    <view class='interest_item style_content4' wx:for="{{sportsList}}" wx:if="{{sportsList.length>0}}">{{item}}
-      <view class="close_icon" bindtap='closeSports' data-name='{{item}}'>
-        <view class="iconfont icon-quxiao1"></view>
+    <view class='interest'>
+      <view class='interest_item style_tag4' bindtap='readyAdd' data-type='sports'>
+        <text class="iconfont icon-icon02"></text>喜欢的运动
+      </view>
+      <view class='interest_item style_content4' wx:for="{{sportsList}}" wx:if="{{sportsList.length>0}}">{{item}}
+        <view class="close_icon" bindtap='closeSports' data-name='{{item}}'>
+          <view class="iconfont icon-quxiao1"></view>
+        </view>
       </view>
     </view>
-  </view>
-  <!-- <cover-view class='saveGroup rgb245'>
+    <!-- <cover-view class='saveGroup rgb245'>
     <cover-view class="info_btn">
       保存
     </cover-view>
   </cover-view> -->
 
-</view>
-<!-- 彈框 -->
-<!-- <view class="mold" wx:if='{{showmold}}'>
+  </view>
+  <!-- 彈框 -->
+  <!-- <view class="mold" wx:if='{{showmold}}'>
   <view class="mold_content">
     <view class="iconfont icon-quxiao1"></view>
     <view class="mold_title">添加兴趣爱好</view>
@@ -344,11 +348,13 @@
 
 
 
-<view class='wrap' wx:if="{{isWrap}}">
-  <view class='wrapContent'>
-    <text class='iconfont icon-quxiao1' bindtap='hideWrap'></text>
-    <view class='wrapContentTitle'>添加兴趣爱好</view>
-    <input class='wrapIpt' placeholder-class='wrapph' placeholder='请输入您喜欢做的事情' bindinput='iptData' value='{{iptData}}'></input>
-    <view class='sure' catchtap='add'>确定</view>
+  <view class='wrap' wx:if="{{isWrap}}">
+    <view class='wrapContent'>
+      <text class='iconfont icon-quxiao1' bindtap='hideWrap'></text>
+      <view class='wrapContentTitle'>添加兴趣爱好</view>
+      <input class='wrapIpt' placeholder-class='wrapph' placeholder='请输入您喜欢做的事情' bindinput='iptData' value='{{iptData}}'></input>
+      <view class='sure' catchtap='add'>确定</view>
+    </view>
   </view>
+
 </view>

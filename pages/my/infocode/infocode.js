@@ -8,13 +8,21 @@ Page({
    * 页面的初始数据
    */
   data: {
-    note:false
+    note:false,
+    wrapConet:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid
@@ -33,6 +41,10 @@ Page({
     }, config.analysis,(res)=>{
       console.log(res)
       WxParse.wxParse('article', 'html', res.data.data.content, this, 0);
+      this.setData({
+        wrapConet:true
+      })
+      wx.hideLoading()
     },(res)=>{
       
     })

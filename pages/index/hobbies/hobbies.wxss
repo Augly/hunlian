@@ -46,3 +46,13 @@
   padding: 18rpx 31rpx;
   margin-left: 16rpx;
 }
+
+.film{
+  background-color: #C8EEFF,
+}
+.foods{
+  background-color: #FFDEDE
+}
+.sports{
+  background-color:#FFE3B0; 
+}

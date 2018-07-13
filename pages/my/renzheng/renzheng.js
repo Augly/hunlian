@@ -14,6 +14,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid
@@ -36,6 +43,7 @@ Page({
       } else {
         config.mytoast('未知错误请稍后重试', (res) => { })
       }
+      wx.hideLoading()
     }, (res) => {
 
     })

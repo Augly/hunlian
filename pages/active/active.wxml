@@ -1,3 +1,6 @@
+<view wx:if="{{wrapContent}}">
+
+
 <view class='container'>
   <!--照片  -->
   <view class='active_item' bindtap='details_page' wx:for="{{list}}" data-id='{{item.id}}'>
@@ -9,3 +12,5 @@
   </view>
 </view>
 <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
+
+</view>

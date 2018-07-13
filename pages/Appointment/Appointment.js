@@ -7,14 +7,20 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    wrapConet:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
   },
   /**
      * 获取用户数据
@@ -36,6 +42,10 @@ Page({
       } else {
         config.mytoast('服务器错误', (res) => { })
       }
+      wx.hideLoading()
+      this.setData({
+        wrapConet: true
+      })
     }, (res) => {
 
     })

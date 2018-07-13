@@ -1,3 +1,6 @@
+<view wx:if="{{wrapConet}}">
+
+
 <view class="myimg_box">
   <view class="img_box">
     <image src="{{info.headiimageurl}}"></image>
@@ -84,3 +87,5 @@
     <view class="iconfont icon-arrow"> </view>
   </view>
 </view> -->
+
+</view>

@@ -37,6 +37,12 @@ Page({
       relation_id: options.id
     }, config.hobby,(res)=>{
       console.log(res)
+      this.setData({
+        label:res.data.data.label,
+        foods:res.data.data.foods,
+        film:res.data.data.film,
+        sports:res.data.data.sports
+      })
     },(res)=>{
 
     })
