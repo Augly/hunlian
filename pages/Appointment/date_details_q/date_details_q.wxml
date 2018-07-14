@@ -10,7 +10,7 @@
     </view>
     <view class='address'>
       <text>地址：{{alldata.address}}</text>
-      <view>
+      <view bindtap='toMap'>
         <icon class='iconfont icon-ditu ditu'></icon>查看地图</view>
     </view>
     <!--最近活动  -->

@@ -69,54 +69,57 @@
 
 
 <view wx:if="{{wrapContent}}">
-<view class="section">
-  <movable-area class="area">
-    <movable-view wx:for="{{content}}" wx:key="index" x="{{x}}" y="{{y}}" direction="all" bindchange="onChange" out-of-bounds="true" data-index="{{index}}" data-id='{{item.user_id}}' catch:touchend="tap">
-      <!-- <image animation="{{animationData}}" src="{{item.value}}" class="image"></image> -->
-      <view class="trm {{index==myindex&&action=='left'?'cssActiveL':index==myindex&&action=='right'?'cssActiveR':''}}">
-        <!-- <text class="iconfont icon-quxiao active" style="position: absolute;left:40rpx;top:40rpx;" wx:if="{{dx<-15}}"></text>
+  <view class="section">
+    <movable-area class="area">
+      <movable-view wx:for="{{content}}" wx:key="index" x="{{x}}" y="{{y}}" direction="all" bindchange="onChange" out-of-bounds="true" data-index="{{index}}" data-id='{{item.user_id}}' catch:touchend="tap">
+        <!-- <image animation="{{animationData}}" src="{{item.value}}" class="image"></image> -->
+        <view class="trm {{index==myindex&&action=='left'?'cssActiveL':index==myindex&&action=='right'?'cssActiveR':''}}">
+          <!-- <text class="iconfont icon-quxiao active" style="position: absolute;left:40rpx;top:40rpx;" wx:if="{{dx<-15}}"></text>
         <text class="iconfont icon-cainixihuan active" style="position: absolute;right:40rpx;top:40rpx;" wx:if="{{dx>15}}"></text> -->
 
-        <image class='move_log' src='{{item.more}}' catchtap='lookmore' data-id='{{item.user_id}}'>
+          <image class='move_log' src='{{item.more}}' catchtap='lookmore' data-id='{{item.user_id}}'>
 
-        </image>
-        <view class='move_res'>
-          <view class='move_title'>{{item.nickname}}
-            <text class='iconfont icon-nv'></text>
-            <view class='move_miniTitle'>{{item.marriage_time}}</view>
+          </image>
+          <view class='move_res'>
+            <view class='move_title'>{{item.nickname}}
+              <text class="iconfont {{item.sex==1?'icon-nv':'icon-nan'}}"></text>
+              <view class='move_miniTitle'>{{item.marriage_time}}</view>
+            </view>
+            <view class='move_other'>
+              <text>{{item.age}}岁</text>
+              <text>{{item.constellation}}</text>
+              <text>{{item.height}}cm</text>
+            </view>
+            <view class='move_zw'>{{item.profession}}</view>
           </view>
-          <view class='move_other'>
-            <text>{{item.age}}岁</text>
-            <text>{{item.constellation}}</text>
-            <text>{{item.height}}cm</text>
-          </view>
-          <view class='move_zw'>{{item.profession}}</view>
         </view>
+      </movable-view>
+
+    </movable-area>
+  </view>
+  <view class='trmone'></view>
+  <view class='trmtwo'></view>
+  <view class='typeGroup'>
+    <text class="iconfont icon-quxiao {{lick==false?'active':''}}" bindtap='unlick'></text>
+    <text class="iconfont icon-cainixihuan {{lick==true?'active':''}}" bindtap='lick'></text>
+    <button open-type='contact' hover-class='none' class="iconfont icon-kefu">
+      <!-- <text class="iconfont icon-kefu"></text> -->
+    </button>
+  </view>
+
+
+  <view class='mask' wx:if="{{mask}}">
+    <view class='toast_center'>
+      <view class='toat_main'>
+        {{otherdetail}}
       </view>
-    </movable-view>
-
-  </movable-area>
-</view>
-<view class='trmone'></view>
-<view class='trmtwo'></view>
-<view class='typeGroup'>
-  <text class="iconfont icon-quxiao {{lick==false?'active':''}}" bindtap='unlick'></text>
-  <text class="iconfont icon-cainixihuan {{lick==true?'active':''}}" bindtap='lick'></text>
-</view>
-
-
-<view class='mask' wx:if="{{mask}}">
-  <view class='toast_center'>
-    <view class='toat_main'>
-      {{otherdetail}}
-    </view>
-    <view class='toat_yes' bindtap='openlick'>
-      我知道了
+      <view class='toat_yes' bindtap='openlick'>
+        我知道了
+      </view>
     </view>
   </view>
-</view>
 
-<myToast noCode="{{noCode}}" step="{{step}}"></myToast>
+  <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
 </view>
 <!-- wx:if="{{noCode}}" -->
 <!-- <view class='maskCode' wx:if="{{noCode}}">

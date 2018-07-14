@@ -1,7 +1,7 @@
 <view wx:if="{{wrapContent}}">
 
 
-<view class='container'>
+<view class='container' wx:if="{{list.length>0}}">
   <!--照片  -->
   <view class='active_item' bindtap='details_page' wx:for="{{list}}" data-id='{{item.id}}'>
     <view class='active_mask'>
@@ -10,6 +10,10 @@
     </view>
     <image src='{{item.more}}' class='pic_item'></image>
   </view>
+</view>
+
+<view class='nodata' wx:else>
+  暂无数据
 </view>
 <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
 

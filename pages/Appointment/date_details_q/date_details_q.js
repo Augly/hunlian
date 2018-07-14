@@ -60,6 +60,19 @@ Page({
 
     })
   },
+  /**
+   * 查看地图
+   * 
+   */
+  toMap(e) {
+    wx.openLocation({
+      latitude: parseFloat(this.data.alldata.lat),
+      longitude: parseFloat(this.data.alldata.lng),
+      scale: 28,
+      address: this.data.alldata.address,
+      name: this.data.alldata.city
+    })
+  },
   near_page: function (e) {
     wx.navigateTo({
       url: '/pages/Appointment/near_acitve_q/near_acitve_q?id='+this.data.id,

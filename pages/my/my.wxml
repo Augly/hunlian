@@ -10,7 +10,7 @@
   </view>
   <view class="myitem">
     <view class="myitem_left">立即开通会员 • 轻松畅聊</view>
-    <view class="myitem_rigth">
+    <view class="myitem_rigth" bindtap='allow'>
       <view>开通</view>
       <view class="iconfont icon-arrow"> </view>
     </view>
@@ -94,18 +94,18 @@
   <view class='member'>
     <text class='iconfont icon-quxiao1' bindtap='hideMask'></text>
     <view class='mtitle'>畅聊会员充值</view>
-    <view class='selectList'>
+    <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldata}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
       <view class='selectL'>
-        <view class='seLtitle'>畅聊一个月
+        <view class='seLtitle'>{{item.title}}
         </view>
-        <view class='seLmintitle'>每天30封</view>
+        <view class='seLmintitle'>每天{{item.number}}封</view>
       </view>
       <view class='selectR'>
         <text class='selectR_M'>￥</text>
-        <text class='selectR_T'>39</text>
+        <text class='selectR_T'>{{item.price}}</text>
       </view>
     </view>
-    <view class='sumbit'>
+    <view class='sumbit' bindtap='pay'>
       立即充值
     </view>
   </view>

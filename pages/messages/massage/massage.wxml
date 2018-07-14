@@ -1,8 +1,12 @@
 <view wx:if="{{wrapConet}}">
-  <view class='container'>
-    <view class='item' wx:for="{{List}}" bindtap='tores'>
+  <view class='container' wx:if="{{list.length>0}}">
+    <view class='item'  wx:for="{{List}}" bindtap='tores' data-id='{{item.uid}}'>
       <text>{{item.nickname}}喜欢了你</text>
       <image src='{{item.more}}' class='person_head'></image>
     </view>
+
   </view>
+      <view class='nodata' wx:else>
+      暂无数据
+    </view>
 </view>

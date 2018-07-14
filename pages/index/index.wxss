@@ -263,7 +263,7 @@ z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom:20rpx;
+  bottom:-50rpx;
 }
 
 .icon-quxiao {
@@ -275,6 +275,13 @@ z-index: 999;
   margin-left: 60rpx;
   font-size: 120rpx;
   color: RGBA(212, 211, 206, 1);
+}
+.icon-kefu{
+  margin-left: 60rpx;
+  font-size: 100rpx;
+  color: RGBA(212, 211, 206, 1);
+  display: block;
+  /* height: 60rpx; */
 }
 
 .active {

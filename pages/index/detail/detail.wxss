@@ -50,6 +50,9 @@
   margin-left: 18rpx;
   justify-content: center;
 }
+.sex_box .iconfont{
+  font-size: 30rpx;
+}
 
 .hint {
   font-size: 24rpx;
@@ -154,7 +157,7 @@
   color: #fff;
   line-height: 88rpx;
   text-align: center;
-  padding: 0 44rpx;
+  padding: 0 44rpx !important;
 }
 
 .icon-weidu, .icon-fuwuerji {

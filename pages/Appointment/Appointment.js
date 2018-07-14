@@ -69,9 +69,16 @@ Page({
    * 
    */
   toMap(e){
-    this.data.list[config.getData(e, 'index')].lng
-    this.data.list[config.getData(e, 'index')].lat
-
+    // this.data.list[config.getData(e, 'index')].lng
+    // this.data.list[config.getData(e, 'index')].lat
+    console.log(parseFloat(this.data.list[config.getData(e, 'index')].lat))
+    wx.openLocation({
+      latitude: parseFloat(this.data.list[config.getData(e, 'index')].lat),
+      longitude: parseFloat(this.data.list[config.getData(e, 'index')].lng),
+      scale: 28,
+      address: this.data.list[config.getData(e, 'index')].address,
+      name: this.data.list[config.getData(e, 'index')].city
+    })
   },
   /**
    * 生命周期函数--监听页面显示

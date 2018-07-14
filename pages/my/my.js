@@ -1,14 +1,20 @@
 // pages/my.js
-const config=require('../../utils/config.js');
-let app=getApp()
+const config = require('../../utils/config.js');
+let app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    wrapConet:false,
-    Mwrap:true
+    wrapConet: false,
+    Mwrap: false
+  },
+
+  allow() {
+    this.setData({
+      Mwrap: true
+    })
   },
   gobacisinfo: function () {
     wx.navigateTo({
@@ -23,9 +29,9 @@ Page({
   /**
    * hideMask
    */
-  hideMask(){
+  hideMask() {
     this.setData({
-      Mwrap:false
+      Mwrap: false
     })
   },
   goteacher: function () {
@@ -55,14 +61,15 @@ Page({
     wx.showLoading({
       title: '数据加载中...',
       mask: true,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid
         this.getInfo(res)
+        this.getchat()
       } else {
         config.mytoast('服务器错误,请稍后再试', (res) => { })
       }
@@ -71,32 +78,95 @@ Page({
   /**
    * 获取个人中心数据
    */
-  getInfo(res){
-    config.ajax('POST',{
+  getInfo(res) {
+    config.ajax('POST', {
       uid: res.data.data.uid
-    }, config.myCenter,(res)=>{
+    }, config.myCenter, (res) => {
       console.log(res)
-      if(res.data.data.code=='20000'){
+      if (res.data.data.code == '20000') {
         this.setData({
-          info:res.data.data
+          info: res.data.data
         })
       } else if (res.data.data.code == '40001') {
         this.setData({
           noCode: true,
           step: res.data.data.step
         })
-      } else{
-        config.mytoast('发生未知错误,请稍后再试',(res)=>{})
+      } else {
+        config.mytoast('发生未知错误,请稍后再试', (res) => { })
       }
       this.setData({
         wrapConet: true
       })
       wx.hideLoading()
-    },(res)=>{
-      
+    }, (res) => {
+
     })
   },
+  //对象转数组
+  toArr(obj) {
+    let newarr = []
+    let result = Object.keys(obj).map((el) => {
+      newarr.push(obj[el]);
+    });
+    // console.log(newarr)
+    // for (var i in newarr) {
+    //   if (newarr[i].name == null || newarr[i].name == undefined) {
+    //     newarr[i].name = '#'
+    //   }
+    // }
+    return newarr
+  },
+  /**
+   * 获取套餐
+   */
+  getchat() {
+    config.ajax('POST', {
+      uid: app.globalData.uid
+    }, config.chat, (res) => {
+      for (var i = 0; i < res.data.data.date.length; i++) {
+        res.data.data.date[i].check = false
+      }
+      res.data.data.date[0].check = true
+      this.setData({
+        alldata: res.data.data.date
+      })
+    }, (res) => {
 
+    })
+  },
+  /**
+   * 选择付款
+   */
+  select(e) {
+    var alldata = this.data.alldata
+    for (var i = 0; i < alldata.length; i++) {
+      if (i == config.getData(e, 'index')) {
+        alldata[i].check = true
+      } else {
+        alldata[i].check = false
+      }
+    }
+    this.setData({
+      payId: config.getData(e, 'id'),
+      alldata: alldata
+    })
+  },
+  /**
+   * 付款
+   */
+  pay() {
+    config.ajax('POST', {
+      uid: app.globalData.uid,
+      id: this.data.payId
+    }, config.payChat, (res) => {
+      config.pay(res, (res) => {
+
+      })
+    }, (res) => {
+
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

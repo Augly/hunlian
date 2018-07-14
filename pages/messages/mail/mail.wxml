@@ -1,25 +1,28 @@
 <view class='container'>
+  <scroll-view scroll-y scroll-with-animation style='width:100%;height:{{myheight}}px' scroll-into-view="a{{stop}}">
 
-<view wx:for="{{list}}">
-    <view class='talk_item' wx:if="{{item.from==1}}">
-    <image src='{{item.more}}' class='person_head'></image>
-    <view class='person_name'>
-      <text class='name'>{{item.nickname}}</text>
-      <view class='talk_details'>
-       {{item.content}}
+
+    <view wx:for="{{list}}" id='a{{index}}'>
+      <view class='talk_item' wx:if="{{item.from==1}}">
+        <image src='{{item.more}}' class='person_head'></image>
+        <view class='person_name'>
+          <text class='name'>{{item.nickname}}</text>
+          <view class='talk_details'>
+            {{item.content}}
+          </view>
+        </view>
+      </view>
+      <view class='talk_item flex_right' wx:else>
+        <view class='person_name'>
+          <text class='name myname' style='text-align:right'>{{item.nickname}}</text>
+          <view class='mytalk'>
+            {{item.content}}
+          </view>
+        </view>
+        <image src='{{item.more}}' class='person_head'></image>
       </view>
     </view>
-  </view>
-  <view class='talk_item flex_right' wx:else>
-    <view class='person_name'>
-      <text class='name myname' style='text-align:right'>{{item.nickname}}</text>
-      <view class='mytalk'>
-       {{item.content}}
-      </view>
-    </view>
-    <image src='{{item.more}}' class='person_head'></image>
-  </view>
-</view>
+  </scroll-view>
   <!--回复弹层  -->
   <view class="reply_mask {{showView?'show':''}}">
     <view class='reply_popup'>

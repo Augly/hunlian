@@ -1,13 +1,18 @@
-<view class='item' wx:for="{{list}}">
-  <view item_left>
-    <view class="item_img">
-      <image src="{{item.more}}"></image>
+<view wx:if="{{list.length>0}}">
+  <view class='item' wx:for="{{list}}">
+    <view item_left>
+      <view class="item_img">
+        <image src="{{item.more}}"></image>
+      </view>
+      <view class="item_content">
+        <view class="item_title">{{item.title}}</view>
+        <view class="item_time">{{item.date}}</view>
+        <view>{{item.address}}</view>
+      </view>
     </view>
-    <view class="item_content">
-      <view class="item_title">{{item.title}}</view>
-      <view class="item_time">{{item.date}}</view>
-      <view>{{item.address}}</view>
-    </view>
+    <view class='item_price'>￥{{item.amount}}</view>
   </view>
-  <view class='item_price'>￥{{item.amount}}</view>
+</view>
+<view class='nodata' wx:else>
+  暂无数据
 </view>

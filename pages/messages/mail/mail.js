@@ -9,13 +9,18 @@ Page({
   data: {
     showView: false,
     showSucc: false,
-    list:[]
+    list:[],
+    stop:null
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    config.rem(182,(res)=>{
+      this.setData({
+        myheight:res
+      })
+    })
     this.setData({
       formid: options.formId,
       options: options
@@ -29,9 +34,13 @@ Page({
     }, config.letterLog, (res) => {
       console.log(res.data.data.list)
       if(res.data.data.code=='20000'){
+        console.log(res.data.data.list.length - 1)
+        console.log(this.data.stop)
         this.setData({
-          list: res.data.data.list
+          list: res.data.data.list,
+          stop: res.data.data.list.length - 1
         })
+        console.log(this.data.stop)
       }
     }, (res) => {
 
@@ -55,7 +64,8 @@ Page({
           var st = this.data.list
           st.push(res.data.data.list)
           this.setData({
-            list:st
+            list:st,
+            stop:st.length-1
           })
         }
       }, (res) => {

@@ -164,6 +164,10 @@ page {
   justify-content: space-between;
   align-items: center;
 }
+.sActive{
+  background-color: RGBA(255, 248, 236, 1);
+  border: 1rpx solid RGBA(233, 173, 64, 1);
+}
 
 .seLtitle {
   font-size: 28rpx;

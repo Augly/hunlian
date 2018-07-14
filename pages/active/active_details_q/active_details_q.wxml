@@ -13,13 +13,12 @@
   <view class='btn' bindtap='show_mask'>
     立即报名
   </view>
-
   <!--报名弹层  -->
    <view class='mask' wx:if="{{mask}}"> 
     <view class='popup'>
       <text class='popup_tit'>报名费用</text>
-      <text class='popup_text'>本次报名活动费99元</text>
-      <view class='popup_btn'  bindtap=''>立即支付</view>
+      <text class='popup_text'>本次报名活动费{{alldata.amount}}元</text>
+      <view class='popup_btn'  bindtap='pay'>立即支付</view>
       <icon class='iconfont icon-quxiao'  bindtap='hideMask'></icon>
     </view>
   </view>

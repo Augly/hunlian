@@ -6,7 +6,7 @@
       <view class='name'>
         <view>{{alldata.name==null?'未填写':alldata.name}}</view>
         <view class='sex_box'>
-          <view class="iconfont {{alldata.sex==1?'icon-nan':'icon-nv'}}"></view>
+          <view class="iconfont {{alldata.sex==1?'icon-nv':'icon-nan'}}"></view>
           <view>{{alldata.age==null?'未填写':alldata.age}}</view>
         </view>
       </view>
@@ -91,10 +91,10 @@
         <view class='iconfont icon-weidu'></view>
         <view class='words'>写信件给Ta</view>
       </view>
-      <view class='phone_btn' bindtap='totell'>
+      <button open-type='contact' hover-class='none' class='phone_btn'>
         <view class='iconfont icon-fuwuerji'></view>
         <view class='words'>帮我联系Ta</view>
-      </view>
+      </button>
     </view>
   </view>
 </view>

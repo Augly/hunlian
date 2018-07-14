@@ -1,7 +1,7 @@
 <view wx:if="{{wrapConet}}">
 
 
-<view class='container'>
+<view class='container' wx:if="{{list.length>0}}">
   <!--照片  -->
   <view class='item_wrap' wx:for="{{list}}" >
     <view class='active_item'>
@@ -18,7 +18,9 @@
   </view>
    <!--照片  -->
 </view>
-
+<view class='nodata' wx:else>
+  暂无数据
+</view>
 <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
 
 </view>

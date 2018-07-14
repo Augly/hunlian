@@ -55,7 +55,15 @@ Page({
 
     })
   },
-
+  tores(e){
+    wx.navigateTo({
+      // url: '/pages/index/basicInformation2/basicInformation2?userId='+e.currentTarget.dataset.id,
+      url: '/pages/index/detail/detail?userId=' + e.currentTarget.dataset.id + '&type=2',
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

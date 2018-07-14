@@ -54,6 +54,7 @@ Page({
       uid: res.data.data.uid,
       activity_id: options.id
     }, config.activityDetails, (res) => {
+      console.log(res)
         this.setData({
           alldata:res.data.data
         })

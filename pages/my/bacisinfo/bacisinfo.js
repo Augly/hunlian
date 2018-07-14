@@ -270,36 +270,43 @@ Page({
       config.mytoast('请输入你的身高！', (res) => {
 
       })
+      return false
     }
     if (this.data.workplace == '' || this.data.workplace == undefined || this.data.workplace == null) {
       config.mytoast('请输入你的工作地区！', (res) => {
 
       })
+      return false
     }
     if (this.data.getzw == '' || this.data.getzw == undefined || this.data.getzw == null) {
       config.mytoast('请输入你的职业！', (res) => {
 
       })
+      return false
     }
     if (this.data.weight == '' || this.data.weight == undefined || this.data.weight == null) {
       config.mytoast('请输入你的体重！', (res) => {
 
       })
+      return false
     }
     if (this.data.iptmz == '' || this.data.iptmz == undefined || this.data.iptmz == null) {
       config.mytoast('请输入你的民族！', (res) => {
 
       })
+      return false
     }
     if (this.data.name == '' || this.data.name == undefined || this.data.name == null) {
       config.mytoast('请输入你的姓名！', (res) => {
 
       })
+      return false
     }
     if (this.data.nickname == '' || this.data.nickname == undefined || this.data.nickname == null) {
       config.mytoast('请输入你的昵称！', (res) => {
 
       })
+      return false
     }
     if (this.data.myimg == '' || this.data.myimg == undefined || this.data.myimg == null) {
       config.mytoast('请上传头像', (res) => {
@@ -355,11 +362,49 @@ Page({
       })
       return false
     }
-    if (this.data.marriage.marriage_time == '' || this.data.workpmarriage.marriage_timelace == undefined || this.data.marriage.marriage_time == null) {
+    console.log(this.data.marriage.marriage_time)
+    if (this.data.marriage.marriage_time == '' || this.data.marriage.marriage_time == undefined || this.data.marriage.marriage_time == null) {
       config.mytoast('请选择期望结婚年龄', (res) => {
 
       })
       return false
+    }
+    // if (this.data.merryValue == '未婚') {
+    //   var marital_status = 0
+    // } else {
+    //   var marital_status = 1
+    // }
+    // if (this.data.isHasValue == '有') {
+    //   var ywzn = 1
+    // } else {
+    //   var ywzn = 0
+    // }
+    console.log(this.data.tempFilePaths)
+    if (this.data.tempFilePaths != null&&this.data.tempFilePaths != undefined && this.data.tempFilePaths !=''){
+      console.log(121212)
+      wx.uploadFile({
+        url: config.https + config.imgUpdate, //仅为示例，非真实的接口地址
+        filePath: this.data.tempFilePaths[0],
+        name: 'img',
+        formData: {},
+        success: (res) => {
+          console.log(res)
+          if (res.errMsg = "uploadFile:ok") {
+            res.data = JSON.parse(res.data)
+            console.log(res.data)
+            this.submit(res.data)
+          }
+        }
+      })
+    }else{
+      this.submit()
+    }
+  },
+  submit(res){
+    if(res==''||res==undefined||res==null){
+      var img = this.data.myimg
+    }else{
+      var img = res.data.img_url
     }
     if (this.data.merryValue == '未婚') {
       var marital_status = 0
@@ -371,26 +416,9 @@ Page({
     } else {
       var ywzn = 0
     }
-    wx.uploadFile({
-      url: config.https + config.imgUpdate, //仅为示例，非真实的接口地址
-      filePath: this.data.tempFilePaths[0],
-      name: 'img',
-      formData: {},
-      success: (res) => {
-        console.log(res)
-        if (res.errMsg = "uploadFile:ok") {
-          res.data = JSON.parse(res.data)
-          console.log(res.data)
-          this.submit(res.data)
-        }
-      }
-    })
-
-  },
-  summit(res){
     config.ajax('POST', {
       uid: app.globalData.uid,
-      headimageurl: res.data.img_url,
+      headimgurl: img,
       nickname: this.data.nickname,
       birth: this.data.mydata,
       income: this.data.money.id,
@@ -398,6 +426,8 @@ Page({
       marriage_time: this.data.marriage.marriage_time,
       marital_status: marital_status,
       weight: this.data.weight,
+      height: this.data.height,
+      constellation:this.data.star,
       ywzn: ywzn
     }, config.userPost, (res) => {
       console.log(res)
@@ -592,6 +622,7 @@ Page({
     config.ajax('POST', {
       uid: uid
     }, config.userInfo, (res) => {
+      console.log(res.data.data.array_marriage[0].marriage_time)
       this.setData({
         myimg: res.data.data.headimgurl,
         array_education: res.data.data.array_education,
