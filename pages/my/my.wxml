@@ -15,6 +15,13 @@
       <view class="iconfont icon-arrow"> </view>
     </view>
   </view>
+  <!-- <view class="myitem">
+    <view class="myitem_left">畅聊会员（三个月）</view>
+    <view class="myitem_rigth">
+      <view>已开通</view>
+      <view class="iconfont icon-arrow"> </view>
+    </view>
+  </view> -->
 
   <view class="mycontent">
     <view class="mycontent_item" bindtap='gobacisinfo'>
@@ -80,13 +87,7 @@
   </view>
 
   <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
-  <!-- <view class="myitem">
-  <view class="myitem_left">畅聊会员（三个月）</view>
-  <view class="myitem_rigth">
-    <view>已开通</view>
-    <view class="iconfont icon-arrow"> </view>
-  </view>
-</view> -->
+
 
 </view>
 

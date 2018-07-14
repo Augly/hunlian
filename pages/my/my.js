@@ -164,7 +164,9 @@ Page({
       id: this.data.payId
     }, config.payChat, (res) => {
       config.pay(res, (res) => {
-
+          this.setData({
+            Mwrap:false
+          })
       })
     }, (res) => {
 
