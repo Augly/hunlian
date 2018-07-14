@@ -20,7 +20,7 @@
     <view class="top_img">
       <image src='http://wxq.test.bronet.cn/images/renzheng_no.png' class='renzheng_type'></image>
     </view>
-    <view class='renzhang_title'>抱歉，您提交的认证信息未通过！</view>
+    <view class='renzhang_title'>{{}}</view>
     <view class='renzheng_txt'>请提交您的真实有效信息</view>
 
     <view class='reset' bindtap='torenzheng'>

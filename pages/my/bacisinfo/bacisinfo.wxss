@@ -370,5 +370,4 @@ line-height: 88rpx;
   height: 80rpx;
   border-radius:50%;
   margin-right: auto;
-  background-color: red;
 }

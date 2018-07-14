@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    wrapConet:false
+    wrapConet:false,
+    Mwrap:true
   },
   gobacisinfo: function () {
     wx.navigateTo({
@@ -17,6 +18,14 @@ Page({
   goinfocode: function () {
     wx.navigateTo({
       url: 'infocode/infocode',
+    })
+  },
+  /**
+   * hideMask
+   */
+  hideMask(){
+    this.setData({
+      Mwrap:false
     })
   },
   goteacher: function () {

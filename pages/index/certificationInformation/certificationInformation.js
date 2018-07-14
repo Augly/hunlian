@@ -133,10 +133,9 @@ Page({
       uid: app.globalData.uid,
       name: this.data.nickName,
       idcard: this.data.idCard,
-      more:JSON.stringify({
-        imgup:res[0],
-        imgdown:res[1]
-      })
+      // more:JSON.stringify(res),
+      imgup:res[0],
+      imgdown:res[1]
     }, config.registerPost, (res) => {
       if (that.data._type == 'error') {
         wx.switchTab({
@@ -147,6 +146,7 @@ Page({
         })
       }else{
         config.pay(res, (res) => {
+          console.log(res)
           wx.switchTab({
             url: '/pages/my/my',
             success: function (res) { },

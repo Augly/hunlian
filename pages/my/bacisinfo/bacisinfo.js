@@ -35,6 +35,17 @@ Page({
     wrapConet:false
   },
   /**
+ * 上传图片
+ */
+  upload() {
+    config.chooseImage((res) => {
+      this.setData({
+        tempFilePaths: res.tempFilePaths,
+        myimg: res.tempFilePaths[0]
+      })
+    })
+  },
+  /**
    * 选择城市
    */
   bindRegionChange: function (e) {
@@ -360,9 +371,26 @@ Page({
     } else {
       var ywzn = 0
     }
+    wx.uploadFile({
+      url: config.https + config.imgUpdate, //仅为示例，非真实的接口地址
+      filePath: this.data.tempFilePaths[0],
+      name: 'img',
+      formData: {},
+      success: (res) => {
+        console.log(res)
+        if (res.errMsg = "uploadFile:ok") {
+          res.data = JSON.parse(res.data)
+          console.log(res.data)
+          this.submit(res.data)
+        }
+      }
+    })
+
+  },
+  summit(res){
     config.ajax('POST', {
       uid: app.globalData.uid,
-      headimageurl: '',
+      headimageurl: res.data.img_url,
       nickname: this.data.nickname,
       birth: this.data.mydata,
       income: this.data.money.id,
@@ -565,6 +593,7 @@ Page({
       uid: uid
     }, config.userInfo, (res) => {
       this.setData({
+        myimg: res.data.data.headimgurl,
         array_education: res.data.data.array_education,
         array_income: res.data.data.array_income,
         array_marriage: res.data.data.array_marriage,

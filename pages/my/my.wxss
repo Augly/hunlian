@@ -110,3 +110,86 @@ page {
 .info_icon {
   color: #dadada;
 }
+
+.MemberWrap {
+  background-color: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member {
+  position: relative;
+  min-width: 520rpx;
+  box-sizing: border-box;
+  padding: 32rpx 23rpx;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10rpx;
+}
+
+.mtitle {
+  font-size: 32rpx;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(26, 26, 26, 1);
+  margin-bottom: 37rpx;
+}
+
+.sumbit {
+  width: 100%;
+  height: 88rpx;
+  background-color: #e9ad40;
+  font-size: 32rpx;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 1);
+  margin-top: 32rpx;
+}
+
+.selectList {
+  width: 100%;
+  height: 100rpx;
+  box-sizing: border-box;
+  border-radius: 5rpx;
+  border: 1rpx solid RGBA(235, 235, 235, 1);
+  margin-top: 16rpx;
+  padding: 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seLtitle {
+  font-size: 28rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.seLmintitle {
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+}
+.selectR{
+  display: flex;
+  align-items:baseline;
+}
+
+.selectR_M{
+  font-size: 24rpx;
+  color: #E9AD40
+}
+.selectR_T{
+  font-size: 36rpx;
+  color: #E9AD40
+}
+.icon-quxiao1{
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  color: RGBA(153, 153, 153, 1);
+}

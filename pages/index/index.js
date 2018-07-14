@@ -275,7 +275,6 @@ Page({
    */
   onChange: function (e) {
     var that = this;
-    console.log(e.detail.x)
     that.setData({
       distance: e.detail.x
     })
