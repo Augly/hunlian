@@ -21,7 +21,8 @@ Page({
     config.ajax('POST',{
       uid: app.globalData.uid,
       relation_id: options.userId,
-      _type: options.type
+      _type: options.type,
+      status: options.status
     }, config.MemberDetail,(res)=>{
       console.log(res)
       this.setData({

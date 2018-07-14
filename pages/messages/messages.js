@@ -28,6 +28,7 @@ Page({
     config.ajax('POST', {
       uid: res.data.data.uid
     }, config.mailBoxOld, (res) => {
+      console.log(res)
       if (res.data.data.code == '20000') {
         var allNum=0;
         for (var i = 0; i < res.data.data.list.length; i++) {
@@ -52,6 +53,50 @@ Page({
 
     }, (res) => {
 
+    })
+  },
+  del(e){
+    var all = this.data.list
+
+    config.ajax('POST',{
+      uid: app.globalData.uid,
+      type:'letter',
+      id:all[config.getData(e,'index')].from_id
+    }, config.infoDel,(res)=>{
+      console.log(res)
+      if(res.data.data.code=='20000'){
+        console.log(config.getData(e, 'index'))
+        all.splice(config.getData(e, 'index'),1)
+        console.log(all)
+        this.setData({
+          list:all
+        })
+      }else{
+        config.mytoast('删除失败',(res)=>{
+
+        })
+      }
+    })
+  },
+  delone(e) {
+    var all = this.data.otherlist
+
+    config.ajax('POST', {
+      uid: app.globalData.uid,
+      type: 'letter',
+      id: all[config.getData(e, 'index')].from_id
+    }, config.infoDel, (res) => {
+      console.log(res)
+      if (res.data.data.code == '20000') {
+        all.splice(config.getData(e, 'index'), 1)
+        this.setData({
+          otherlist: all
+        })
+      } else {
+        config.mytoast('删除失败', (res) => {
+
+        })
+      }
     })
   },
   getotherdata(res) {

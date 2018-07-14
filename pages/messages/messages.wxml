@@ -41,7 +41,7 @@
         {{item.create_time}}
       </view>
     </view>
-    <view class='item_right'>
+    <view class='item_right' bindtap='del' data-index='{{index}}'>
       删除
     </view>
   </view>
@@ -77,7 +77,7 @@
         {{item.create_time}}
       </view>
     </view>
-    <view class='item_right'>
+    <view class='item_right' bindtap='delone' data-index='{{index}}'>
       删除
     </view>
   </view>

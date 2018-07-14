@@ -88,6 +88,8 @@ const getUid = '/api/portal/index/getUid',
   chat = '/api/user/register/chat',
   //购买畅聊套餐
   payChat = '/api/user/register/payChat',
+  //删除消息
+  infoDel='/api/portal/letter/infoDel',
   //验证码验证
   registerOne = '/api/user/register/registerOne'
 /**
@@ -324,5 +326,6 @@ module.exports = {
   hobby: hobby,
   chat: chat,
   payChat: payChat,
-  rem: rem
+  rem: rem,
+  infoDel: infoDel
 } 

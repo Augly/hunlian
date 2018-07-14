@@ -65,15 +65,6 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-    config.getuid((res) => {
-      if (res.data.data.code == '20000') {
-        app.globalData.uid = res.data.data.uid
-        this.getInfo(res)
-        this.getchat()
-      } else {
-        config.mytoast('服务器错误,请稍后再试', (res) => { })
-      }
-    }, (res) => { })
   },
   /**
    * 获取个人中心数据
@@ -183,7 +174,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    config.getuid((res) => {
+      if (res.data.data.code == '20000') {
+        app.globalData.uid = res.data.data.uid
+        this.getInfo(res)
+        this.getchat()
+      } else {
+        config.mytoast('服务器错误,请稍后再试', (res) => { })
+      }
+    }, (res) => { })
   },
 
   /**
