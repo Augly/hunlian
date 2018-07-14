@@ -73,9 +73,13 @@ Page({
       activity_id:this.data.id,
       amount: this.data.alldata.amount
     }, config.activityPay,(res)=>{
-      // config.pay(res,(res)=>{
-
-      // })
+      config.pay(res,(res)=>{
+          config.mytoast('活动参与成功',(res)=>{
+            wx.navigateBack({
+              delta: 1,
+            })
+          })
+      })
     },(res)=>{
 
     })

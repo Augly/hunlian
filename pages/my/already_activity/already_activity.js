@@ -14,14 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    config.getuid((res) => {
-      if (res.data.data.code == '20000') {
-        app.globalData.uid = res.data.data.uid
-        this.getdata(res)
-      } else {
-        config.mytoast('服务器错误,请稍后再试', (res) => { })
-      }
-    }, (res) => { })
+
   },
   getdata(res){
     config.ajax('POST',{
@@ -54,7 +47,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    config.getuid((res) => {
+      if (res.data.data.code == '20000') {
+        app.globalData.uid = res.data.data.uid
+        this.getdata(res)
+      } else {
+        config.mytoast('服务器错误,请稍后再试', (res) => { })
+      }
+    }, (res) => { })
   },
 
   /**
