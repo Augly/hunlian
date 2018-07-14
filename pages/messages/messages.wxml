@@ -2,11 +2,11 @@
 <view wx:if="{{wrapConet}}">
 <view class='selectGroup'>
   <view class='selectView' bindtap='select' data-id='1'>
-    <view class="selectCor {{myindex=='1'?'selectCor_Active':''}}">已读({{allNum}})</view>
+    <view class="selectCor {{myindex=='1'?'selectCor_Active':''}}">已读({{allNum==null?'0':allNum}})</view>
 
   </view>
   <view class='selectView'>
-    <view class="selectCor {{myindex=='2'?'selectCor_Active':''}}" bindtap='select' data-id='2'> 未读({{otherNum}}）</view>
+    <view class="selectCor {{myindex=='2'?'selectCor_Active':''}}" bindtap='select' data-id='2'> 未读({{otherNum==null?'0':otherNum}}）</view>
 
   </view>
 </view>

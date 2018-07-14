@@ -32,6 +32,7 @@ Page({
     that.setData({
       x: winWidth,
       y: winHeight,
+      distance: winWidth
     })
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
@@ -48,6 +49,7 @@ Page({
   tap: function (e) {
     var that = this;
     var distance = that.data.distance;
+
     if ((distance > (winWidth + winWidth / 2)) || (distance < (winWidth - winWidth / 2))) {
       var content = that.data.content;
       if (app.globalData._ishua) {
@@ -134,7 +136,7 @@ Page({
       })
       setTimeout(() => {
         var content = that.data.content;
-        that.getselectL(content[_num].user_id)
+        that.getselectR(content[_num].user_id)
         content.splice(_num, 1);
         that.setData({
           content: content,

@@ -9,7 +9,8 @@ Page({
    */
   data: {
     zimg: '',
-    bimg: ''
+    bimg: '',
+    _type:''
   },
   /**
    * 输入姓名
@@ -45,6 +46,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (options._type != null || options._type != undefined){
+        this.setData({
+          _type:'error'
+        })
+    }
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid
@@ -122,22 +128,34 @@ Page({
    * 立即支付
    */
   bottom_btn(res) {
+    var that=this
     config.ajax('POST', {
       uid: app.globalData.uid,
       name: this.data.nickName,
       idcard: this.data.idCard,
-      imgup: res[0],
-      imgdown: res[1]
-    }, config.registerPost, (res) => {
-      config.pay(res, (res) => {
-        console.log(res)
-                wx.navigateTo({
-          url: '/pages/my/renzheng/renzheng',
-          success: function(res) {},
-          fail: function(res) {},
-          complete: function(res) {},
-        })
+      more:JSON.stringify({
+        imgup:res[0],
+        imgdown:res[1]
       })
+    }, config.registerPost, (res) => {
+      if (that.data._type == 'error') {
+        wx.switchTab({
+          url: '/pages/my/my',
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }else{
+        config.pay(res, (res) => {
+          wx.switchTab({
+            url: '/pages/my/my',
+            success: function (res) { },
+            fail: function (res) { },
+            complete: function (res) { },
+          })
+        })
+      } 
+
       if (res.data.data.code == '20000') {
         console.log(res)
         // config.pay(res,(res)=>{
@@ -166,8 +184,8 @@ Page({
    * 提交资料
    */
   submit() {
-    var that=this
-    if (this.data.nickName == '' || this.data.nickName == undefined || this.data.idCard == null)    {
+    var that = this
+    if (this.data.nickName == '' || this.data.nickName == undefined || this.data.idCard == null) {
       config.mytoast('请填写姓名', (res) => { })
       return false
     }
@@ -184,7 +202,7 @@ Page({
       return false
     }
 
-    var imgArr=[this.data.zimg,this.data.bimg];
+    var imgArr = [this.data.zimg, this.data.bimg];
     var resImg = []
     var n = imgArr.length - 1; //需要上传图片数组的长度-1
     var s = 0;  //初始化索引值标志
@@ -194,7 +212,7 @@ Page({
         filePath: imgArr[s],  //需要上传的图片文件
         name: 'img',
         formData: {},
-        success:(res)=>{  //上传成功后
+        success: (res) => {  //上传成功后
           console.log(res)
           res.data = JSON.parse(res.data)
           resImg.push(res.data.data.img_url)
