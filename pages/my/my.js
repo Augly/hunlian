@@ -124,12 +124,14 @@ Page({
     config.ajax('POST', {
       uid: app.globalData.uid
     }, config.chat, (res) => {
+      console.log(res)
       for (var i = 0; i < res.data.data.date.length; i++) {
         res.data.data.date[i].check = false
       }
       res.data.data.date[0].check = true
       this.setData({
-        alldata: res.data.data.date
+        alldata: res.data.data.date,
+        payId: res.data.data.date[0].id,
       })
     }, (res) => {
 
@@ -147,6 +149,7 @@ Page({
         alldata[i].check = false
       }
     }
+    console.log(config.getData(e, 'id'))
     this.setData({
       payId: config.getData(e, 'id'),
       alldata: alldata
