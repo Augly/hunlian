@@ -225,11 +225,16 @@ Page({
    * 提交资料
    */
   submit(res) {
+    if (this.data.sex=='女'){
+      var sex=0
+    }else{
+      var sex = 1
+    }
     config.ajax('POST', {
       uid: app.globalData.uid,
       headimageurl: res.data.img_url,
       nick_name: this.data.nackName,
-      sex: this.data.sex,
+      sex: sex,
       birth: this.data.mydate,
       constellation: this.data.star,
       height: this.data.myHeight,

@@ -18,30 +18,7 @@ Page({
     wrapContent:false
   },
   onLoad: function () {
-    wx.showLoading({
-      title: '数据加载中...',
-      mask: true,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
-    })
-    var that = this;
-    var res = wx.getSystemInfoSync();
-    winWidth = res.windowWidth;
-    winHeight = res.windowHeight;
-    that.setData({
-      x: winWidth,
-      y: winHeight,
-      distance: winWidth
-    })
-    config.getuid((res) => {
-      if (res.data.data.code == '20000') {
-        app.globalData.uid = res.data.data.uid
-        this.getallData(res)
-      } else {
-        config.mytoast('服务器错误,请稍后再试', (res) => { })
-      }
-    }, (res) => { })
+
   },
   /**
    * 滑动函数
@@ -50,14 +27,14 @@ Page({
     var that = this;
     var distance = that.data.distance;
 
-    if ((distance > (winWidth + winWidth / 2)) || (distance < (winWidth - winWidth / 2))) {
+    if ((distance > (winWidth + winWidth / 4)) || (distance < (winWidth - winWidth / 4))) {
       var content = that.data.content;
       if (app.globalData._ishua) {
-        if (distance > (winWidth + winWidth / 2)) {
+        if (distance > (winWidth + winWidth / 4)) {
           var lick = true
           this.getselectR(config.getData(e, 'id'))  //右滑
         }
-        if (distance < (winWidth - winWidth / 2)) {
+        if (distance < (winWidth - winWidth / 4)) {
           var lick = false
           this.getselectL(config.getData(e, 'id'))  //左滑
         }
@@ -280,5 +257,31 @@ Page({
     })
   },
   onScale: function (e) {
+  },
+  onShow:function(){
+    wx.showLoading({
+      title: '数据加载中...',
+      mask: true,
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
+    })
+    var that = this;
+    var res = wx.getSystemInfoSync();
+    winWidth = res.windowWidth;
+    winHeight = res.windowHeight;
+    that.setData({
+      x: winWidth,
+      y: winHeight,
+      distance: winWidth
+    })
+    config.getuid((res) => {
+      if (res.data.data.code == '20000') {
+        app.globalData.uid = res.data.data.uid
+        this.getallData(res)
+      } else {
+        config.mytoast('服务器错误,请稍后再试', (res) => { })
+      }
+    }, (res) => { })
   }
 })
