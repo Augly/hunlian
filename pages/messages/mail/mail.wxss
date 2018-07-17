@@ -1,11 +1,12 @@
 .container{
+  box-sizing: border-box;
   padding: 32rpx 32px 150rpx 32rpx;
 }
 .talk_item{
   display: flex;
   margin-bottom: 100rpx;
   overflow: hidden;
-  width: 686rpx;
+  /* width: 686rpx; */
 }
 .person_head{
   width: 100rpx;
@@ -156,4 +157,9 @@
   text-align: center;
   line-height: 120rpx;
   color: #ffffff;
+}
+
+
+.listgo{
+  width: 100% !important;
 }

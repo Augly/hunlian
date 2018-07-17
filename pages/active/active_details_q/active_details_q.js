@@ -85,22 +85,24 @@ Page({
             })
           })
         }, (res) => {
-
+          
         })
 
+      },(res)=>{
+        config.ajax('POST', {
+          uid: app.globalData.uid,
+          activity_id: this.data.id,
+          payStatus: 2
+        }, config.returnPay, (res) => {
+          config.mytoast('参与活动失败', (res) => {
+
+          })
+        }, (res) => {
+
+        })
       })
     }, (res) => {
-      config.ajax('POST', {
-        uid: app.globalData.uid,
-        activity_id: this.data.id,
-        payStatus: 2
-      }, config.returnPay, (res) => {
-        config.mytoast('参与活动失败', (res) => {
 
-        })
-      }, (res) => {
-
-      })
     })
   },
   show_mask: function (e) {

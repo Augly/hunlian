@@ -1,8 +1,8 @@
 <view class='container'>
-  <scroll-view scroll-y scroll-with-animation style='width:100%;height:{{myheight}}px' scroll-into-view="a{{stop}}">
+  <scroll-view scroll-y scroll-with-animation style='width:100%;height:{{myheight}}px;' scroll-into-view="a{{stop}}">
 
 
-    <view wx:for="{{list}}" id='a{{index}}'>
+    <view wx:for="{{list}}" id='a{{index}}' class='listgo'>
       <view class='talk_item' wx:if="{{item.from==1}}">
         <image src='{{item.more}}' class='person_head'></image>
         <view class='person_name'>

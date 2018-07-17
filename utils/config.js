@@ -208,7 +208,7 @@ function getData(e, name) {
 /**
  * 自定义封装支付函数
  */
-function pay(res, successData) {
+function pay(res, successData,errorData) {
   console.log(res.data.data)
   wx.requestPayment({
     "timeStamp": res.data.data.timeStamp,
@@ -227,7 +227,9 @@ function pay(res, successData) {
       })
     },
     "fail": function (res) {
-      console.log(res)
+      if (errorData){
+        errorData(res)
+      }
       wx.showToast({
         title: '取消支付成功！',
         icon: "success",

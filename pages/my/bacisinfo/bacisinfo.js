@@ -32,7 +32,8 @@ Page({
       id: 1,
       education: '小学'
     },
-    wrapConet:false
+    wrapConet:false,
+    msg:'保存'
   },
   /**
  * 上传图片
@@ -179,7 +180,17 @@ Page({
     })
   },
   readyAdd(e) {
+    if (config.getData(e, 'type') =='sports'){
+        var status='喜欢的运动'
+    } else if (config.getData(e, 'type') == 'foods'){
+      var status='喜欢的美食'
+    } else if (config.getData(e, 'type') == 'film') {
+      var status = '喜欢的电影'
+    }else{
+      var status = '个人标签'
+    }
     this.setData({
+      status:status,
       _type: config.getData(e, 'type'),
       isWrap: true
     })
@@ -430,7 +441,11 @@ Page({
       constellation:this.data.star,
       ywzn: ywzn
     }, config.userPost, (res) => {
-      console.log(res)
+      if(res.data.data.msg=='保存成功'){
+        this.setData({
+          msg:'已保存'
+        })
+      }
     }, (res) => {
 
     })

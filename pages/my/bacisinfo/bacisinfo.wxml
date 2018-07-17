@@ -351,7 +351,7 @@
   <view class='wrap' wx:if="{{isWrap}}">
     <view class='wrapContent'>
       <text class='iconfont icon-quxiao1' bindtap='hideWrap'></text>
-      <view class='wrapContentTitle'>添加兴趣爱好</view>
+      <view class='wrapContentTitle'>{{status}}</view>
       <input class='wrapIpt' placeholder-class='wrapph' placeholder='请输入您喜欢做的事情' bindinput='iptData' value='{{iptData}}'></input>
       <view class='sure' catchtap='add'>确定</view>
     </view>

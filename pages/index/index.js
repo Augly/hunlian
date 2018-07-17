@@ -167,7 +167,9 @@ Page({
           })
         }else{
           console.log(1111)
-          noCode: false
+          this.setData({
+            noCode: false
+          }) 
         }
         this.setData({
           content: res.data.data.list
