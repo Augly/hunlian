@@ -166,6 +166,7 @@ Page({
             step: res.data.data.step
           })
         }else{
+          console.log(1111)
           noCode: false
         }
         this.setData({
@@ -174,10 +175,9 @@ Page({
       } else {
         config.mytoast('暂无数据', (res) => {
           app.globalData._ishua = false
-          // this.setData({
-          //   noCode: true,
-          //   otherdetail: '没有其他了...'
-          // })
+          this.setData({
+            noCode: false,
+          })
           config.mytoast('没有其他了', (res) => {
 
           })

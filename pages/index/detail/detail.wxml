@@ -74,11 +74,10 @@
             <view class='iconfont icon-xingqu'></view>
           </view>
           <view class='basic_information_item'>
-            <view class='content_detail1'>甜食</view>
-            <view class='content_detail1'>乒乓球</view>
-            <view class='content_detail1'>哲学控</view>
-            <view class='content_detail1'>阿甘正传</view>
-            <view class='content_detail1'>肖申克的救赎</view>
+            <view class='content_detail1' wx:for="{{alldata.film}}" wx:if="{{index<2}}">{{item}}</view>
+            <view class='content_detail1' wx:for="{{alldata.foods}}" wx:if="{{index<2}}">{{item}}</view>
+            <view class='content_detail1' wx:for="{{alldata.sports}}" wx:if="{{index<2}}">{{item}}</view>
+            <view class='content_detail1' wx:for="{{alldata.label}}" wx:if="{{index<2}}">{{item}}</view>
           </view>
         </view>
         <view>

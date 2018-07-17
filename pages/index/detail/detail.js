@@ -34,12 +34,28 @@ Page({
   },
   //写邮件给Ta
   toemail(){
-    wx.navigateTo({
-      url: '/pages/messages/mail/mail?formId=' + this.data.formId,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+    var that=this
+    config.ajax('POST',{
+      uid: app.globalData.uid,
+      to_id:this.data.formId
+    }, config.letter,(res)=>{
+      console.log(res)
+      if(res.data.data.code=='40000'){
+        config.mytoast(res.data.data.msg,(res)=>{
+
+        })
+      } else if (res.data.data.code == '20000'){
+        wx.navigateTo({
+          url: '/pages/messages/mail/mail?formId=' + that.data.formId,
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }
+    },(res)=>{
+
     })
+
   },
   //基本资料
   jbzl(){

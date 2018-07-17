@@ -2,6 +2,8 @@
 const getUid = '/api/portal/index/getUid',
   //主域名
   https = "http://love.w.bronet.cn",
+  //活动支付结果
+  returnPay='/api/portal/activity/returnPay',
   //基本资料类型查看
   registerBase = '/api/user/register/registerBase',
   //我的活动
@@ -90,6 +92,8 @@ const getUid = '/api/portal/index/getUid',
   payChat = '/api/user/register/payChat',
   //删除消息
   infoDel='/api/portal/letter/infoDel',
+  //判断是否能写信
+  letter='/api/portal/letter/letter',
   //验证码验证
   registerOne = '/api/user/register/registerOne'
 /**
@@ -205,6 +209,7 @@ function getData(e, name) {
  * 自定义封装支付函数
  */
 function pay(res, successData) {
+  console.log(res.data.data)
   wx.requestPayment({
     "timeStamp": res.data.data.timeStamp,
     "nonceStr": res.data.data.nonceStr,
@@ -327,5 +332,7 @@ module.exports = {
   chat: chat,
   payChat: payChat,
   rem: rem,
-  infoDel: infoDel
+  infoDel: infoDel,
+  letter: letter,
+  returnPay: returnPay
 } 

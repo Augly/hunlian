@@ -36,13 +36,16 @@ Page({
    */
   getInfo(res, options) {
     var that=this
+    this.setData({
+      status: options.status
+    })
     config.ajax('POST', {
       uid: res.data.data.uid,
       status: options.status
     }, config.msgList, (res) => {
       console.log(res)
       if (res.data.data.code == '40005') {
-        return false
+        
       } else {
         that.setData({
           List: res.data.data.list
@@ -59,7 +62,7 @@ Page({
   tores(e){
     wx.navigateTo({
       // url: '/pages/index/basicInformation2/basicInformation2?userId='+e.currentTarget.dataset.id,
-      url: '/pages/index/detail/detail?userId=' + e.currentTarget.dataset.id + '&type=2',
+      url: '/pages/index/detail/detail?userId=' + e.currentTarget.dataset.id + '&type=2&status='+this.data.status,
       success: function (res) { },
       fail: function (res) { },
       complete: function (res) { },

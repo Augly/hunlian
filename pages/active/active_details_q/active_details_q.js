@@ -1,6 +1,6 @@
 // pages/active_details_q/active_details_q.js
-const config=require('../../../utils/config.js')
-let app=getApp()
+const config = require('../../../utils/config.js')
+let app = getApp()
 const WxParse = require('../../../utils/wxParse/wxParse.js');
 Page({
 
@@ -8,14 +8,13 @@ Page({
    * 页面的初始数据
    */
   data: {
-    showView:false,
-    mask:false,
-    wrapConet:false
+    showView: false,
+    mask: false,
+    wrapConet: false
   },
-  hideMask(){
-    console.log(1)
+  hideMask() {
     this.setData({
-      mask:false
+      mask: false
     })
   },
   /**
@@ -25,16 +24,16 @@ Page({
     wx.showLoading({
       title: '数据加载中...',
       mask: true,
-      success: function(res) {},
-      fail: function(res) {},
-      complete: function(res) {},
+      success: function (res) { },
+      fail: function (res) { },
+      complete: function (res) { },
     })
     console.log(options.id)
-    if (options.id == null || options.id==undefined){
+    if (options.id == null || options.id == undefined) {
       config.mytoast('未知进入途径')
-    }else{
+    } else {
       this.setData({
-        id:options.id
+        id: options.id
       })
       config.getuid((res) => {
         if (res.data.data.code == '20000') {
@@ -49,50 +48,70 @@ Page({
   /**
    * 获取详情参数
    */
-  getdetail(res, options){
+  getdetail(res, options) {
     config.ajax('POST', {
       uid: res.data.data.uid,
       activity_id: options.id
     }, config.activityDetails, (res) => {
       console.log(res)
-        this.setData({
-          alldata:res.data.data
-        })
-        WxParse.wxParse('article', 'html', res.data.data.content, this, 0);
-        wx.hideLoading()
-        this.setData({
-          wrapConet: true
-        })
+      this.setData({
+        alldata: res.data.data
+      })
+      WxParse.wxParse('article', 'html', res.data.data.content, this, 0);
+      wx.hideLoading()
+      this.setData({
+        wrapConet: true
+      })
     }, (res) => {
 
     })
   },
-  pay(){
-    config.ajax('POST',{
+  pay() {
+    config.ajax('POST', {
       uid: app.globalData.uid,
-      activity_id:this.data.id,
+      activity_id: this.data.id,
       amount: this.data.alldata.amount
-    }, config.activityPay,(res)=>{
-      config.pay(res,(res)=>{
-          config.mytoast('活动参与成功',(res)=>{
+    }, config.activityPay, (res) => {
+      config.pay(res, (res) => {
+        console.log(res)
+        config.ajax('POST', {
+          uid: app.globalData.uid,
+          activity_id: this.data.id,
+          payStatus: 1
+        }, config.returnPay, (res) => {
+          config.mytoast('活动参与成功', (res) => {
             wx.navigateBack({
               delta: 1,
             })
           })
-      })
-    },(res)=>{
+        }, (res) => {
 
+        })
+
+      })
+    }, (res) => {
+      config.ajax('POST', {
+        uid: app.globalData.uid,
+        activity_id: this.data.id,
+        payStatus: 2
+      }, config.returnPay, (res) => {
+        config.mytoast('参与活动失败', (res) => {
+
+        })
+      }, (res) => {
+
+      })
     })
   },
-  show_mask:function(e){
+  show_mask: function (e) {
     var that = this;
 
     // this.pay()
     that.setData({
-      mask:true
+      mask: true
     })
   },
-  hide_mask:function(e){
+  hide_mask: function (e) {
     var that = this;
     that.setData({
       showView: false,
@@ -102,48 +121,48 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-  
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+
   }
 })
