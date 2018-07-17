@@ -159,7 +159,15 @@ Page({
       uid: res.data.data.uid
     }, config.index, (res) => {
       if (res.data.data.code == '20000') {
-        console.log(res.data.data.list)
+        console.log(res)
+        if (res.data.data.step == '5' || res.data.data.step == '4'){
+          this.setData({
+            noCode:true,
+            step: res.data.data.step
+          })
+        }else{
+          noCode: false
+        }
         this.setData({
           content: res.data.data.list
         })
@@ -259,6 +267,7 @@ Page({
   onScale: function (e) {
   },
   onShow:function(){
+   
     wx.showLoading({
       title: '数据加载中...',
       mask: true,

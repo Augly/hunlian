@@ -95,7 +95,8 @@
   <view class='member'>
     <text class='iconfont icon-quxiao1' bindtap='hideMask'></text>
     <view class='mtitle'>畅聊会员充值</view>
-    <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldata}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
+    <view class='mcontent'>
+          <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldata}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
       <view class='selectL'>
         <view class='seLtitle'>{{item.title}}
         </view>
@@ -106,6 +107,8 @@
         <text class='selectR_T'>{{item.price}}</text>
       </view>
     </view>
+    </view>
+
     <view class='sumbit' bindtap='pay'>
       立即充值
     </view>

@@ -1,5 +1,5 @@
 <view wx:if="{{wrapConet}}">
-  <view class='container' wx:if="{{list.length>0}}">
+  <view class='container' wx:if="{{List.length>0}}">
     <view class='item'  wx:for="{{List}}" bindtap='tores' data-id='{{item.uid}}'>
       <text>{{item.nickname}}喜欢了你</text>
       <image src='{{item.more}}' class='person_head'></image>

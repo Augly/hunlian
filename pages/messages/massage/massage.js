@@ -35,15 +35,16 @@ Page({
    * 获取基本信息类型
    */
   getInfo(res, options) {
+    var that=this
     config.ajax('POST', {
       uid: res.data.data.uid,
       status: options.status
     }, config.msgList, (res) => {
       console.log(res)
       if (res.data.data.code == '40005') {
-
+        return false
       } else {
-        this.setData({
+        that.setData({
           List: res.data.data.list
         })
       }

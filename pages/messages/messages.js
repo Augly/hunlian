@@ -45,6 +45,13 @@ Page({
           noCode: true,
           step: res.data.data.step
         })
+      } else {
+        var allNum = 0;
+        allNum = res.data.data.message_num
+        this.setData({
+          alldata: res.data.data,
+          allNum: allNum
+        })
       }
       wx.hideLoading()
       this.setData({
@@ -112,6 +119,7 @@ Page({
           otherNum += res.data.data.list[i].num
         }
         otherNum = otherNum + res.data.data.message_num
+
         this.setData({
           otheralldata: res.data.data,
           otherlist: res.data.data.list,
@@ -121,6 +129,13 @@ Page({
         this.setData({
           noCode: true,
           step: res.data.data.step
+        })
+      }else{
+        var otherNum = 0;
+        otherNum =res.data.data.message_num
+        this.setData({
+          otheralldata: res.data.data,
+          otherNum: otherNum
         })
       }
     }, (res) => {
