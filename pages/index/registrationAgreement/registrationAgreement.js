@@ -82,7 +82,7 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return app.globalData.shareInfo
   },
   /**
    * 跳到登录注册页

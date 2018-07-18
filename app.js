@@ -33,6 +33,11 @@ App({
   globalData: {
     userInfo: null,
     uid:null,
-    _ishua:true
+    _ishua:true,
+    shareInfo: {
+      title: '成就更好的自己·TA在For you等您',
+      path: '/pages/index/index',
+      imageUrl: '/img/share.png'
+    }
   }
 })

@@ -18,19 +18,26 @@ Page({
     this.setData({
       formId: options.userId
     })
-    config.ajax('POST',{
-      uid: app.globalData.uid,
-      relation_id: options.userId,
-      _type: options.type,
-      status: options.status
-    }, config.MemberDetail,(res)=>{
-      console.log(res)
-      this.setData({
-        alldata:res.data.data
-      })
-    },(res)=>{
+    config.getuid((res) => {
+      if (res.data.data.code == '20000') {
+        app.globalData.uid = res.data.data.uid
+        config.ajax('POST', {
+          uid: app.globalData.uid,
+          relation_id: options.userId,
+          _type: options.type,
+          status: options.status
+        }, config.MemberDetail, (res) => {
+          console.log(res)
+          this.setData({
+            alldata: res.data.data
+          })
+        }, (res) => {
 
-    })
+        })
+      } else {
+        config.mytoast('服务器错误,请稍后再试', (res) => { })
+      }
+    }, (res) => { })
   },
   //写邮件给Ta
   toemail(){
@@ -128,6 +135,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-  
+    return app.globalData.shareInfo
   }
 })
