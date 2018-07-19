@@ -41,5 +41,5 @@
   </view>
 </view>
   <view class='bottomGroup'>
-    <view class='next_btn' bindtap='submit'>立即支付</view>
+    <view class='next_btn' bindtap='submit'>{{_type=='error'?'立即上传':'立即支付'}}</view>
   </view>

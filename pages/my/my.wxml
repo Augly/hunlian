@@ -3,7 +3,7 @@
 
   <view class="myimg_box">
     <view class="img_box">
-      <image src="{{info.headimgurl}}"></image>
+      <image src="{{info.headimgurl}}" mode='widthFix'></image>
     </view>
     <view class="myname">{{info.nickname}}</view>
     <view>认证会员</view>

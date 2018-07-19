@@ -13,7 +13,7 @@
     <view class="info_item">
       <view class="info_box">
         <view class="info_name">头像</view>
-        <image class='user_log' src='{{myimg}}' bindtap='upload'  lazy-load>
+        <image class='user_log' src='{{myimg}}' bindtap='upload'   lazy-load>
 
         </image>
       </view>
