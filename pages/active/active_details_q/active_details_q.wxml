@@ -16,7 +16,7 @@
               {{man}}人
           </text>
           </view>
-          <image class='heart' src='/imgs/heart@2x.png'></image>
+          <!-- <image class='heart' src='/imgs/heart@2x.png'></image> -->
           <view class='personl'>
             <text class='person'>
             {{woman}}人

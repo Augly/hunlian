@@ -1,26 +1,28 @@
-<view wx:if="{{wrapConet}}">
+<view wx:if="{{delect_time==0}}">
+  <view wx:if="{{wrapConet}}">
 
 
-<view class='container' wx:if="{{list.length>0}}">
-  <!--照片  -->
-  <view class='item_wrap' wx:for="{{list}}" >
-    <view class='active_item'>
-      <view class='active_mask' bindtap='todetail' data-id='{{item.id}}'>
-        <text class='mask_text'>{{item.theme}}</text>
-        <text class='mask_subtext'>{{item.title}}</text>
+    <view class='container' wx:if="{{list.length>0}}">
+      <!--照片  -->
+      <view class='item_wrap' wx:for="{{list}}">
+        <view class='active_item'>
+          <view class='active_mask' bindtap='todetail' data-id='{{item.id}}'>
+            <text class='mask_text'>{{item.theme}}</text>
+            <text class='mask_subtext'>{{item.title}}</text>
+          </view>
+          <image src='{{item.more}}' class='pic_item'></image>
+          <view class='address'>
+            <text>地址：{{item.address}}</text>
+            <view catchtap='toMap' data-index='{{index}}'>
+              <icon class='iconfont icon-ditu ditu'></icon>查看地图</view>
+          </view>
+        </view>
       </view>
-      <image src='{{item.more}}' class='pic_item'></image>
-      <view class='address'>
-      <text>地址：{{item.address}}</text>
-      <view catchtap='toMap' data-index='{{index}}'><icon class='iconfont icon-ditu ditu'></icon>查看地图</view>
-      </view>
+      <!--照片  -->
     </view>
+    <view class='nodata' wx:else>
+      暂无数据
+    </view>
+    <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
   </view>
-   <!--照片  -->
-</view>
-<view class='nodata' wx:else>
-  暂无数据
-</view>
-<myToast noCode="{{noCode}}" step="{{step}}"></myToast>
-
 </view>

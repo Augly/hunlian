@@ -51,7 +51,8 @@ Page({
         allNum = res.data.data.message_num
         this.setData({
           alldata: res.data.data,
-          allNum: allNum
+          allNum: allNum,
+          noCode: false,
         })
       }
       wx.hideLoading()
@@ -131,12 +132,16 @@ Page({
           noCode: true,
           step: res.data.data.step
         })
+      } else if (res.data.data.code == '40005'){
+        this.setData({
+          noCode: false,
+        })
       }else{
         var otherNum = 0;
         otherNum =res.data.data.message_num
         this.setData({
           otheralldata: res.data.data,
-          otherNum: otherNum
+          otherNum: otherNum,
         })
       }
     }, (res) => {
@@ -177,6 +182,14 @@ Page({
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid
+        this.setData({
+          delect_time: res.data.data.delete_time
+        })
+        if (res.data.data.delete_time != 0) {
+          config.mytoast('您已被拉黑', (res) => {
+
+          })
+        }
         this.getdata(res)
         this.getotherdata(res)
       } else {

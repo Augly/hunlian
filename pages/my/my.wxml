@@ -1,10 +1,11 @@
+<view wx:if="{{delect_time==0}}">
 <view wx:if="{{wrapConet}}">
   <view class="myimg_box">
     <view class="img_box">
       <image src="{{info.headimgurl}}" mode='widthFix'></image>
     </view>
     <view class="myname">{{info.nickname}}</view>
-    <view wx:if="{{info.chat_status==1}}">认证会员</view>
+    <view wx:if="{{info.check_status==1}}">认证会员</view>
     <view wx:else>未认证</view>
   </view>
   <view class="myitem" wx:if="{{info.title==''||info.title==null||info.title=='null'}}">
@@ -112,4 +113,5 @@
       立即充值
     </view>
   </view>
+</view>
 </view>

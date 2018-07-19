@@ -1,4 +1,5 @@
 <!--pages/messages/messages.wxml-->
+<view wx:if="{{delect_time==0}}">
 <view wx:if="{{wrapConet}}">
 <view class='selectGroup'>
   <view class='selectView' bindtap='select' data-id='1'>
@@ -85,4 +86,5 @@
 </view>
 
 <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
+</view>
 </view>

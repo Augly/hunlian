@@ -59,8 +59,13 @@ Page({
       activity_id: id
     }, config.activityDetails, (res) => {
       console.log(res)
-      var manColor=res.data.data.man/(res.data.data.man+res.data.data.woman)*100
-      var womanColor = res.data.data.woman/ (res.data.data.man + res.data.data.woman) * 100 
+      if (res.data.data.activity_id != 0) {
+        this.setData({
+          join: false
+        })
+      }
+      var manColor = res.data.data.man / (res.data.data.man + res.data.data.woman) * 100
+      var womanColor = res.data.data.woman / (res.data.data.man + res.data.data.woman) * 100
       this.setData({
         alldata: res.data.data,
         manColor: manColor,
@@ -86,7 +91,7 @@ Page({
     }, config.activityPay, (res) => {
       console.log(res)
       if (res.data.data.code == '40000') {
-        config.mytoast(res.data.data.msg,(res)=>{
+        config.mytoast(res.data.data.msg, (res) => {
           wx.navigateBack({
             delta: 1,
           })

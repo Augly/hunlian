@@ -1,4 +1,5 @@
 <!--Components/myToast.wxml-->
+
 <view class='maskCode' wx:if="{{noCode}}">
   <view class='toast_centerCode'>
     <!-- <text class='iconfont icon-quxiao1' bindtap='hideMask'></text> -->

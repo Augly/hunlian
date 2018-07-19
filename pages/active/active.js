@@ -74,6 +74,14 @@ Page({
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid
+        this.setData({
+          delect_time: res.data.data.delete_time
+        })
+        if (res.data.data.delete_time != 0) {
+          config.mytoast('您已被拉黑', (res) => {
+
+          })
+        }
         this.getData(res)
       } else {
         config.mytoast('服务器错误,请稍后再试', (res) => { })
