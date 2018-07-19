@@ -29,40 +29,46 @@ Page({
       fail: function (res) { },
       complete: function (res) { },
     })
-    console.log(options.id)
+    console.log(options)
     if (options.id == null || options.id == undefined) {
-      config.mytoast('未知进入途径')
       this.setData({
         id: options.mid,
-        join:false
+        join: false
       })
     } else {
       this.setData({
         id: options.id,
         join: true
       })
-      config.getuid((res) => {
-        if (res.data.data.code == '20000') {
-          app.globalData.uid = res.data.data.uid
-          this.getdetail(res, options)
-        } else {
-          config.mytoast('服务器错误,请稍后再试', (res) => { })
-        }
-      }, (res) => { })
     }
+    config.getuid((res) => {
+      if (res.data.data.code == '20000') {
+        app.globalData.uid = res.data.data.uid
+        this.getdetail(res, this.data.id)
+      } else {
+        config.mytoast('服务器错误,请稍后再试', (res) => { })
+      }
+    }, (res) => { })
   },
   /**
    * 获取详情参数
    */
-  getdetail(res, options) {
+  getdetail(res, id) {
     config.ajax('POST', {
       uid: res.data.data.uid,
-      activity_id: options.id
+      activity_id: id
     }, config.activityDetails, (res) => {
       console.log(res)
+      var manColor=res.data.data.man/(res.data.data.man+res.data.data.woman)*100
+      var womanColor = res.data.data.woman/ (res.data.data.man + res.data.data.woman) * 100 
       this.setData({
-        alldata: res.data.data
+        alldata: res.data.data,
+        manColor: manColor,
+        man: res.data.data.man,
+        woman: res.data.data.woman,
+        womanColor: womanColor
       })
+
       WxParse.wxParse('article', 'html', res.data.data.content, this, 0);
       wx.hideLoading()
       this.setData({
@@ -78,35 +84,43 @@ Page({
       activity_id: this.data.id,
       amount: this.data.alldata.amount
     }, config.activityPay, (res) => {
-      config.pay(res, (res) => {
-        console.log(res)
-        config.ajax('POST', {
-          uid: app.globalData.uid,
-          activity_id: this.data.id,
-          payStatus: 1
-        }, config.returnPay, (res) => {
-          config.mytoast('活动参与成功', (res) => {
-            wx.navigateBack({
-              delta: 1,
+      if (res.data.data.code == '40000') {
+        config.mytoast(res.data.data.msg,(res)=>{
+          wx.navigateBack({
+            delta: 1,
+          })
+        })
+      } else if (res.data.data.code == '20000') {
+        config.pay(res, (res) => {
+          console.log(res)
+          config.ajax('POST', {
+            uid: app.globalData.uid,
+            activity_id: this.data.id,
+            payStatus: 1
+          }, config.returnPay, (res) => {
+            config.mytoast('活动参与成功', (res) => {
+              wx.navigateBack({
+                delta: 1,
+              })
             })
-          })
-        }, (res) => {
-          
-        })
-
-      },(res)=>{
-        config.ajax('POST', {
-          uid: app.globalData.uid,
-          activity_id: this.data.id,
-          payStatus: 2
-        }, config.returnPay, (res) => {
-          config.mytoast('参与活动失败', (res) => {
+          }, (res) => {
 
           })
         }, (res) => {
+          config.ajax('POST', {
+            uid: app.globalData.uid,
+            activity_id: this.data.id,
+            payStatus: 2
+          }, config.returnPay, (res) => {
+            config.mytoast('参与活动失败', (res) => {
 
+            })
+          }, (res) => {
+
+          })
         })
-      })
+      }
+      // console.log(res)
     }, (res) => {
 
     })

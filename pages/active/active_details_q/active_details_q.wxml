@@ -1,37 +1,64 @@
 <view wx:if="{{wrapConet}}">
-<import src="../../../utils/wxParse/wxParse.wxml"/>
-<view class='container'>
-  <view class='banner_wrap'>
-    <image src='{{alldata.more}}' class='banner'></image>
-  </view>
-  <view class='Proportion'>
-    
-  </view>
-  <view class='active_details'>
-    <text class='active_tit'>活动详情</text>
-    <view class='active_text'> <template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
+  <import src="../../../utils/wxParse/wxParse.wxml" />
+  <view class='container'>
+    <view class='banner_wrap'>
+      <image src='{{alldata.more}}' class='banner'></image>
+    </view>
+    <view class='Proportion'>
+      <view class='Proportion_title'>男女比例</view>
+      <view class='Proportion_content'>
+        <view class='Proportion_main'>
+          <view class='personl'>
+            <image class='man' src='/imgs/man@2x.png'>
+
+            </image>
+            <text class='person' style='margin-left:8rpx;'>
+              {{man}}人
+          </text>
+          </view>
+          <image class='heart' src='/imgs/heart@2x.png'></image>
+          <view class='personl'>
+            <text class='person'>
+            {{woman}}人
+          </text>
+            <image class='man' src='/imgs/woman@2x.png' style='margin-left:8rpx;'>
+
+            </image>
+
+          </view>
+        </view>
+        <view class='Proportion_content_bottom'>
+          <view class='manColor' style='width:{{manColor}}%'></view>
+          <view class='womanColor' style='width:{{womanColor}}%'></view>
+        </view>
+      </view>
+    </view>
+    <view class='active_details'>
+      <text class='active_tit'>活动详情</text>
+      <view class='active_text'>
+        <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+      </view>
+    </view>
+    <!--btn  -->
+    <view class='btn' bindtap='show_mask' wx:if="{{join}}">
+      立即报名
+    </view>
+    <view class='btn' wx:else>
+      已报名
+    </view>
+    <!--报名弹层  -->
+    <view class='mask' wx:if="{{mask}}">
+      <view class='popup'>
+        <text class='popup_tit'>报名费用</text>
+        <text class='popup_text'>本次报名活动费{{alldata.amount}}元</text>
+        <view class='popup_btn' bindtap='pay'>立即支付</view>
+        <icon class='iconfont icon-quxiao' bindtap='hideMask'></icon>
+      </view>
     </view>
   </view>
-  <!--btn  -->
-  <view class='btn' bindtap='show_mask' wx:if="{{join}}">
-    立即报名
-  </view>
-  <view class='btn'  wx:else>
-    已报名
-  </view>
-  <!--报名弹层  -->
-   <view class='mask' wx:if="{{mask}}"> 
-    <view class='popup'>
-      <text class='popup_tit'>报名费用</text>
-      <text class='popup_text'>本次报名活动费{{alldata.amount}}元</text>
-      <view class='popup_btn'  bindtap='pay'>立即支付</view>
-      <icon class='iconfont icon-quxiao'  bindtap='hideMask'></icon>
-    </view>
-  </view>
-</view>
 
 
-<!-- <view class='mask' wx:if="{{mask}}">
+  <!-- <view class='mask' wx:if="{{mask}}">
   <view class='toast_center'>
     <view class='toat_main'>
       {{otherdetail}}

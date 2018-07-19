@@ -435,12 +435,14 @@ Page({
       birth: this.data.mydata,
       income: this.data.money.id,
       education: this.data.education.id,
-      marriage_time: this.data.marriage.marriage_time,
+      marriage_time: this.data.marriage.id,
       marital_status: marital_status,
       weight: this.data.weight,
       height: this.data.height,
       constellation:this.data.star,
-      ywzn: ywzn
+      ywzn: ywzn,
+      profession: this.data.getzw,
+      nationality: this.data.iptmz,
     }, config.userPost, (res) => {
       if(res.data.data.msg=='保存成功'){
         this.setData({
@@ -651,6 +653,8 @@ Page({
         nickname: res.data.data.nick_name,
         sexIndex: this.data.sexIndex[res.data.data.sex],
         weight: res.data.data.weight,
+        getzw: res.data.data.profession,
+        iptmz: res.data.data.nationality,
         workplace: res.data.data.workplace,
         money: res.data.data.array_income[0],
         moneyone: res.data.data.array_income[0],

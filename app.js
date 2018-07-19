@@ -37,7 +37,7 @@ App({
     shareInfo: {
       title: '成就更好的自己·TA在For you等您',
       path: '/pages/index/index',
-      imageUrl: '/img/share.png'
+      imageUrl: '/imgs/share.png'
     }
   }
 })

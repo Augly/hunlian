@@ -1,22 +1,19 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/index/toloading/toloading",
     "pages/index/loginRegister/loginRegister",
-    "pages/index/index",
-    
     "pages/my/bacisinfo/bacisinfo",
     "pages/text/text",
     "pages/index/detail/detail",
     "pages/index/chooseStandard/chooseStandard",
     "pages/index/hobbies/hobbies",
     "pages/index/basicInformation2/basicInformation2",
-    
     "pages/Appointment/near_acitve_q/near_acitve_q",
     "pages/index/basicInformation/basicInformation",
     "pages/index/certificationInformation/certificationInformation",
     "pages/index/certification/certification",
     "pages/index/registrationAgreement/registrationAgreement",
-    
     "pages/index/Pay_certification/Pay_certification",
     "pages/active/active",
     "pages/active/active_details_q/active_details_q",

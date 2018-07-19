@@ -129,7 +129,7 @@
       <view class="info_box ">
         <view class="info_name">民族</view>
         <view>
-          <input placeholder='请输入民族' placeholder-class='iptplh' bindinput='iptmz' value="{{iptmz}}"></input>
+          <input placeholder='请输入民族' placeholder-class='iptplh' bindinput='iptmz' value="{{iptmz==null?'':iptmz}}"></input>
         </view>
         <!-- <view class="info_icon">
         <text class="iconfont icon-arrow"></text>
@@ -149,7 +149,7 @@
       <view class="info_box ">
         <view class="info_name">职业</view>
         <view>
-          <input placeholder='请输入职业' placeholder-class='iptplh' bindinput='getzw' value="{{getzw}}"></input>
+          <input placeholder='请输入职业' placeholder-class='iptplh' bindinput='getzw' value="{{getzw==null?'':getzw}}"></input>
         </view>
         <view class="info_icon">
           <text class="iconfont "></text>
