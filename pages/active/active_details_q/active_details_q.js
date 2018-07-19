@@ -84,6 +84,7 @@ Page({
       activity_id: this.data.id,
       amount: this.data.alldata.amount
     }, config.activityPay, (res) => {
+      console.log(res)
       if (res.data.data.code == '40000') {
         config.mytoast(res.data.data.msg,(res)=>{
           wx.navigateBack({
@@ -91,7 +92,7 @@ Page({
           })
         })
       } else if (res.data.data.code == '20000') {
-        config.pay(res, (res) => {
+        config.pay(res.data, (res) => {
           console.log(res)
           config.ajax('POST', {
             uid: app.globalData.uid,
