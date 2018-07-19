@@ -279,7 +279,7 @@
     </view>
     <cover-view class='saveGroup rgb245'>
       <cover-view class="info_btn" bindtap="savemyLovePost">
-        保存
+        {{msgone}}
       </cover-view>
     </cover-view>
   </view>

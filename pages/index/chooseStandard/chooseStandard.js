@@ -1,4 +1,6 @@
 // pages/index/chooseStandard/chooseStandard.js
+const config=require('../../../utils/config.js');
+let app=getApp()
 Page({
 
   /**
@@ -12,7 +14,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    config.ajax('POST', {
+      uid: app.globalData.uid,
+      relation_id:options.id
+    }, config.spouse,(res)=>{
+      console.log(res)
+      this.setData({
+        alldata:res.data.data
+      })
+    },(res)=>{
+
+    })
   },
 
   /**
@@ -26,7 +38,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+
   },
 
   /**

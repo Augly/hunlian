@@ -94,6 +94,8 @@ const getUid = '/api/portal/index/getUid',
   infoDel='/api/portal/letter/infoDel',
   //判断是否能写信
   letter='/api/portal/letter/letter',
+  //择偶标准
+  spouse='/api/portal/index/spouse',
   //验证码验证
   registerOne = '/api/user/register/registerOne'
 /**
@@ -336,5 +338,6 @@ module.exports = {
   rem: rem,
   infoDel: infoDel,
   letter: letter,
-  returnPay: returnPay
+  returnPay: returnPay,
+  spouse: spouse
 } 

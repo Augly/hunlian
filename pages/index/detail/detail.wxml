@@ -22,7 +22,7 @@
     </view>
     <view class='item_list certification'>
       <view class='title'>实名认证</view>
-      <view class='real-name'>张**</view>
+      <view class='real-name'>{{alldata.name==null?'未认证':alldata.name[0]+'**'}}</view>
     </view>
     <view class='item_list'>
       <view class='title'>基本信息</view>

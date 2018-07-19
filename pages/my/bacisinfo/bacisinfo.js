@@ -33,7 +33,8 @@ Page({
       education: '小学'
     },
     wrapConet:false,
-    msg:'保存'
+    msg:'保存',
+    msgone:'保存'
   },
   /**
  * 上传图片
@@ -549,6 +550,11 @@ Page({
       ywzn: ywzn
     }, config.myLovePost, (res) => {
       console.log(res)
+      if(res.data.data.code=='20000'){
+        this.setData({
+          msgone:'已保存'
+        })
+      }
     }, (res) => {
 
     })
@@ -623,7 +629,19 @@ Page({
       if (res.data.data.code == '40005') {
 
       } else {
-
+        if (res.data.data.income==2){
+          var all=0
+        }
+        this.setData({
+          myage: res.data.data.age,
+          myheight: res.data.data.height,
+          moneyone: this.data.array_income[all],
+          zo_education: this.data.array_education[res.data.data.education],
+          merryValuetwo: this.data.merry[res.data.data.marital_status],
+          myweighttwo: res.data.data.weight,
+          staript: res.data.data.constellation,
+          isHasValuetwo: this.data.isHas[res.data.data.ywzn]
+        })
       }
     }, (res) => {
 
