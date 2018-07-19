@@ -32,7 +32,8 @@ Page({
       console.log(res)
       if (res.data.data.code == '20000') {
         this.setData({
-          list: res.data.data.list
+          list: res.data.data.list,
+          noCode: false,
         })
       } else if (res.data.data.code == '40001') {
         this.setData({

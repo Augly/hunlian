@@ -38,7 +38,8 @@ Page({
         this.setData({
           alldata: res.data.data,
           list: res.data.data.list,
-          allNum:allNum
+          allNum:allNum,
+          noCode: false,
         })
       } else if (res.data.data.code == '40001') {
         this.setData({
