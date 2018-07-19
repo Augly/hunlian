@@ -10,7 +10,8 @@ Page({
   data: {
     showView: false,
     mask: false,
-    wrapConet: false
+    wrapConet: false,
+    join: true
   },
   hideMask() {
     this.setData({
@@ -31,9 +32,14 @@ Page({
     console.log(options.id)
     if (options.id == null || options.id == undefined) {
       config.mytoast('未知进入途径')
+      this.setData({
+        id: options.mid,
+        join:false
+      })
     } else {
       this.setData({
-        id: options.id
+        id: options.id,
+        join: true
       })
       config.getuid((res) => {
         if (res.data.data.code == '20000') {

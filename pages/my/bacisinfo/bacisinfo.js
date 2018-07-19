@@ -165,7 +165,8 @@ Page({
       if (res.data.data.code == '20000') {
         config.mytoast('添加成功', (res) => {
           this.setData({
-            isWrap: false
+            isWrap: false,
+            iptData:''
           })
           this.gethobby(app.globalData.uid)
         })
@@ -647,7 +648,7 @@ Page({
         star: res.data.data.constellation,
         height: res.data.data.height,
         name: res.data.data.name,
-        nickname: res.data.data.nickname,
+        nickname: res.data.data.nick_name,
         sexIndex: this.data.sexIndex[res.data.data.sex],
         weight: res.data.data.weight,
         workplace: res.data.data.workplace,

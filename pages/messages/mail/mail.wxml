@@ -38,6 +38,6 @@
 <!--btn  -->
 <view class='btn_wrpa'>
   <view class='btn' bindtap='mask'>
-    回复
+    写信
   </view>
 </view>

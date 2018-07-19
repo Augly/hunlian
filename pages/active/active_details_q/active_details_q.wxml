@@ -4,14 +4,20 @@
   <view class='banner_wrap'>
     <image src='{{alldata.more}}' class='banner'></image>
   </view>
+  <view class='Proportion'>
+    
+  </view>
   <view class='active_details'>
     <text class='active_tit'>活动详情</text>
     <view class='active_text'> <template is="wxParse" data="{{wxParseData:article.nodes}}"/> 
     </view>
   </view>
   <!--btn  -->
-  <view class='btn' bindtap='show_mask'>
+  <view class='btn' bindtap='show_mask' wx:if="{{join}}">
     立即报名
+  </view>
+  <view class='btn'  wx:else>
+    已报名
   </view>
   <!--报名弹层  -->
    <view class='mask' wx:if="{{mask}}"> 

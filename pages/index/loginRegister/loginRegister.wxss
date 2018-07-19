@@ -2,8 +2,18 @@
 
 page {
   background-size: 100% 100%;
-  background-image: url('http://wxq.test.bronet.cn/images/bga@2x.png');
+  background-image: url('http://wxq.test.bronet.cn/images/zhucebg.png');
   background-repeat: no-repeat;
+}
+.mylogo{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius:50%;
+  position: absolute;
+  top: 80rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 .input_box {
@@ -53,14 +63,14 @@ page {
 }
 
 .next_btn {
-  width: 91%;
-  height: 88rpx;
-  background: linear-gradient(#c98c1c, #e7a42a);
-  border-radius: 44rpx;
+  width: 536rpx;
+  height: 100rpx;
+  background: RGBA(174, 156, 128, 1);
+  border-radius: 50rpx;
   font-size: 36rpx;
   color: #fff;
   text-align: center;
-  line-height: 88rpx;
+  line-height: 100rpx;
   margin-top: 43rpx;
 }
 

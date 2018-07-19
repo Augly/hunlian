@@ -55,7 +55,6 @@ Component({
           url: '/pages/index/basicInformation/basicInformation',
         })
       } else if (this.data.step == '5') {
-        console.log(this.data.step)
         wx.navigateTo({
           url: '/pages/my/renzheng/renzheng',
         })

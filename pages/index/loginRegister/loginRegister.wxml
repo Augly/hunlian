@@ -1,5 +1,8 @@
 <!--pages/index/loginRegister.wxml-->
 <view class='container'>
+<image class='mylogo' src='http://wxq.test.bronet.cn/images/logo.png'>
+
+</image>
   <view class='input_box'>
     <view class='phone_box'>
       <view class='iconfont icon-shouji'></view>

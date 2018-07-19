@@ -1,5 +1,5 @@
 <view wx:if="{{list.length>0}}">
-  <view class='item' wx:for="{{list}}">
+  <view class='item' wx:for="{{list}}" bindtap='todetail' data-id='{{item.id}}'>
     <view item_left>
       <view class="item_img">
         <image src="{{item.more}}"></image>

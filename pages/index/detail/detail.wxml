@@ -40,7 +40,7 @@
             <view class='content_detail1'>{{alldata.ywzn==0?'有子女':'无子女'}}</view>
           </view>
         </view>
-        <view>
+        <view style='margin-left:auto;'>
           <view class='iconfont icon-diandiandianshu' bindtap='jbzl'></view>
         </view>
       </view>
@@ -61,7 +61,7 @@
             <view class='content_detail1'>{{alldata.constellation2==null?'未填写':alldata.constellation2}}</view>
           </view>
         </view>
-        <view>
+        <view style='margin-left: auto;'>
           <view class='iconfont icon-diandiandianshu' bindtap='zobz'></view>
         </view>
       </view>
@@ -80,7 +80,7 @@
             <view class='content_detail1' wx:for="{{alldata.label}}" wx:if="{{index<2}}">{{item}}</view>
           </view>
         </view>
-        <view>
+        <view style='margin-left: auto;'>
           <view class='iconfont icon-diandiandianshu' bindtap='xqah'></view>
         </view>
       </view>

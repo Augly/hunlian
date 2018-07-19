@@ -21,7 +21,7 @@
       <image src='http://wxq.test.bronet.cn/images/renzheng_no.png' class='renzheng_type'></image>
     </view>
     <view class='renzhang_title'>{{}}</view>
-    <view class='renzheng_txt'>请提交您的真实有效信息</view>
+    <view class='renzheng_txt'>{{alldata.list==''?'请填写正确的身份信息':alldata.list}}</view>
 
     <view class='reset' bindtap='torenzheng'>
       重新认证

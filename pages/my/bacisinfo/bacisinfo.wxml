@@ -13,7 +13,7 @@
     <view class="info_item">
       <view class="info_box">
         <view class="info_name">头像</view>
-        <image class='user_log' src='{{myimg}}' bindtap='upload' mode='widthFix' lazy-load>
+        <image class='user_log' src='{{myimg}}' bindtap='upload'  lazy-load>
 
         </image>
       </view>
@@ -24,9 +24,7 @@
         </view>
       </view>
     </view>
-
     <view class="info_item">
-
       <view class="info_box ">
         <view class="info_name">姓名</view>
         <view>
@@ -180,7 +178,7 @@
     </view>
     <cover-view class='saveGroup' style='backgroud-color:RGBA(255, 255, 255, 1);'>
       <cover-view class="info_btn" bindtap='adduserPost'>
-        保存
+        {{msg}}
       </cover-view>
     </cover-view>
 

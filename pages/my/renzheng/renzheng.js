@@ -37,7 +37,8 @@ Page({
       if (res.data.data.code == '20000') {
         this.setData({
           mask:true,
-          msg: res.data.data.msg
+          msg: res.data.data.msg,
+          alldata:res.data.data
         })
         // WxParse.wxParse('article', 'html', res.data.data.content, this, 0);
       } else {

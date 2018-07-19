@@ -63,6 +63,11 @@ Page({
       this.setData({
         note:res.data.data.msg
       })
+      setTimeout((res)=>{
+        this.setData({
+          note: false
+        })
+      },1500)
     }, (res) => {
 
     })

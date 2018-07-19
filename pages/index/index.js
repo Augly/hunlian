@@ -26,38 +26,57 @@ Page({
   tap: function (e) {
     var that = this;
     var distance = that.data.distance;
-
-    if ((distance > (winWidth + winWidth / 4)) || (distance < (winWidth - winWidth / 4))) {
+    if ((distance > (winWidth + winWidth / 2)) || (distance < (winWidth - winWidth / 2))) {
       var content = that.data.content;
       if (app.globalData._ishua) {
-        if (distance > (winWidth + winWidth / 4)) {
+        if (distance > (winWidth + winWidth / 2)) {
           var lick = true
           this.getselectR(config.getData(e, 'id'))  //右滑
+          that.setData({
+            distance: winWidth
+          })
         }
-        if (distance < (winWidth - winWidth / 4)) {
+        if (distance < (winWidth - winWidth / 2)) {
           var lick = false
           this.getselectL(config.getData(e, 'id'))  //左滑
+          that.setData({
+            distance: winWidth
+          })
         }
         content.splice(e.currentTarget.dataset.index, 1);
         that.setData({
           x: winWidth,
           y: winHeight,
           content: content,
+          distance: winWidth,
           lick: lick
         });
       } else {
+        var res = wx.getSystemInfoSync();
+        winWidth = res.windowWidth;
+        winHeight = res.windowHeight;
         that.setData({
           x: winWidth,
           y: winHeight,
+          distance: winWidth,
           noCode: true
         });
       }
     } else {
+      var res = wx.getSystemInfoSync();
+      winWidth = res.windowWidth;
+      winHeight = res.windowHeight;
       that.setData({
         x: winWidth,
         y: winHeight,
+        distance: winWidth,
         lick: null
       })
+      // that.setData({
+      //   x: winWidth,
+      //   y: winHeight,
+      //   lick: null
+      // })
     }
   },
   lookmore(e) {
@@ -215,7 +234,8 @@ Page({
         console.log(res.data)
         this.setData({
           mynoCode: true,
-          step: res.data.data.step
+          step: res.data.data.step,
+          distance: winWidth,
         })
       }
       if (res.data.data.code == '40002') {
@@ -246,7 +266,8 @@ Page({
         app.globalData._ishua = false
         this.setData({
           noCode: true,
-          step: res.data.data.step
+          step: res.data.data.step,
+          distance: winWidth,
         })
       }
       if (res.data.data.code == '40002') {
@@ -268,6 +289,7 @@ Page({
    */
   onChange: function (e) {
     var that = this;
+    console.log(e.detail.x)
     that.setData({
       distance: e.detail.x
     })
@@ -292,6 +314,7 @@ Page({
       y: winHeight,
       distance: winWidth
     })
+    console.log(this.data.distance)
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
         app.globalData.uid = res.data.data.uid

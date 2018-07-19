@@ -1,5 +1,7 @@
 /* pages/index/version.wxss */
-
+page{
+  background-image: url('http://wxq.test.bronet.cn/images/denglubg.png')
+}
 .container {
   position: fixed;
   left: 0;
@@ -38,13 +40,33 @@
   text-align: center;
 }
 .start_btn{
-  width: 520rpx;
-  height: 80rpx;
+  position: fixed;
+  width: 536rpx;
+  height: 100rpx;
   font-size: 32rpx;
   color: #fff;
-  line-height: 80rpx;
+  line-height: 100rpx;
   text-align: center;
-  background-color: #000;
-  border-radius: 40rpx;
-  margin-bottom: 176rpx;
+  background-color: RGBA(174, 156, 128, 1);
+  border-radius: 50rpx;
+  bottom: 176rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.note{
+  width: 100%;
+  height: 80rpx;
+  font-size: 28rpx;
+  color: RGBA(174, 156, 128, 1);
+  text-align:center;
+  position: fixed;
+  bottom: 276rpx;
+  line-height: 80rpx;
+}
+
+.banner{
+  width: 65%;
+  position:fixed;
+  top: 100rpx;
 }

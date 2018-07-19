@@ -4,7 +4,7 @@
     <view class='item_list'>
       <view class='list_content banner'>
         <view class='list_name'>头像</view>
-        <image class='user_log' src='{{myimg}}' bindtap='upload' mode='widthFix' lazy-load>
+        <image class='user_log' src='{{myimg}}' bindtap='upload'  lazy-load>
 
         </image>
       </view>

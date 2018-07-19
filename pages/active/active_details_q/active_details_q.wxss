@@ -113,6 +113,13 @@ page{
   top: 0;
   color: #DBDBDB;
 }
+
+.Proportion{
+  width: 100%;
+  height: 175rpx;
+  background-color: rgba(255, 255, 255, 1);
+  border-top:16rpx solid RGBA(245, 246, 250, 1); 
+}
 /* .mask{
   position: fixed;
   top: 0;

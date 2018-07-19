@@ -15,7 +15,7 @@
       <view class='id_number'>
         <view class='input_name'>身份证号</view>
         <view>
-          <input type='text' placeholder='请输入' placeholder-class='font_color' bindinput='idCard' value='{{idCard}}'></input>
+          <input type='text' placeholder='请输入' placeholder-class='font_color' bindinput='idCard' value='{{idCard}}' type='idcard'></input>
         </view>
       </view>
     </view>

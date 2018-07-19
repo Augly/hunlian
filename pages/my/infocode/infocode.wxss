@@ -55,4 +55,5 @@ page{
   background-color: rgba(0, 0, 0, 1);
   opacity: 0.8;
   border-radius: 10rpx;
+  box-sizing: border-box;
 }

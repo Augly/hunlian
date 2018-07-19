@@ -109,6 +109,7 @@
 .icon-diandiandianshu {
   font-size: 60rpx;
   color: #ccc;
+  margin-left: auto;
 }
 
 .aaaa {
