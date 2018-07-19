@@ -16,7 +16,7 @@ Page({
   onLoad: function (options) {
     config.ajax('POST', {
       uid: app.globalData.uid,
-      relation_id:options.id
+      relation_id:options.userId
     }, config.spouse,(res)=>{
       console.log(res)
       this.setData({

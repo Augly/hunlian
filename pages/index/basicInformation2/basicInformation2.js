@@ -14,9 +14,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     config.ajax('POST',{
       uid: app.globalData.uid,
-      relation_id:options.id
+      relation_id:options.userId
     }, config.MemberBase,(res)=>{
       console.log(res.data.data)
       this.setData({
