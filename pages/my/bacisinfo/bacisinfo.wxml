@@ -28,23 +28,24 @@
       <view class="info_box ">
         <view class="info_name">姓名</view>
         <view>
-          <input value='{{name}}' bindinput='name'></input>
+        <view class='infoSelect'>{{name}}</view>
+          <!-- <input value='{{name}}' bindinput='name'></input> -->
         </view>
         <view class="info_icon">
           <text class="iconfont "></text>
         </view>
       </view>
-      <picker range='{{sex}}' bindchange='selectSex'>
+      <!-- <picker range='{{sex}}' bindchange='selectSex'> -->
         <view class="info_box ">
           <view class="info_name">性别</view>
           <view>
             <view class='infoSelect'>{{sexIndex}}</view>
           </view>
-          <view class="info_icon">
+          <!-- <view class="info_icon">
             <text class="iconfont icon-arrow"></text>
-          </view>
+          </view> -->
         </view>
-      </picker>
+      <!-- </picker> -->
       <picker mode='date' bindchange='mydata' end='{{enddata}}'>
         <view class="info_box ">
           <view class="info_name">生日</view>

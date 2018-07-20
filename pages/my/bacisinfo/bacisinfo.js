@@ -658,7 +658,7 @@ Page({
     config.ajax('POST', {
       uid: uid
     }, config.userInfo, (res) => {
-      console.log(res.data.data.array_marriage[0].marriage_time)
+      console.log(res.data.data)
       this.setData({
         myimg: res.data.data.headimgurl,
         array_education: res.data.data.array_education,
@@ -669,7 +669,7 @@ Page({
         height: res.data.data.height,
         name: res.data.data.name,
         nickname: res.data.data.nick_name,
-        sexIndex: this.data.sexIndex[res.data.data.sex],
+        sexIndex: this.data.sex[res.data.data.sex],
         weight: res.data.data.weight,
         getzw: res.data.data.profession,
         iptmz: res.data.data.nationality,
