@@ -127,12 +127,15 @@
     <text class='iconfont icon-quxiao1' bindtap='hideshowwrap'></text>
     <view class='mtitle'>温馨提示</view>
     <view class='mcontent'>
-      <view wx:if="{{alldataone.code=='40011'||alldataone.code=='40013'||alldataone.code=='40011'}}">您今日的写信次数已达上限
+      <view wx:if="{{alldataone.code=='40013'||alldataone.code=='40014'}}">您今日的写信次数已达上限
       </view>
       <view>{{msg}}</view>
     </view>
-    <view class='sumbit' bindtap='showMwrap'>
+    <view class='sumbit' bindtap='showMwrap' wx:if="{{alldataone.code!='40013'&&alldataone.code!='40012'}}">
       升级畅聊会员
+    </view>
+    <view class='sumbit' bindtap='showMwrap' wx:if="{{alldataone.code=='40012'}}">
+      重新开通畅聊会员
     </view>
   </view>
 </view>

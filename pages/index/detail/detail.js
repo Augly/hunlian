@@ -8,7 +8,7 @@ Page({
    */
   data: {
     Mwrap:false,
-    showwrap:true
+    showwrap:false
   },
   /**
    * hideMask
@@ -173,7 +173,7 @@ Page({
           showwrap: true,
           msg: res.data.data.msg
         })
-      } else if (res.data.data.code == '40013') {
+      } else if (res.data.data.code == '40014') {
         this.setData({
           showwrap: true,
           msg: res.data.data.msg
@@ -183,7 +183,7 @@ Page({
           msg: res.data.data.msg
         })
         config.mytoast(msg,(res)=>{
-          
+
         })
       }
     },(res)=>{
