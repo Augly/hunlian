@@ -1,117 +1,117 @@
 <view wx:if="{{delect_time==0}}">
-<view wx:if="{{wrapConet}}">
-  <view class="myimg_box">
-    <view class="img_box">
-      <image src="{{info.headimgurl}}" mode='widthFix'></image>
+  <view wx:if="{{wrapConet}}">
+    <view class="myimg_box">
+      <view class="img_box">
+        <image src="{{info.headimgurl}}"></image>
+      </view>
+      <view class="myname">{{info.nickname}}</view>
+      <view wx:if="{{info.check_status==1}}">认证会员</view>
+      <view wx:else>未认证</view>
     </view>
-    <view class="myname">{{info.nickname}}</view>
-    <view wx:if="{{info.check_status==1}}">认证会员</view>
-    <view wx:else>未认证</view>
+    <view class="myitem" wx:if="{{info.title==''||info.title==null||info.title=='null'}}">
+      <view class="myitem_left">立即开通会员 • 轻松畅聊</view>
+      <view class="myitem_rigth" bindtap='allow'>
+        <view>开通</view>
+        <view class="iconfont icon-arrow"> </view>
+      </view>
+    </view>
+    <view class="myitem" wx:else>
+      <view class="myitem_left">{{info.title}}</view>
+      <view class="myitem_rigth">
+        <view>已开通</view>
+        <view class="iconfont icon-arrow"> </view>
+      </view>
+    </view>
+
+    <view class="mycontent">
+      <view class="mycontent_item" bindtap='gobacisinfo'>
+        <view class="mycontent_txt">
+          <view class="icon_box">
+            <view class='iconfont icon-wode'></view>
+          </view>
+          基本资料
+        </view>
+
+        <view class="iconfont icon-arrow"></view>
+      </view>
+      <view class="mycontent_item" bindtap='goinfocode'>
+        <view class="mycontent_txt">
+          <view class="icon_box">
+            <view class='iconfont icon-ic_track_changes_p'></view>
+          </view>
+          生命密码解析
+        </view>
+
+        <view class="iconfont icon-arrow"></view>
+      </view>
+      <view class="mycontent_item" bindtap='goteacher'>
+        <view class="mycontent_txt">
+          <view class="icon_box">
+            <view class='iconfont icon-ic_track_changes_p'></view>
+          </view>
+          我要做服务老师
+        </view>
+
+        <view class="iconfont icon-arrow"></view>
+      </view>
+      <view class="mycontent_item" bindtap='gocontactme'>
+        <view class="mycontent_txt">
+          <view class="icon_box">
+            <view class='iconfont icon-lianxiwomen  '></view>
+          </view>
+          联系我们
+        </view>
+
+        <view class="iconfont icon-arrow"></view>
+      </view>
+      <view class="mycontent_item" bindtap='goalready_activity'>
+        <view class="mycontent_txt">
+          <view class="icon_box">
+            <view class='iconfont icon-wode'></view>
+          </view>
+          报名过的活动
+        </view>
+
+        <view class="iconfont icon-arrow"></view>
+      </view>
+      <view class="mycontent_item" bindtap='gorenzheng'>
+        <view class="mycontent_txt">
+          <view class="icon_box">
+            <view class='iconfont icon-renzheng'></view>
+          </view>
+          我的认证
+        </view>
+        <view class="iconfont icon-arrow"></view>
+      </view>
+
+    </view>
+
+    <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
+
+
   </view>
-  <view class="myitem" wx:if="{{info.title==''||info.title==null||info.title=='null'}}">
-    <view class="myitem_left">立即开通会员 • 轻松畅聊</view>
-    <view class="myitem_rigth" bindtap='allow'>
-      <view>开通</view>
-      <view class="iconfont icon-arrow"> </view>
+
+  <view class='MemberWrap' wx:if="{{Mwrap}}">
+    <view class='member'>
+      <text class='iconfont icon-quxiao1' bindtap='hideMask'></text>
+      <view class='mtitle'>畅聊会员充值</view>
+      <view class='mcontent'>
+        <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldata}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
+          <view class='selectL'>
+            <view class='seLtitle'>{{item.title}}
+            </view>
+            <view class='seLmintitle'>每天{{item.number}}封</view>
+          </view>
+          <view class='selectR'>
+            <text class='selectR_M'>￥</text>
+            <text class='selectR_T'>{{item.price}}</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='sumbit' bindtap='pay'>
+        立即充值
+      </view>
     </view>
   </view>
-   <view class="myitem" wx:else>
-    <view class="myitem_left">{{info.title}}</view>
-    <view class="myitem_rigth">
-      <view>已开通</view>
-      <view class="iconfont icon-arrow"> </view>
-    </view>
-  </view> 
-
-  <view class="mycontent">
-    <view class="mycontent_item" bindtap='gobacisinfo'>
-      <view class="mycontent_txt">
-        <view class="icon_box">
-          <view class='iconfont icon-wode'></view>
-        </view>
-        基本资料
-      </view>
-
-      <view class="iconfont icon-arrow"></view>
-    </view>
-    <view class="mycontent_item" bindtap='goinfocode'>
-      <view class="mycontent_txt">
-        <view class="icon_box">
-          <view class='iconfont icon-ic_track_changes_p'></view>
-        </view>
-        生命密码解析
-      </view>
-
-      <view class="iconfont icon-arrow"></view>
-    </view>
-    <view class="mycontent_item" bindtap='goteacher'>
-      <view class="mycontent_txt">
-        <view class="icon_box">
-          <view class='iconfont icon-ic_track_changes_p'></view>
-        </view>
-        我要做服务老师
-      </view>
-
-      <view class="iconfont icon-arrow"></view>
-    </view>
-    <view class="mycontent_item" bindtap='gocontactme'>
-      <view class="mycontent_txt">
-        <view class="icon_box">
-          <view class='iconfont icon-lianxiwomen  '></view>
-        </view>
-        联系我们
-      </view>
-
-      <view class="iconfont icon-arrow"></view>
-    </view>
-    <view class="mycontent_item" bindtap='goalready_activity'>
-      <view class="mycontent_txt">
-        <view class="icon_box">
-          <view class='iconfont icon-wode'></view>
-        </view>
-        报名过的活动
-      </view>
-
-      <view class="iconfont icon-arrow"></view>
-    </view>
-    <view class="mycontent_item" bindtap='gorenzheng'>
-      <view class="mycontent_txt">
-        <view class="icon_box">
-          <view class='iconfont icon-renzheng'></view>
-        </view>
-        我的认证
-      </view>
-      <view class="iconfont icon-arrow"></view>
-    </view>
-
-  </view>
-
-  <myToast noCode="{{noCode}}" step="{{step}}"></myToast>
-
-
-</view>
-
-<view class='MemberWrap' wx:if="{{Mwrap}}">
-  <view class='member'>
-    <text class='iconfont icon-quxiao1' bindtap='hideMask'></text>
-    <view class='mtitle'>畅聊会员充值</view>
-    <view class='mcontent'>
-          <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldata}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
-      <view class='selectL'>
-        <view class='seLtitle'>{{item.title}}
-        </view>
-        <view class='seLmintitle'>每天{{item.number}}封</view>
-      </view>
-      <view class='selectR'>
-        <text class='selectR_M'>￥</text>
-        <text class='selectR_T'>{{item.price}}</text>
-      </view>
-    </view>
-    </view>
-
-    <view class='sumbit' bindtap='pay'>
-      立即充值
-    </view>
-  </view>
-</view>
 </view>

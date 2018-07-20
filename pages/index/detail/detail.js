@@ -7,9 +7,104 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    Mwrap:false,
+    showwrap:true
   },
+  /**
+   * hideMask
+   */
+  hideMask() {
+    this.setData({
+      Mwrap: false
+    })
+  },
+  hideshowwrap(){
+    this.setData({
+      showwrap: false
+    })
+  },
+  allow() {
+    this.setData({
+      Mwrap: true
+    })
+  },
+  //对象转数组
+  toArr(obj) {
+    let newarr = []
+    let result = Object.keys(obj).map((el) => {
+      newarr.push(obj[el]);
+    });
+    // console.log(newarr)
+    // for (var i in newarr) {
+    //   if (newarr[i].name == null || newarr[i].name == undefined) {
+    //     newarr[i].name = '#'
+    //   }
+    // }
+    return newarr
+  },
+  /**
+   * 获取套餐
+   */
+  getchat() {
+    config.ajax('POST', {
+      uid: app.globalData.uid
+    }, config.chat, (res) => {
+      console.log(res)
+      for (var i = 0; i < res.data.data.date.length; i++) {
+        res.data.data.date[i].check = false
+      }
+      res.data.data.date[0].check = true
+      this.setData({
+        alldata: res.data.data.date,
+        payId: res.data.data.date[0].id,
+      })
+    }, (res) => {
 
+    })
+  },
+  /**
+   * 选择付款
+   */
+  select(e) {
+    var alldata = this.data.alldata
+    for (var i = 0; i < alldata.length; i++) {
+      if (i == config.getData(e, 'index')) {
+        alldata[i].check = true
+      } else {
+        alldata[i].check = false
+      }
+    }
+    console.log(config.getData(e, 'id'))
+    this.setData({
+      payId: config.getData(e, 'id'),
+      alldata: alldata
+    })
+  },
+  /**
+   * 付款
+   */
+  pay() {
+    config.ajax('POST', {
+      uid: app.globalData.uid,
+      id: this.data.payId
+    }, config.payChat, (res) => {
+      config.pay(res, (res) => {
+        this.setData({
+          Mwrap: false
+        })
+        config.getuid((res) => {
+          if (res.data.data.code == '20000') {
+            app.globalData.uid = res.data.data.uid
+            this.getInfo(res)
+          } else {
+            config.mytoast('服务器错误,请稍后再试', (res) => { })
+          }
+        }, (res) => { })
+      })
+    }, (res) => {
+
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

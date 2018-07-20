@@ -96,4 +96,46 @@
       </button>
     </view>
   </view>
+
+
+
+
+
+</view>
+
+<view class='MemberWrap' wx:if="{{Mwrap}}">
+  <view class='member'>
+    <text class='iconfont icon-quxiao1' bindtap='hideMask'></text>
+    <view class='mtitle'>畅聊会员充值</view>
+    <view class='mcontent'>
+      <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldata}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
+        <view class='selectL'>
+          <view class='seLtitle'>{{item.title}}
+          </view>
+          <view class='seLmintitle'>每天{{item.number}}封</view>
+        </view>
+        <view class='selectR'>
+          <text class='selectR_M'>￥</text>
+          <text class='selectR_T'>{{item.price}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class='sumbit' bindtap='pay'>
+      立即充值
+    </view>
+  </view>
+</view>
+
+<view class='MemberWrap' wx:if="{{showwrap}}">
+  <view class='member'>
+    <text class='iconfont icon-quxiao1' bindtap='hideshowwrap'></text>
+    <view class='mtitle'>温馨提示</view>
+    <view class='mcontent'>
+
+    </view>
+    <view class='sumbit' bindtap='showMwrap'>
+      升级畅聊会员
+    </view>
+  </view>
 </view>
