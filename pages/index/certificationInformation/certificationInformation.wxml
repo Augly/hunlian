@@ -25,14 +25,20 @@
         <view>
           <view class='upload_content' bindtap='uploadZ'>
             <view class='iconfont icon-tianjiajiahaowubiankuang' wx:if="{{zimg==''}}"></view>
-            <image class='upload' src='{{zimg}}' wx:else></image>
+            
+            <view class='upload' style="background-image: url('{{zimg}}');" wx:else>
+            FouYou实名
+            </view>
+            <!-- <image class='upload' src='{{zimg}}' wx:else></image> -->
           </view>
           <view class='prompt_information'>手持身份证正面照</view>
         </view>
         <view>
           <view class='upload_content' bindtap='uploadB'>
             <view class='iconfont icon-tianjiajiahaowubiankuang' wx:if="{{bimg==''}}"></view>
-             <image class='upload' src='{{bimg}}' wx:else></image>
+             <!-- <image class='upload' src='{{bimg}}' wx:else></image> -->
+             <view class='upload' style="background-image: url('{{bimg}}');" wx:else>
+             FouYou实名</view>
           </view>
           <view class='prompt_information'>身份证背面照</view>
         </view>

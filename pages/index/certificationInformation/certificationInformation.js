@@ -1,6 +1,7 @@
 // pages/index/certificationInformation/certificationInformation.js
 const config = require('../../../utils/config.js');
 let app = getApp()
+var check=true
 const WxParse = require('../../../utils/wxParse/wxParse.js');
 Page({
 
@@ -129,56 +130,62 @@ Page({
    */
   bottom_btn(res) {
     var that=this
-    config.ajax('POST', {
-      uid: app.globalData.uid,
-      name: this.data.nickName,
-      idcard: this.data.idCard,
-      // more:JSON.stringify(res),
-      imgup:res[0],
-      imgdown:res[1]
-    }, config.registerPost, (res) => {
-      if (that.data._type == 'error') {
-        wx.switchTab({
-          url: '/pages/my/my',
-          success: function (res) { },
-          fail: function (res) { },
-          complete: function (res) { },
-        })
-      }else{
-        config.pay(res, (res) => {
-          console.log(res)
+    if (check){
+      check=false
+      config.ajax('POST', {
+        uid: app.globalData.uid,
+        name: this.data.nickName,
+        idcard: this.data.idCard,
+        // more:JSON.stringify(res),
+        imgup: res[0],
+        imgdown: res[1]
+      }, config.registerPost, (res) => {
+        if (that.data._type == 'error') {
           wx.switchTab({
             url: '/pages/my/my',
             success: function (res) { },
             fail: function (res) { },
             complete: function (res) { },
           })
-        })
-      } 
+        } else {
+          config.pay(res, (res) => {
+            console.log(res)
+            wx.switchTab({
+              url: '/pages/my/my',
+              success: function (res) { },
+              fail: function (res) { },
+              complete: function (res) { },
+            })
+          },(res)=>{
+            check=true
+          })
+        }
 
-      if (res.data.data.code == '20000') {
-        console.log(res)
-        // config.pay(res,(res)=>{
-        //           // wx.navigateTo({
-        //   url: '/pages/my/renzheng/renzheng',
-        //   success: function(res) {},
-        //   fail: function(res) {},
-        //   complete: function(res) {},
-        // })
-        // })
-        // wx.navigateTo({
-        //   url: '/pages/my/renzheng/renzheng',
-        //   success: function(res) {},
-        //   fail: function(res) {},
-        //   complete: function(res) {},
-        // })
-        // config.pay(res,(res)=>{
-        //   console.log(res)
-        // })
-      }
-    }, (res) => {
+        if (res.data.data.code == '20000') {
+          console.log(res)
+          // config.pay(res,(res)=>{
+          //           // wx.navigateTo({
+          //   url: '/pages/my/renzheng/renzheng',
+          //   success: function(res) {},
+          //   fail: function(res) {},
+          //   complete: function(res) {},
+          // })
+          // })
+          // wx.navigateTo({
+          //   url: '/pages/my/renzheng/renzheng',
+          //   success: function(res) {},
+          //   fail: function(res) {},
+          //   complete: function(res) {},
+          // })
+          // config.pay(res,(res)=>{
+          //   console.log(res)
+          // })
+        }
+      }, (res) => {
 
-    })
+      })
+    }
+
   },
   /**
    * 提交资料

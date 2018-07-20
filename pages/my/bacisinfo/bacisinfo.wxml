@@ -67,7 +67,7 @@
         </view>
       </view>
       <view class="info_box border_none">
-        <view class="info_name">身高</view>
+        <view class="info_name">身高(cm)</view>
         <view>
           <input class='infoSelect' value="{{height}}" bindinput='myheight'></input>
         </view>
@@ -157,7 +157,7 @@
         </view>
       </view>
       <view class="info_box">
-        <view class="info_name">体重</view>
+        <view class="info_name">体重(kg)</view>
         <view>
           <input placeholder='请输入体重' placeholder-class='iptplh' value='{{weight}}' bindinput='myweight'></input>
         </view>

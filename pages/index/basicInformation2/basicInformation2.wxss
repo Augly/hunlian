@@ -17,12 +17,14 @@
 
 .banner_img {
   width: 200rpx;
+  height: 200rpx;
   position: relative;
   top: -50rpx;
 }
 
 .banner_img image {
   width: 100%;
+  height: 100%;
 }
 
 .person_information {

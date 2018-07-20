@@ -65,7 +65,8 @@ Page({
           st.push(res.data.data.list)
           this.setData({
             list:st,
-            stop:st.length-1
+            stop:st.length-1,
+            myipt:''
           })
         }
       }, (res) => {

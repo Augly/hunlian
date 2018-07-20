@@ -7,7 +7,7 @@
     <view class='item_list'>
       <view class='person_information'>
         <view class='banner_img'>
-          <image src='{{alldata.more}}' mode='widthFix'></image>
+          <image src='{{alldata.more}}'></image>
         </view>
         <view class='information_detail'>
           <view class='name_box'>
