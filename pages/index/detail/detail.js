@@ -149,6 +149,7 @@ Page({
       uid: app.globalData.uid,
       to_id:this.data.formId
     }, config.letter,(res)=>{
+      console.log(res)
       this.setData({
         alldataone:res.data.data
       })
@@ -178,7 +179,13 @@ Page({
           showwrap: true,
           msg: res.data.data.msg
         })
-      } else if (res.data.data.code == '40010') {
+      } else if (res.data.data.code == '40013') {
+        this.setData({
+          showwrap: true,
+          msg: res.data.data.msg
+        })
+      }  
+      else if (res.data.data.code == '40010') {
         this.setData({
           msg: res.data.data.msg
         })
