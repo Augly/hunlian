@@ -41,13 +41,13 @@
         </view>
       </view>
       <view class='list_content'>
-        <view class='list_name'>身高</view>
+        <view class='list_name'>身高(cm)</view>
         <view>
           <input type='text' placeholder='请输入' placeholder-class='content' bindinput='myHeight' value='{{myHeight}}'></input>
         </view>
       </view>
       <view class='list_content'>
-        <view class='list_name'>体重</view>
+        <view class='list_name'>体重(kg)</view>
         <view>
           <input type='text' placeholder='请输入' placeholder-class='content' bindinput='myWeight' value='{{myWeight}}'></input>
         </view>

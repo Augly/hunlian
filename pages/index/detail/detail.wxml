@@ -58,7 +58,7 @@
             <view class='content_detail1'>{{alldata.height2==null?'未填写':alldata.height2+'cm'}}</view>
             <view class='content_detail1'>{{alldata.workplace2==null?'未填写':alldata.workplace2}}</view>
             <view class='content_detail1'>{{alldata.income2==null?'未填写':alldata.income2}}</view>
-            <view class='content_detail1'>{{alldata.constellation2==null?'未填写':alldata.constellation2}}</view>
+            <view class='content_detail1'>{{alldata.constellation2==0?'有子女':'无子女'}}</view>
           </view>
         </view>
         <view style='margin-left: auto;'>
