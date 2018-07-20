@@ -103,7 +103,7 @@ Page({
         config.getuid((res) => {
           if (res.data.data.code == '20000') {
             app.globalData.uid = res.data.data.uid
-            this.getInfo(res)
+            // this.getInfo(res)
           } else {
             config.mytoast('服务器错误,请稍后再试', (res) => { })
           }
