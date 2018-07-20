@@ -96,11 +96,6 @@
       </button>
     </view>
   </view>
-
-
-
-
-
 </view>
 
 <view class='MemberWrap' wx:if="{{Mwrap}}">
@@ -108,7 +103,7 @@
     <text class='iconfont icon-quxiao1' bindtap='hideMask'></text>
     <view class='mtitle'>畅聊会员充值</view>
     <view class='mcontent'>
-      <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldata}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
+      <view class="selectList {{item.check?'sActive':''}}" wx:for="{{alldatatwo}}" bindtap='select' data-id='{{item.id}}' data-index='{{index}}'>
         <view class='selectL'>
           <view class='seLtitle'>{{item.title}}
           </view>
@@ -132,7 +127,9 @@
     <text class='iconfont icon-quxiao1' bindtap='hideshowwrap'></text>
     <view class='mtitle'>温馨提示</view>
     <view class='mcontent'>
-
+      <view wx:if="{{alldataone.code=='40011'||alldataone.code=='40013'||alldataone.code=='40011'}}">您今日的写信次数已达上限
+      </view>
+      <view>{{msg}}</view>
     </view>
     <view class='sumbit' bindtap='showMwrap'>
       升级畅聊会员

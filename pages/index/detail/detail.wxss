@@ -266,3 +266,7 @@
   max-height: 500rpx;
   overflow-y: auto;
 }
+.mcontent view{
+  font-size: 28rpx;
+  text-align: center;
+}

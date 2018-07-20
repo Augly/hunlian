@@ -45,6 +45,14 @@ Page({
   /**
    * 获取套餐
    */
+  showMwrap(){
+    this.setData({
+      showwrap:false,
+      Mwrap:true
+    })
+    this.getchat()
+
+  },
   getchat() {
     config.ajax('POST', {
       uid: app.globalData.uid
@@ -55,7 +63,7 @@ Page({
       }
       res.data.data.date[0].check = true
       this.setData({
-        alldata: res.data.data.date,
+        alldatatwo: res.data.data.date,
         payId: res.data.data.date[0].id,
       })
     }, (res) => {
@@ -66,7 +74,7 @@ Page({
    * 选择付款
    */
   select(e) {
-    var alldata = this.data.alldata
+    var alldata = this.data.alldatatwo
     for (var i = 0; i < alldata.length; i++) {
       if (i == config.getData(e, 'index')) {
         alldata[i].check = true
@@ -77,7 +85,7 @@ Page({
     console.log(config.getData(e, 'id'))
     this.setData({
       payId: config.getData(e, 'id'),
-      alldata: alldata
+      alldatatwo: alldata
     })
   },
   /**
@@ -141,7 +149,9 @@ Page({
       uid: app.globalData.uid,
       to_id:this.data.formId
     }, config.letter,(res)=>{
-      console.log(res)
+      this.setData({
+        alldataone:res.data.data
+      })
       if(res.data.data.code=='40000'){
         config.mytoast(res.data.data.msg,(res)=>{
 
@@ -152,6 +162,28 @@ Page({
           success: function (res) { },
           fail: function (res) { },
           complete: function (res) { },
+        })
+      }else if(res.data.data.code=='40011'){
+        this.setData({
+          showwrap:true,
+          msg: res.data.data.msg,
+        })
+      } else if (res.data.data.code == '40012') {
+        this.setData({
+          showwrap: true,
+          msg: res.data.data.msg
+        })
+      } else if (res.data.data.code == '40013') {
+        this.setData({
+          showwrap: true,
+          msg: res.data.data.msg
+        })
+      } else if (res.data.data.code == '40010') {
+        this.setData({
+          msg: res.data.data.msg
+        })
+        config.mytoast(msg,(res)=>{
+          
         })
       }
     },(res)=>{
