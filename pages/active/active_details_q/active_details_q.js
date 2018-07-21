@@ -1,6 +1,7 @@
 // pages/active_details_q/active_details_q.js
 const config = require('../../../utils/config.js')
 let app = getApp()
+var check=true
 const WxParse = require('../../../utils/wxParse/wxParse.js');
 Page({
 
@@ -84,52 +85,58 @@ Page({
     })
   },
   pay() {
-    config.ajax('POST', {
-      uid: app.globalData.uid,
-      activity_id: this.data.id,
-      amount: this.data.alldata.amount
-    }, config.activityPay, (res) => {
-      console.log(res)
-      if (res.data.data.code == '40000') {
-        config.mytoast(res.data.data.msg, (res) => {
-          wx.navigateBack({
-            delta: 1,
+    if (check){
+      check = false
+      config.ajax('POST', {
+        uid: app.globalData.uid,
+        activity_id: this.data.id,
+        amount: this.data.alldata.amount
+      }, config.activityPay, (res) => {
+        console.log(res)
+        if (res.data.data.code == '40000') {
+          config.mytoast(res.data.data.msg, (res) => {
+            wx.navigateBack({
+              delta: 1,
+            })
           })
-        })
-      } else if (res.data.data.code == '20000') {
-        config.pay(res.data, (res) => {
-          console.log(res)
-          config.ajax('POST', {
-            uid: app.globalData.uid,
-            activity_id: this.data.id,
-            payStatus: 1
-          }, config.returnPay, (res) => {
-            config.mytoast('活动参与成功', (res) => {
-              wx.navigateBack({
-                delta: 1,
+        } else if (res.data.data.code == '20000') {
+          config.pay(res.data, (res) => {
+            console.log(res)
+            config.ajax('POST', {
+              uid: app.globalData.uid,
+              activity_id: this.data.id,
+              payStatus: 1
+            }, config.returnPay, (res) => {
+              config.mytoast('活动参与成功', (res) => {
+                wx.navigateBack({
+                  delta: 1,
+                })
+                check = true
+
               })
-            })
-          }, (res) => {
-
-          })
-        }, (res) => {
-          config.ajax('POST', {
-            uid: app.globalData.uid,
-            activity_id: this.data.id,
-            payStatus: 2
-          }, config.returnPay, (res) => {
-            config.mytoast('参与活动失败', (res) => {
+            }, (res) => {
 
             })
           }, (res) => {
+            config.ajax('POST', {
+              uid: app.globalData.uid,
+              activity_id: this.data.id,
+              payStatus: 2
+            }, config.returnPay, (res) => {
+              config.mytoast('参与活动失败', (res) => {
+                check = true
+              })
+            }, (res) => {
 
+            })
           })
-        })
-      }
-      // console.log(res)
-    }, (res) => {
+        }
+        // console.log(res)
+      }, (res) => {
 
-    })
+      })
+    }
+
   },
   show_mask: function (e) {
     var that = this;

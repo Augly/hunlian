@@ -1,6 +1,7 @@
 // pages/index/detail/detail.js
 const config=require('../../../utils/config.js')
 let app=getApp()
+var check=true
 Page({
 
   /**
@@ -92,6 +93,8 @@ Page({
    * 付款
    */
   pay() {
+    if(check){
+      check = false
     config.ajax('POST', {
       uid: app.globalData.uid,
       id: this.data.payId
@@ -109,9 +112,11 @@ Page({
           }
         }, (res) => { })
       })
+      check = true
     }, (res) => {
-
+      check = true
     })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

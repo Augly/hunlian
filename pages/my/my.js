@@ -1,6 +1,7 @@
 // pages/my.js
 const config = require('../../utils/config.js');
 let app = getApp()
+let check = true
 Page({
 
   /**
@@ -151,6 +152,8 @@ Page({
    * 付款
    */
   pay() {
+    if(check){
+        check=false
     config.ajax('POST', {
       uid: app.globalData.uid,
       id: this.data.payId
@@ -167,10 +170,12 @@ Page({
               config.mytoast('服务器错误,请稍后再试', (res) => { })
             }
           }, (res) => { })
+          check = true
       })
     }, (res) => {
-
+      check = true
     })
+  }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
