@@ -91,6 +91,7 @@ Page({
         var allNum = 0;
         allNum = parseInt(res.data.data.message_num)
         this.setData({
+          list: [],
           alldata: res.data.data,
           allNum: allNum,
           noCode: false,
@@ -173,14 +174,11 @@ Page({
           noCode: true,
           step: res.data.data.step
         })
-      } else if (res.data.data.code == '40005'){
-        this.setData({
-          noCode: false,
-        })
-      }else{
+      } else{
         var otherNum = 0;
         otherNum =res.data.data.message_num
         this.setData({
+          otherlist:[],
           otheralldata: res.data.data,
           otherNum: otherNum,
         })
