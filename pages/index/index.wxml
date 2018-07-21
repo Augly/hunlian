@@ -76,7 +76,7 @@
             <!-- <text class="iconfont icon-quxiao active" style="position: absolute;left:40rpx;top:40rpx;" wx:if="{{dx<-15}}"></text>
         <text class="iconfont icon-cainixihuan active" style="position: absolute;right:40rpx;top:40rpx;" wx:if="{{dx>15}}"></text> -->
 
-            <image class='move_log' src='{{item.more}}' catchtap='lookmore' data-id='{{item.user_id}}'>
+            <image class='move_log' src="{{item.more!=null&&item.more!=undefind?item.more:'/imgs/logo.png'}}" catchtap='lookmore' data-id='{{item.user_id}}'>
 
             </image>
             <view class='move_res'>

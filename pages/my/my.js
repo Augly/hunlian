@@ -11,7 +11,46 @@ Page({
     wrapConet: false,
     Mwrap: false
   },
+  getNumdata(res) {
+    config.ajax('POST', {
+      uid: res.data.data.uid
+    }, config.mailBoxNew, (res) => {
+      if (res.data.data.code == '20000') {
+        var otherNum = 0;
+        console.log(res.data.data)
+        for (var i = 0; i < res.data.data.list.length; i++) {
+          res.data.data.list[i].myleft = 0,
+            otherNum += parseInt(res.data.data.list[i].num)
+        }
+        otherNum = parseInt(otherNum) + parseInt(res.data.data.message_num)
+      } else {
+        var otherNum = 0;
+        otherNum = res.data.data.message_num
+      }
+      if (otherNum > 0) {
+        wx.showTabBarRedDot({
+          index: 3,
+          success: function (res) {
+            wx.setTabBarBadge({
+              index: 3,
+              text: otherNum.toString(),
+            })
+          },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      } else {
+        wx.hideTabBarRedDot({
+          index: 3,
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }
+    }, (res) => {
 
+    })
+  },
   allow() {
     this.setData({
       Mwrap: true
@@ -199,6 +238,7 @@ Page({
 
           })
         }
+        this.getNumdata(res)
         this.getInfo(res)
         this.getchat()
       } else {

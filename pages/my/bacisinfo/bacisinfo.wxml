@@ -1,6 +1,6 @@
 <!--pages/bacisinfo/bacisinfo.wxml-->
 
-<view wx:if="{{wrapConet}}">
+<!-- <view wx:if="{{wrapConet}}"> -->
 
 
   <view class="info_top">
@@ -356,4 +356,4 @@
     </view>
   </view>
 
-</view>
+<!-- </view> -->

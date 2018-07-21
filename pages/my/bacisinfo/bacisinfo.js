@@ -674,9 +674,9 @@ Page({
         getzw: res.data.data.profession,
         iptmz: res.data.data.nationality,
         workplace: res.data.data.workplace,
-        money: res.data.data.array_income[0],
+        money: res.data.data.array_income[res.data.data.income],
         moneyone: res.data.data.array_income[0],
-        marriage: res.data.data.array_marriage[0],
+        marriage: res.data.data.array_marriage[res.data.data.marital_status],
         education: res.data.data.array_education[0]
       })
       this.setData({

@@ -24,6 +24,46 @@ Page({
     })
 
   },
+  getNumdata(res) {
+    config.ajax('POST', {
+      uid: res.data.data.uid
+    }, config.mailBoxNew, (res) => {
+      if (res.data.data.code == '20000') {
+        var otherNum = 0;
+        console.log(res.data.data)
+        for (var i = 0; i < res.data.data.list.length; i++) {
+          res.data.data.list[i].myleft = 0,
+            otherNum += parseInt(res.data.data.list[i].num)
+        }
+        otherNum = parseInt(otherNum) + parseInt(res.data.data.message_num)
+      } else {
+        var otherNum = 0;
+        otherNum = res.data.data.message_num
+      }
+      if (otherNum > 0) {
+        wx.showTabBarRedDot({
+          index: 3,
+          success: function (res) {
+            wx.setTabBarBadge({
+              index: 3,
+              text: otherNum.toString(),
+            })
+          },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      } else {
+        wx.hideTabBarRedDot({
+          index: 3,
+          success: function (res) { },
+          fail: function (res) { },
+          complete: function (res) { },
+        })
+      }
+    }, (res) => {
+
+    })
+  },
   getdata(res) {
     config.ajax('POST', {
       uid: res.data.data.uid
@@ -33,8 +73,9 @@ Page({
         var allNum=0;
         for (var i = 0; i < res.data.data.list.length; i++) {
           res.data.data.list[i].myleft = 0,
-          allNum += res.data.data.list[i].num
+          allNum += parseInt(res.data.data.list[i].num)
         }
+        allNum = parseInt(allNum) + parseInt(res.data.data.message_num)
         this.setData({
           alldata: res.data.data,
           list: res.data.data.list,
@@ -48,7 +89,7 @@ Page({
         })
       } else {
         var allNum = 0;
-        allNum = res.data.data.message_num
+        allNum = parseInt(res.data.data.message_num)
         this.setData({
           alldata: res.data.data,
           allNum: allNum,
@@ -118,9 +159,9 @@ Page({
         console.log(res.data.data)
         for (var i = 0; i < res.data.data.list.length; i++) {
           res.data.data.list[i].myleft = 0,
-          otherNum += res.data.data.list[i].num
+          otherNum += parseInt(res.data.data.list[i].num)
         }
-        otherNum = otherNum + res.data.data.message_num
+        otherNum = parseInt(otherNum) +  parseInt(res.data.data.message_num) 
 
         this.setData({
           otheralldata: res.data.data,
@@ -192,6 +233,7 @@ Page({
         }
         this.getdata(res)
         this.getotherdata(res)
+        this.getNumdata(res)
       } else {
         config.mytoast('服务器错误,请稍后再试', (res) => { })
       }
