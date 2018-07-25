@@ -12,7 +12,7 @@
       <view class="myitem_left">立即开通会员 • 轻松畅聊</view>
       <view class="myitem_rigth" bindtap='allow'>
         <view>开通</view>
-        <view class="iconfont icon-arrow"> </view>
+        <!-- <view class="iconfont icon-arrow"> </view> -->
       </view>
     </view>
     <view class="myitem" wx:else>
@@ -25,60 +25,78 @@
 
     <view class="mycontent">
       <view class="mycontent_item" bindtap='gobacisinfo'>
+        <view class="icon_box">
+          <image src='/imgs/ic01@2x.png'>
+
+          </image>
+        </view>
         <view class="mycontent_txt">
-          <view class="icon_box">
-            <view class='iconfont icon-wode'></view>
-          </view>
+
           基本资料
         </view>
 
         <view class="iconfont icon-arrow"></view>
       </view>
       <view class="mycontent_item" bindtap='goinfocode'>
+        <view class="icon_box">
+          <image src='/imgs/ic02@2x.png'>
+
+          </image>
+        </view>
         <view class="mycontent_txt">
-          <view class="icon_box">
-            <view class='iconfont icon-ic_track_changes_p'></view>
-          </view>
+
           生命密码解析
         </view>
 
         <view class="iconfont icon-arrow"></view>
       </view>
       <view class="mycontent_item" bindtap='goteacher'>
+        <view class="icon_box">
+          <image src='/imgs/ic03@2x.png'>
+
+          </image>
+        </view>
         <view class="mycontent_txt">
-          <view class="icon_box">
-            <view class='iconfont icon-ic_track_changes_p'></view>
-          </view>
+
           我要做服务老师
         </view>
 
         <view class="iconfont icon-arrow"></view>
       </view>
       <view class="mycontent_item" bindtap='gocontactme'>
+        <view class="icon_box">
+          <image src='/imgs/ic04@2x.png'>
+
+          </image>
+        </view>
         <view class="mycontent_txt">
-          <view class="icon_box">
-            <view class='iconfont icon-lianxiwomen  '></view>
-          </view>
+
           联系我们
         </view>
 
         <view class="iconfont icon-arrow"></view>
       </view>
       <view class="mycontent_item" bindtap='goalready_activity'>
+        <view class="icon_box">
+          <image src='/imgs/ic05@2x.png'>
+
+          </image>
+        </view>
         <view class="mycontent_txt">
-          <view class="icon_box">
-            <view class='iconfont icon-wode'></view>
-          </view>
+
           报名过的活动
         </view>
 
         <view class="iconfont icon-arrow"></view>
       </view>
       <view class="mycontent_item" bindtap='gorenzheng'>
+        <view class="icon_box">
+          <image src='/imgs/ic06@2x.png'>
+
+          </image>
+        </view>
         <view class="mycontent_txt">
-          <view class="icon_box">
-            <view class='iconfont icon-renzheng'></view>
-          </view>
+
           我的认证
         </view>
         <view class="iconfont icon-arrow"></view>

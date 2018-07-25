@@ -210,6 +210,9 @@ button::after {
 
 button {
   /* background-color: none; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;

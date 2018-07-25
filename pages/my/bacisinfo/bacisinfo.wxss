@@ -98,6 +98,8 @@ page {
   justify-content: center;
   background-color: rgba(255, 255, 255, 1);
   z-index: 10;
+  box-sizing: border-box;
+  border-top:20rpx solid  #f5f6fa; 
 }
 
 .rgb255 {
@@ -112,12 +114,12 @@ page {
   z-index: 100;
   left: 0;
   height: 88rpx;
-  width: 680rpx;
+  width:470rpx;
   text-align: center;
   line-height: 88rpx;
   color: #fff;
   font-size: 38rpx;
-  background-color: #e9ad40;
+  background-color: rgba(0, 0, 0,1);
   border-radius: 44rpx;
   /* background: radial-gradient(#e7a42a, #c98c1c); */
   /* box-shadow: 0rpx 2rpx 30rpx #e9ad40; */

@@ -99,10 +99,13 @@
     <view class='trmone'></view>
     <view class='trmtwo'></view>
     <view class='typeGroup'>
-      <text class="iconfont icon-quxiao {{lick==false?'active':''}}" bindtap='unlick'></text>
-      <text class="iconfont icon-cainixihuan {{lick==true?'active':''}}" bindtap='lick'></text>
-      <button open-type='contact' hover-class='none' class="iconfont icon-kefu">
-        <!-- <text class="iconfont icon-kefu"></text> -->
+      <image src='/imgs/HealthCircle@2x.png' bindtap='unlick'></image>
+       <image src='/imgs/heart@2x(1).png' bindtap='unlick'></image>
+        
+      <!-- <text class="iconfont  {{lick==false?'active':''}}" bindtap='unlick'></text>
+      <text class="iconfont icon-cainixihuan {{lick==true?'active':''}}" bindtap='lick'></text> -->
+      <button open-type='contact' hover-class='none'>
+        <image src='/imgs/phone@2x.png' bindtap='unlick' style='margin-right:0rpx;'></image>
       </button>
     </view>
 

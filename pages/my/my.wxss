@@ -38,10 +38,10 @@ page {
   display: flex;
   text-align: center;
   justify-content: space-between;
-  margin: 24rpx 32rpx;
-  padding: 25rpx 36rpx 24rpx 100rpx;
+  margin: 24rpx 0rpx;
+  padding: 30rpx 36rpx 30rpx 100rpx;
   background-color: #fff;
-  color: #e9ad40;
+  /* color: #e9ad40; */
   font-size: 28rpx;
   font-weight: bold;
   border-radius: 10rpx;
@@ -50,12 +50,12 @@ page {
 .myitem_rigth {
   display: flex;
   width: 160rpx;
-  height: 50rpx;
+  height: 60rpx;
   justify-content: center;
   align-items: center;
-  border-radius: 25rpx;
+  border-radius: 30rpx;
   color: #fff;
-  background-color: #e9ad40;
+  background-color: rgba(241, 90, 36, 1);
 }
 
 .myitem .icon-arrow {
@@ -78,7 +78,7 @@ page {
   margin: 0 32rpx;
   padding: 25rpx 8rpx 25rpx 0;
   border-bottom: 1px solid #ebebeb;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -88,23 +88,26 @@ page {
 
 .icon_box {
   display: inline-block;
-  margin: 0 10rpx 0 0;
+  margin: 0 20rpx 0 0;
   height: 48rpx;
   width: 48rpx;
   border-radius: 3rpx;
-  background-color: #e9ad40;
+  /* background-color: #e9ad40; */
   text-align: center;
   line-height: 48rpx;
   color: #fff;
 }
 
-.icon_box .icon-yanzhengma {
-  font-size: 26rpx;
+.icon_box image{
+ display: block;
+ width: 100%;
+ height: 100%;
 }
 
 .mycontent_item .icon-arrow {
   color: #dadada;
   font-size: 26rpx;
+  margin-left: auto;
 }
 
 .info_icon {
