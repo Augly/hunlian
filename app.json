@@ -45,7 +45,7 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
+        "text": "邂逅",
         "iconPath": "/imgs/nav01@2x.png",
         "selectedIconPath": "/imgs/nav02@2x.png"
       },

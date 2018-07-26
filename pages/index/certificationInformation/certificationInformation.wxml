@@ -31,7 +31,7 @@
             </view>
             <!-- <image class='upload' src='{{zimg}}' wx:else></image> -->
           </view>
-          <view class='prompt_information'>手持身份证正面照</view>
+          <view class='prompt_information'>身份证正面</view>
         </view>
         <view>
           <view class='upload_content' bindtap='uploadB'>
@@ -40,7 +40,7 @@
              <view class='upload' style="background-image: url('{{bimg}}');" wx:else>
              FouYou实名</view>
           </view>
-          <view class='prompt_information'>身份证背面照</view>
+          <view class='prompt_information'>身份证背面</view>
         </view>
       </view>
     </view>
