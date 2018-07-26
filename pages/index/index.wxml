@@ -100,7 +100,7 @@
     <view class='trmtwo'></view> -->
     <view class='typeGroup'>
       <image src='/imgs/HealthCircle@2x.png' bindtap='unlick'></image>
-       <image src='/imgs/heart@2x(1).png' bindtap='unlick'></image>
+       <image src='/imgs/heart@2x(1).png' bindtap='lick'></image>
         
       <!-- <text class="iconfont  {{lick==false?'active':''}}" bindtap='unlick'></text>
       <text class="iconfont icon-cainixihuan {{lick==true?'active':''}}" bindtap='lick'></text> -->

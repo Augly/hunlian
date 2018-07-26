@@ -51,6 +51,10 @@ Page({
         this.setData({
           _type:'error'
         })
+    }else{
+      this.setData({
+        _type: ''
+      })
     }
     config.getuid((res) => {
       if (res.data.data.code == '20000') {
@@ -140,6 +144,7 @@ Page({
         imgup: res[0],
         imgdown: res[1]
       }, config.registerPost, (res) => {
+        console.log(res)
         if (that.data._type == 'error') {
           wx.switchTab({
             url: '/pages/my/my',

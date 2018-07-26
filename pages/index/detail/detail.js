@@ -194,7 +194,7 @@ Page({
         this.setData({
           msg: res.data.data.msg
         })
-        config.mytoast(msg,(res)=>{
+        config.mytoast(res.data.data.msg,(res)=>{
 
         })
       }
