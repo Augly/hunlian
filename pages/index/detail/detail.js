@@ -154,7 +154,6 @@ Page({
       uid: app.globalData.uid,
       to_id:this.data.formId
     }, config.letter,(res)=>{
-      console.log(res)
       this.setData({
         alldataone:res.data.data
       })
@@ -194,9 +193,33 @@ Page({
         this.setData({
           msg: res.data.data.msg
         })
-        config.mytoast(res.data.data.msg,(res)=>{
+        let step = res.data.data.step
+        if (res.data.data.step != null || res.data.data.step != undefined || res.data.data.step != '') {
+          config.mytoast(res.data.data.msg, (res) => {
+            if (step == '1') {
+              wx.navigateTo({
+                url: '/pages/index/toloading/toloading',
+              })
+            } else if (step == '2') {
+              wx.navigateTo({
+                url: '/pages/index/loginRegister/loginRegister',
+              })
+            } else if (step == '3') {
+              wx.navigateTo({
+                url: '/pages/index/basicInformation/basicInformation',
+              })
+            } else if (step == '5') {
+              wx.navigateTo({
+                url: '/pages/my/renzheng/renzheng',
+              })
+            } else {
+              wx.navigateTo({
+                url: '/pages/index/certificationInformation/certificationInformation',
+              })
+            }
+          })
+        }
 
-        })
       }
     },(res)=>{
 
