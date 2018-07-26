@@ -31,9 +31,9 @@
 <scroll-view class='selectList' wx:for="{{list}}" scroll-x scroll-left="{{item.myleft}}" scroll-with-animation bindscroll='scroll' data-index='{{index}}'>
   <view class='item'>
     <view class='item_left' bindtap='tomailRes' data-formid='{{item.from_id}}' data-id='{{item.id}}'>
-      <view class='left_log'>
-        <text class='iconfont icon-yidu'></text>
-      </view>
+      <image class='left_log' src='{{item.headimgurl}}'>
+      
+      </image>
       <view class='left_res'>
         <view class='left_title'>{{item.nickname}}</view>
         <view class='left_mintitle'>给您发布{{item.num}}条消息</view>
@@ -67,9 +67,12 @@
 <scroll-view class='selectList' wx:for="{{otherlist}}" scroll-x scroll-left="{{item.myleft}}" scroll-with-animation bindscroll='scroll' data-index='{{index}}'>
   <view class='item'>
     <view class='item_left' bindtap='tomailRestwo' data-formid='{{item.from_id}}' data-id='{{item.id}}'>
-      <view class='left_log'>
+      <!-- <view class='left_log'>
         <text class='iconfont icon-yidu'></text>
-      </view>
+      </view> -->
+      <image class='left_log' src='{{item.headimgurl}}'>
+      
+      </image>
       <view class='left_res'>
         <view class='left_title'>{{item.nickname}}</view>
         <view class='left_mintitle'>给您发布{{item.num}}条消息</view>

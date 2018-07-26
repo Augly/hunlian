@@ -26,10 +26,10 @@ Page({
   tap: function (e) {
     var that = this;
     var distance = that.data.distance;
-    if ((distance > (winWidth + winWidth / 4)) || (distance < (winWidth - winWidth / 4))) {
+    if ((distance > (winWidth + winWidth / 5)) || (distance < (winWidth - winWidth / 5))) {
       var content = that.data.content;
       if (app.globalData._ishua) {
-        if (distance > (winWidth + winWidth / 4)) {
+        if (distance > (winWidth + winWidth / 5)) {
           var lick = true
           this.getselectR(config.getData(e, 'id'))  //右滑
           that.setData({
