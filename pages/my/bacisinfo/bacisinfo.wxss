@@ -31,7 +31,7 @@ page {
 }
 
 .info_top .info_activity {
-  color: #e9ad40;
+  color: RGBA(241, 90, 36, 1);
 }
 
 .info_activity .activity_view {
@@ -283,14 +283,14 @@ page {
 }
 
 .top_item.info_activity {
-  color: #c98c1c;
+  color: RGBA(241, 90, 36, 1);
 }
 
 .top_item.info_activity:after {
   content: '';
-  background: #c98c1c;
+  background:RGBA(241, 90, 36, 1);
   width: 100%;
-  height: 4rpx;
+  height: 7rpx;
   position: absolute;
   bottom: 0;
   left: 0;

@@ -80,7 +80,7 @@
 
             </image>
             <view class='move_res'>
-              <view class='move_title'>{{item.nickname}}
+              <view class='move_title'>{{item.nick_name}}
                 <text class="iconfont {{item.sex==1?'icon-nv':'icon-nan'}}"></text>
                 <view class='move_miniTitle'>{{item.marriage_time}}</view>
               </view>
@@ -89,15 +89,15 @@
                 <text>{{item.constellation}}</text>
                 <text>{{item.height}}cm</text>
               </view>
-              <view class='move_zw'>{{item.profession}}</view>
+              <view class='move_zw'>{{item.profession==null?'未填写':item.profession}}</view>
             </view>
           </view>
         </movable-view>
 
       </movable-area>
     </view>
-    <view class='trmone'></view>
-    <view class='trmtwo'></view>
+    <!-- <view class='trmone'></view>
+    <view class='trmtwo'></view> -->
     <view class='typeGroup'>
       <image src='/imgs/HealthCircle@2x.png' bindtap='unlick'></image>
        <image src='/imgs/heart@2x(1).png' bindtap='unlick'></image>

@@ -26,17 +26,17 @@ Page({
   tap: function (e) {
     var that = this;
     var distance = that.data.distance;
-    if ((distance > (winWidth + winWidth / 2)) || (distance < (winWidth - winWidth / 2))) {
+    if ((distance > (winWidth + winWidth / 4)) || (distance < (winWidth - winWidth / 4))) {
       var content = that.data.content;
       if (app.globalData._ishua) {
-        if (distance > (winWidth + winWidth / 2)) {
+        if (distance > (winWidth + winWidth / 4)) {
           var lick = true
           this.getselectR(config.getData(e, 'id'))  //右滑
           that.setData({
             distance: winWidth
           })
         }
-        if (distance < (winWidth - winWidth / 2)) {
+        if (distance < (winWidth - winWidth / 4)) {
           var lick = false
           this.getselectL(config.getData(e, 'id'))  //左滑
           that.setData({

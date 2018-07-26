@@ -11,10 +11,11 @@
             <text class='mask_subtext'>{{item.title}}</text>
           </view>
           <image src='{{item.more}}' class='pic_item'></image>
+          <!-- <view class='adder_title'>11</view> -->
           <view class='address'>
             <text>地址：{{item.address}}</text>
             <view catchtap='toMap' data-index='{{index}}'>
-              <icon class='iconfont icon-ditu ditu'></icon>查看地图</view>
+              <icon class='iconfont icon-didian didian'></icon>查看地图</view>
           </view>
         </view>
       </view>

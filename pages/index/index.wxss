@@ -199,8 +199,8 @@ height: 100vh;
 z-index: 999;
 }
  .trm {
-  width: 686rpx;
-  height: 839rpx;
+  width: 672rpx;
+  height: 887rpx;
   background-color: rgba(255, 255, 255, 1);
   left:32rpx;
   right: 0;
@@ -214,12 +214,13 @@ z-index: 999;
 } 
 .move_log {
   width: 100%;
-  height: 683rpx;
+  height:100%;
   /* background-color: red; */
   display: block;
 }
 
 .move_res {
+  background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 157rpx;
   box-sizing: border-box;
@@ -227,11 +228,12 @@ z-index: 999;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-top:-157rpx; 
 }
 
 .move_title {
   font-size: 32rpx;
-  color: RGBA(26, 26, 26, 1);
+  color: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
 }
@@ -247,7 +249,7 @@ z-index: 999;
 
 .move_other {
   font-size: 26rpx;
-  color: RGBA(153, 153, 153, 1);
+  color: rgba(255, 255, 255, 1);
 }
 .move_other text{
   margin-right: 38rpx;
@@ -255,7 +257,7 @@ z-index: 999;
 
 .move_zw {
   font-size: 26rpx;
-  color: RGBA(153, 153, 153, 1);
+   color: rgba(255, 255, 255, 1);
 }
 .typeGroup {
   position: fixed;
@@ -263,7 +265,7 @@ z-index: 999;
   display: flex;
   align-items: center;
   justify-content: center;
-  bottom:15rpx;
+  bottom:36rpx;
 }
 .typeGroup image{
   width: 60rpx;

@@ -16,7 +16,7 @@
   <view class='item' bindtap='tomail'>
     <view class='item_left'>
       <view class='left_log'>
-        <text class='iconfont icon-yidu'></text>
+        <image src='/imgs/xiaoxi@2x.png'></image>
       </view>
       <view class='left_res'>
         <view class='left_title'>系统消息</view>
@@ -53,7 +53,7 @@
   <view class='item' bindtap='tomailtwo'>
     <view class='item_left'>
       <view class='left_log'>
-        <text class='iconfont icon-yidu'></text>
+        <image src='/imgs/xiaoxi@2x.png'></image>
       </view>
       <view class='left_res'>
         <view class='left_title'>系统消息</view>

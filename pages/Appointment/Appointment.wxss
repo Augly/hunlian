@@ -18,6 +18,15 @@
   position: relative;
   margin-bottom: 16rpx;
 }
+.adder_title{
+  font-size: 23rpx;
+  color: rgba(0, 0, 0, 0.4);
+  font-weight: bold;
+}
+.didian{
+  font-size:32rpx;
+  margin-left: 10rpx;
+}
 .address{
   display: flex;
   justify-content: space-between;
