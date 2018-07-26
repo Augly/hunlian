@@ -4,7 +4,7 @@
     <image src="{{alldata.more}}" mode='widthFix'></image>
     <view class='name_box'>
       <view class='name'>
-        <view>{{alldata.name==null?'未填写':alldata.name}}</view>
+        <view>{{alldata.nickname==null?'未填写':alldata.nickname}}</view>
         <view class='sex_box'>
           <view class="iconfont {{alldata.sex==1?'icon-nv':'icon-nan'}}"></view>
           <view>{{alldata.age==null?'未填写':alldata.age}}</view>
