@@ -36,15 +36,16 @@ Page({
     if (reg.test(this.data.mobile) == true) {
       var that = this;
       var currentTime = that.data.currentTime
-      that.setData({
-        time: currentTime + '秒',
-        disabled: false
-      })
+      
       this.sendCode((res) => {
         if (res.data.data.code == '20000') {
           console.log(res.data.data.qiu)
           this.setData({
             oldCode:res.data.data.qiu
+          })
+          that.setData({
+            time: currentTime + '秒',
+            disabled: false
           })
           interval = setInterval(function () {
             currentTime--;
@@ -61,7 +62,7 @@ Page({
             }
           }, 1000)
         } else {
-          config.mytoast('验证码发送失败!', (res) => { })
+          config.mytoast(res.data.data.msg, (res) => { })
         }
 
       }, (res) => {

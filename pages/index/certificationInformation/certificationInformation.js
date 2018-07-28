@@ -146,7 +146,6 @@ Page({
         imgdown: res[1]
       }, config.registerPost, (res) => {
         console.log(res)
-        check = true
         if (that.data._type == 'error') {
           wx.switchTab({
             url: '/pages/my/my',
@@ -164,7 +163,8 @@ Page({
               complete: function (res) { },
             })
           },(res)=>{
-           
+            check = true            
+             console.log('quxiao：'+res)
           })
         }
 

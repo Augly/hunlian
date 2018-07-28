@@ -28,3 +28,12 @@
    background: radial-gradient(#E7A42A, #C98C1C); 
    box-shadow:0rpx 2rpx 30rpx #E9AD40;
  }
+ textarea.input_atr{
+   width: 680rpx;
+   box-sizing: border-box;
+ }
+ .holder{
+   text-align: justify;
+   line-height: 1.5;
+   font-size: 30rpx;
+ }

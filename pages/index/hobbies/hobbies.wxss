@@ -40,19 +40,22 @@
 
 .label {
   font-size: 26rpx;
-  color: #2846b3;
+  color: #B4A48C;
   border-radius: 10rpx;
-  background-color: #bdcbff;
+  background-color: #EBE9EE;
   padding: 18rpx 31rpx;
   margin-left: 16rpx;
 }
 
 .film{
-  background-color: #C8EEFF,
+  background-color: rgba(8,47,73,1);
+  color: #FFF;
 }
 .foods{
-  background-color: #FFDEDE
+  background-color: #D8C7A9;
+  color: #FFF;
 }
 .sports{
-  background-color:#FFE3B0; 
+  background-color:#BECBD4; 
+  color: #FFF;
 }

@@ -1,6 +1,8 @@
 /* pages/index/version.wxss */
 page{
-  background-image: url('http://wxq.test.bronet.cn/images/denglubg.png')
+  background: url('http://wxq.test.bronet.cn/images/bg_cover.png');
+  /* background-repeat: no-repeat; */
+  background-size: cover;
 }
 .container {
   position: fixed;

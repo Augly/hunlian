@@ -20,7 +20,7 @@
 .bottom_btn {
   width:686rpx;
   height: 88rpx;
-  background: linear-gradient(#C98C1C,#E7A42A);
+  background: linear-gradient(rgba(174,156,128,1),rgba(174,156,128,0.8));
   border-radius: 44rpx;
   font-size: 36rpx;
   color: #fff;

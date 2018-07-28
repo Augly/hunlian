@@ -32,8 +32,8 @@ page {
 }
 
 .selectCor_Active {
-  color: RGBA(241, 90, 36, 1);
-  border-bottom: 6rpx solid RGBA(241, 90, 36, 1);
+  color: RGBA(174,156,128,1);
+  border-bottom: 6rpx solid RGBA(174,156,128,1);
 }
 
 .selectList {

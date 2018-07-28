@@ -9,7 +9,7 @@
       <view wx:else>未认证</view>
     </view>
     <view class="myitem" wx:if="{{info.title==''||info.title==null||info.title=='null'}}">
-      <view class="myitem_left">立即开通会员 • 轻松畅聊</view>
+      <view class="myitem_left">升级为VIP会员• 轻松畅聊</view>
       <view class="myitem_rigth" bindtap='allow'>
         <view>开通</view>
         <!-- <view class="iconfont icon-arrow"> </view> -->
@@ -57,8 +57,7 @@
           </image>
         </view>
         <view class="mycontent_txt">
-
-          我要做服务老师
+          我的才艺展示
         </view>
 
         <view class="iconfont icon-arrow"></view>

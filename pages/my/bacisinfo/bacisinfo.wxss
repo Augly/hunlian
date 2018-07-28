@@ -31,7 +31,7 @@ page {
 }
 
 .info_top .info_activity {
-  color: RGBA(241, 90, 36, 1);
+  color: RGBA(174, 156, 128, 1);
 }
 
 .info_activity .activity_view {
@@ -119,7 +119,7 @@ page {
   line-height: 88rpx;
   color: #fff;
   font-size: 38rpx;
-  background-color: rgba(0, 0, 0,1);
+  background-color: rgba(174, 156, 128,1);
   border-radius: 44rpx;
   /* background: radial-gradient(#e7a42a, #c98c1c); */
   /* box-shadow: 0rpx 2rpx 30rpx #e9ad40; */
@@ -140,7 +140,7 @@ page {
   padding: 25rpx 15rpx;
   font-size: 30rpx;
   line-height: 30rpx;
-  border-radius: 5rpx;
+  border-radius: 8rpx;
 }
 
 .interest_item .iconfont {
@@ -169,51 +169,50 @@ page {
 }
 
 .style_tag {
-  color: #2846b3;
-  border: 2px dashed #bdcbff;
+  color: rgba(174,156,128,1);
+  border: 2px dashed #EBE9EF;
   background-color: #fff;
 }
 
 .style_tag2 {
-  color: #1979a5;
-  border: 2px dashed #c8eeff;
+  color: rgba(174,156,128,1);
+  border: 2px dashed #052B45;
   background-color: #fff;
 }
 
 .style_tag3 {
-  color: #923939;
-  border: 2px dashed #ffdede;
+  color: rgba(174,156,128,1);
+  border: 2px dashed rgba(216,199,169,1);
   background-color: #fff;
 }
 
 .style_tag4 {
-  color: #895c0b;
-  border: 2px dashed #ffe3b0;
+  color: rgba(174,156,128,1);
+  border: 2px dashed rgba(190,203,212,1);
   background-color: #fff;
 }
 
 .style_content {
-  background-color: #bdcbff;
-  color: #2846b3;
-  border: 2px solid #bdcbff;
+  background-color: #EBE9EE;
+  color: #B3A38A;
 }
 
 .style_content2 {
-  background-color: #c8eeff;
-  color: #1979a5;
+  background-color: #082F49;
+  color: #FFF;
   border: 2px solid #c8eeff;
 }
 
 .style_content3 {
-  background-color: #ffdede;
-  color: #923939;
-  border: 2px solid #ffdede;
+  background-color: rgba(216,199,169,1);
+  color: #FFF;
+  border: 2px solid rgba(216,199,169,1);
 }
 
 .style_content4 {
-  background-color: #ffe3b0;
-  color: #895c0b;
-  border: 2px solid #ffe3b0;
+  background-color: rgba(190,203,212,1);
+  color: #FFF;
+  border: 2px solid rgba(190,203,212,1);
 }
 
 .mold {
@@ -283,12 +282,12 @@ page {
 }
 
 .top_item.info_activity {
-  color: RGBA(241, 90, 36, 1);
+  color: RGBA(174,156, 128,1);
 }
 
 .top_item.info_activity:after {
   content: '';
-  background:RGBA(241, 90, 36, 1);
+  background:RGBA(174,156,156,1);
   width: 100%;
   height: 7rpx;
   position: absolute;
@@ -351,7 +350,7 @@ page {
 .sure{
   width:480rpx;
 height:88rpx;
-background:rgba(233,173,64,1);
+background:rgba(174,156,128,1);
 border-radius:5rpx;
 font-size: 32rpx;
 color:rgba(255, 255, 255, 1);

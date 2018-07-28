@@ -134,7 +134,7 @@
   width: 48rpx;
   height: 48rpx;
   font-size: 32rpx;
-  background-color: #9aafff;
+  background-color: RGBA(174,156,128, 1);
   color: #fff;
   text-align: center;
   line-height: 48rpx;
@@ -152,7 +152,7 @@
 .message_btn, .phone_btn {
   display: flex;
   height: 88rpx;
-  background-color: #e9ad40;
+  background-color: rgba(174,156,128,1);
   border-radius: 44rpx;
   font-size: 30rpx;
   color: #fff;

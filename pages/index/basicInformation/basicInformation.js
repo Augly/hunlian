@@ -108,7 +108,7 @@ Page({
     } else if (sm >= 1123 && sm <= 1221) {
       n = '射手座'
     } else if (sm >= 1222) {
-      n = '魔蝎座'
+      n = '摩羯座'
     } else if (sm >= 120 && sm <= 218) {
       n = '水瓶座'
     } else if (sm >= 219 && sm <= 320) {

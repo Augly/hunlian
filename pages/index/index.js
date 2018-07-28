@@ -6,7 +6,7 @@ let app = getApp()
 Page({
   data: {
     myindex: null,
-    mask: true,
+    mask: false,
     lick: null,
     x: winWidth,
     y: winHeight,
@@ -18,7 +18,7 @@ Page({
     wrapContent:false
   },
   onLoad: function () {
-
+    
   },
   /**
    * 滑动函数
@@ -163,6 +163,7 @@ Page({
       this.setData({
         mask: false
       })
+      wx.setStorageSync('secMore', true)
     }
   },
   /**
@@ -199,6 +200,12 @@ Page({
         this.setData({
           content: res.data.data.list
         })
+        let secMore = wx.getStorageSync('secMore')
+        if(!secMore){
+          this.setData({
+            mask: true
+          })
+        }
       } else {
         config.mytoast('暂无数据', (res) => {
           app.globalData._ishua = false

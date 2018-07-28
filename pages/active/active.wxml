@@ -4,7 +4,7 @@
 
 <view class='container' wx:if="{{list.length>0}}">
   <!--照片  -->
-  <view class='active_item' bindtap='details_page' wx:for="{{list}}" data-id='{{item.id}}'>
+  <view class='active_item' bindtap='details_page' wx:for="{{list}}" data-id='{{item.id}}' wx:key=''>
     <view class='active_mask'>
       <text class='mask_text'>{{item.theme}}</text>
       <text class='mask_subtext'>{{item.title}}</text>

@@ -259,7 +259,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 5rpx;
-  background-color: RGBA(233, 173, 64, 1);
+  background-color: RGBA(174, 156, 128, 1);
 }
 
 .icon-quxiao1{

@@ -99,7 +99,7 @@
 .icon_font {
   width: 48rpx;
   height: 48rpx;
-  background: rgba(233, 173, 64, 1);
+  background: rgba(174, 156, 128, 1);
   border-radius: 5rpx;
   color: #fff;
   text-align: center;

@@ -56,7 +56,7 @@
   height: 88rpx;
   line-height: 88rpx;
   color: #fff;
-  background: linear-gradient(to bottom, #E7A42A , #C98C1C);
+  background: linear-gradient(to bottom, rgba(174,156,128,1) , rgba(174,156,128,0.8));
   text-align: center;
   border-radius: 44rpx;
 }
@@ -131,7 +131,7 @@
   width: 616rpx;
   height: 88rpx;
   margin-top: 26rpx;
-  background-color: #E9AD40;
+  background-color: rgba(174,156,128,1);
   text-align: center;
   line-height: 88rpx;
   font-size: 32rpx;

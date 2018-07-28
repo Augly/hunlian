@@ -1,5 +1,5 @@
 <view class="input_box">
-  <textarea placeholder='请输入自己的经验' type="text" bindinput='teacherPost' value='{{teacherPost}}'></textarea> 
+  <textarea placeholder='造诣超群、学富五车、出类拔萃、举世无双——说的就是您吗？那快写下您不为众人所知的才能和联系方式，加入“FOR YOU·幸福云南”单身派对一展才华吧！在这里，您可能转角遇到爱，更有机会获得大企业投资与合作哦！' type="text" bindinput='teacherPost' placeholder-class='holder' class='input_atr' value='{{teacherPost}}'></textarea> 
 </view>
   <view class='bottomGroup'>
     <view class='next_btn' bindtap='sure'>确定</view>

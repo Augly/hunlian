@@ -23,15 +23,19 @@ page {
 
 .phone_box, .code_box {
   width: 100%;
-  border-bottom: 1rpx solid white;
+  border-bottom: 1rpx solid rgba(174,156,128,1);
   display: flex;
   align-items: center;
   color: #fff;
   padding: 54rpx 0 31rpx 0;
 }
+.code_box .iconfont,.phone_box .iconfont{
+  color: rgba(174,156,128,1)
+}
 .phone_box input, .code_box input{
   margin-left: 30rpx;
   font-size: 36rpx;     
+  color: rgba(174,156,128,1)
 }
 .code_box input{
   margin-left:35rpx;
@@ -47,13 +51,14 @@ page {
 
 .font_color {
   font-size: 32rpx;
-  color: #fff;
   margin-left:0rpx;
+  color: rgba(174,156,128,1)
 }
 
 .verify_code {
   font-size: 32rpx;
   margin-left: auto;
+  color: #999;
 }
 
 .bottom_box {
@@ -76,7 +81,7 @@ page {
 
 .prompt_words {
   font-size: 26rpx;
-  color: #fff;
+  color: rgba(174,156,128,1);
   margin-top: 41rpx;
 }
 
@@ -84,9 +89,13 @@ page {
   display: flex;
   margin-top: 278rpx;
   font-size: 24rpx;
-  color: #fff;
+  color: rgba(174,156,128,1);
+  position: fixed;
+  bottom: 50rpx;
+  justify-items: center;
+  align-content: center;
 }
 
 .agreement {
-  color: #e3a128;
+  color: #FFF;
 }

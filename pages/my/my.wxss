@@ -55,7 +55,7 @@ page {
   align-items: center;
   border-radius: 30rpx;
   color: #fff;
-  background-color: rgba(241, 90, 36, 1);
+  background-color: rgba(174, 156, 128, 1);
 }
 
 .myitem .icon-arrow {
@@ -145,7 +145,7 @@ page {
 .sumbit {
   width: 100%;
   height: 88rpx;
-  background-color: #e9ad40;
+  background-color: rgba(174, 156, 128, 1);
   font-size: 32rpx;
   text-align: center;
   display: flex;
@@ -169,7 +169,7 @@ page {
 }
 .sActive{
   background-color: RGBA(255, 248, 236, 1);
-  border: 1rpx solid RGBA(233, 173, 64, 1);
+  border: 1rpx solid RGBA(174, 156, 128, 1);
 }
 
 .seLtitle {
@@ -188,11 +188,11 @@ page {
 
 .selectR_M{
   font-size: 24rpx;
-  color: #E9AD40
+  color: rgba(174, 156, 128, 1)
 }
 .selectR_T{
   font-size: 36rpx;
-  color: #E9AD40
+  color: rgba(174, 156, 128, 1)
 }
 .icon-quxiao1{
   position: absolute;

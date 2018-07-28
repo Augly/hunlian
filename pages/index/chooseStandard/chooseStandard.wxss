@@ -39,8 +39,9 @@
 .content_title {
   font-size: 36rpx;
   font-weight: bold;
-  background-color: #ffbf4b;
+  background-color: rgba(174,156,128,1);
   padding: 27rpx;
+  color: #1a1a1a;
 }
 
 .information_detail {
@@ -82,7 +83,7 @@
 .icon_font {
   width: 48rpx;
   height: 48rpx;
-  background: rgba(233, 173, 64, 1);
+  background: rgba(174, 156, 128, 1);
   border-radius: 5rpx;
   color: #fff;
   text-align: center;

@@ -191,6 +191,7 @@ Page({
    * 付款
    */
   pay() {
+    let tempData = Object.assign({},this.data.alldata)
     if(check){
         check=false
     config.ajax('POST', {
@@ -208,11 +209,13 @@ Page({
             } else {
               config.mytoast('服务器错误,请稍后再试', (res) => { })
             }
-          }, (res) => { })
-          check = true
+          }, (res) => { 
+          })
+      },(errMsg)=>{
+        console.log('取消支付')
+        check = true
       })
     }, (res) => {
-      check = true
     })
   }
   },

@@ -94,7 +94,7 @@
 .next_btn {
   width: 91%;
   height: 88rpx;
-  background: linear-gradient(#c98c1c, #e7a42a);
+  background: linear-gradient(rgba(174,156,128,1), rgba(174,156,128,.8));
   border-radius: 44rpx;
   font-size: 36rpx;
   color: #fff;
